@@ -8,7 +8,7 @@
 
 These pages are an attempt to create clear and structured starter documentation for people who want to start playing *Jagged Alliance 2 v1.13*.
 
-[**Click here to view the starter documentation.**](https://aimnas.github.io/1.13_starter_documentation/)
+[**Click here to view the starter documentation.**](https://1dot13.github.io/documentation/)
 
 ## Community
 - [The Bear's Pit forums](http://thepit.ja-galaxy-forum.com/)
