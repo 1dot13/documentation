@@ -87,26 +87,18 @@ After you got your hands on a copy of JA2 and want to go install it, we have a f
 ### 1.2 The 1.13 mod
 Once you have your clean JA2 installation ready to be turned into a clean 1.13 installation, there are a few routes you can go to achieve this.
 
-- Install the latest SCI (Single Click Installer, something of a misnomer). This is the best way to go as these SCI packages are based upon the latest game developments but don't worry, they are very stable.
+- Download the "latest" package from Github.
 - Install the old so called "stable" release which is referred to as 7609. Some mods chose to stick to this version so check what your goal mod requires.
-- Install 1.13 via the SVN route. This is an expert path because next to getting all the mod files from SVN you will have to compile the game's executable file from source code as well.
 
-#### 1.2.1 Install the latest SCI 
+#### 1.2.1 Install the latest package from Github 
 This is the preferred way to go for people who want to start playing 1.13 as it will give you a good out of the box experience.
 
-> As of 2020/10/15, the OneDrive link below is not being updated. An **unofficial** source for the latest SCIs can be found [here](https://jenkins.maeyanie.com/job/JA2%20SCI/).
-
-You can get the latest SCI file from [this OneDrive location](https://onedrive.live.com/?id=13A6926EAC52083!583&cid=013A6926EAC52083). If you sort the OneDrive file listing from new to old you should see the file with the highest revision number up on top: download this one.
-
-Once you have downloaded the file you will need to extract its contents with a file archiver. There are different tools to use for this like [7-Zip](https://www.7-zip.org/ "7-Zip homepage"). Extract the file to the location where your target JA2 installation is located and choose to overwrite files if you get asked, so for this example we'll use `C:\Games\Jagged Alliance 2\`.
+You can get the latest mod version from [Github](https://github.com/1dot13/source/tags).
 
 > **If you are not prompted to overwrite files, you did not extract to the correct directory.**
 
 #### 1.2.2 Install release 7609
 For the special cases with a requirement to run on release 7609 (namely mods), you can find it [here](https://storage.rcs-rds.ro/links/4729f8d6-f44b-42b7-aa3e-e0ddc6deead6?path=%2FJA_2%2Fv1.13_Releases%2FOfficial%2FEnglish%2Fv7435). You will need to download both `JA2_113_FullRelease_English_7435.exe` and `JA2_113_UpdateForRelease7435_English_7609.exe`.
-
-#### 1.2.3 Install 1.13 from SVN
-If you have a special reason to not use the SCI release, for example if you are actively helping to fix bugs in 1.13, it can be handy to get your gamedata and executable from source. This is however an advanced topic which is covered in more detail [here](development.md). 
 
 ### 1.3 Fixes for newer Windows versions
 Technically, there is no need to adjust anything to make 1.13 run well on Windows 7 and older. However there are a few things you will need to do to be able to play 1.13 well on the Windows 8+ versions, here's a list:
@@ -170,6 +162,10 @@ Vanilla *Jagged Alliance 2* can be played on Mac and Linux with [Jagged Alliance
 ### 3.8 My mercs are only moving backwards and/or certain hotkeys are not working!
 When you Alt-Tab out of the game, sometimes the Alt key gets stuck. In-game, tap Alt a few times to fix it.
 
+### 3.9 I've found a bug! Where can I report it?
+Best place for that is on [Github's Issue Page](https://github.com/1dot13/source/issues).
+
+
 
 ## 4. Mods
 <!-- Consider moving this section to its own page -->
@@ -206,6 +202,8 @@ This is an alternate executable for 1.13 r7609 and is therefore only usable with
 *AFS* is a port of the features introduced in *Urban Chaos 1.13* and *Deidranna Lives 1.13* to regular 1.13. [List of features](http://thepit.ja-galaxy-forum.com/index.php?t=msg&th=21225&start=0&).  
 The latest release as of 15/05/2019, [Arulco Folding Stock Full Experimental 14 v4.6x 20190510](http://thepit.ja-galaxy-forum.com/index.php?t=msg&th=23933&goto=357358&#msg_357358), supports r8675.
 
+### 4.8 [Stock Data Overhaul](https://github.com/LatZee/SDO)
+An extensive rework of the vanilla 1.13 data, focusing on balance and refining existing features.
 
 ## 5. Glossary
 - Arulco: the fictional nation where Jagged Alliance 2 takes place. [More info](https://jaggedalliance.fandom.com/wiki/Arulco)

@@ -141,9 +141,15 @@ Radio sets can be used to call for militia reinforcements, artillery strikes, or
 - Auto fire (and by extension, suppression) is very effective.
 
 ### 4.2 Who are some good mercs to initially hire?
-TODO  
-Generally, it is very useful to have a decent marksman, a medic and a mechanic around.  
-Barry, Buns, Grunty, Igor, Fox, Wolf, Meltdown, Stephen, Grizzly
+At the start of the game, you'll want (for example):
+- One or two medics (MD, Fox, Spider)
+- A technician (Vinny, Barry)
+- Several good fighters (Buns, Grizzly, Igor, Grunty, Meltdown)
+If you want to take a quieter approach, consider mercenaries who:
+- Are stealthy (Mouse, Igor)
+- Specialize in Night Ops (Spider, Barry)
+
+Hovering over a mercenary's portrait will show their traits. 
 
 ### 4.3 Basic strategy and tactics for early game
 - A merc ending the turn with leftover AP will have a greater chance to trigger an interrupt.
@@ -152,3 +158,10 @@ Barry, Buns, Grunty, Igor, Fox, Wolf, Meltdown, Stephen, Grizzly
 - When prone or crouching near cover a merc can "rest their weapon", improving their accuracy.
 - When you have captured most of a city, train militia to defend the city while you are elsewhere.
 - Suppressive fire reduces the target's AP so it can be very effective.
+
+### 4.4 Defending against the dreaded Drassen counter-attack
+It's not really recommended for beginners, but if you want to give it a shot...
+- You **can** train or buy militia before you've captured the entire city. Be sure to save up some cash.
+- Position any militia you have in the strategic map in either the mine sector and the sector next to it (so they can be called in as reinforcements). 
+- Get your mercenaries in cover in tactical before accelerating time. 
+- Consider the effective range of your weapons. Do not expose your mercs to danger until they can get a good shot.
