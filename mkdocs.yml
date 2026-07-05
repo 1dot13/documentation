@@ -95,6 +95,7 @@ nav:
       - New game options: playing/new-game-options.md
       - Hotkeys & controls: playing/hotkeys.md
       - Starter tips: playing/tips.md
+      - Cheats & debug tools: playing/cheats.md
       - Feature guides:
           - New Chance to Hit (NCTH): playing/features/ncth.md
           - Suppression: playing/features/suppression.md
@@ -108,6 +109,8 @@ nav:
           - Covert operations: playing/features/covert-ops.md
           - Food & water: playing/features/food.md
           - Prisoners of war: playing/features/prisoners.md
+          - Drugs & disease: playing/features/drugs-disease.md
+          - Know your enemy: playing/features/enemies.md
   - Walkthrough:
       - walkthrough/index.md
       - First steps: walkthrough/first-steps.md
@@ -116,6 +119,7 @@ nav:
       - Late game: walkthrough/late-game.md
       - Side quests: walkthrough/side-quests.md
       - NPCs & recruitment: walkthrough/npcs-recruitment.md
+      - Secrets & rare loot: walkthrough/secrets.md
   - Configuration:
       - configuration/index.md
       - JA2_Options.ini guide: configuration/options-ini.md
