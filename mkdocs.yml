@@ -97,10 +97,17 @@ nav:
       - Starter tips: playing/tips.md
       - Feature guides:
           - New Chance to Hit (NCTH): playing/features/ncth.md
+          - Suppression: playing/features/suppression.md
           - Inventory & LBE: playing/features/inventory.md
           - Weapon attachments: playing/features/attachments.md
+          - Skills & traits: playing/features/traits.md
+          - Creating IMPs: playing/features/imp.md
+          - Bobby Ray & item progression: playing/features/bobby-ray.md
           - Militia: playing/features/militia.md
           - Support roles: playing/features/support-roles.md
+          - Covert operations: playing/features/covert-ops.md
+          - Food & water: playing/features/food.md
+          - Prisoners of war: playing/features/prisoners.md
   - Walkthrough:
       - walkthrough/index.md
       - First steps: walkthrough/first-steps.md
@@ -133,6 +140,7 @@ nav:
       - multiplayer/index.md
   - Reference:
       - Mods based on 1.13: reference/mods.md
+      - Tools: reference/tools.md
       - Version history: reference/version-history.md
       - Glossary: reference/glossary.md
       - Links & community: reference/links.md

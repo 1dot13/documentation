@@ -28,7 +28,8 @@ suppresses too.
 This changes tactics fundamentally: a machine gun burst that hits nothing can still win a
 turn. Suppression intensity can be adjusted or disabled in `JA2_Options.ini`.
 
-Read more: [starter tips](tips.md) for using suppression effectively.
+Read more: the [suppression guide](features/suppression.md) for the full mechanics, and
+[starter tips](tips.md) for using it effectively.
 
 ### Autofire you control
 
@@ -236,18 +237,21 @@ on top of the campaign. The keys named below live in `JA2_Options.ini`, and seve
 these systems can also be toggled from the
 [1.13 Features screen](new-game-options.md#the-113-features-screen):
 
-- **Food and water** (`FOOD`, off by default; in the trunk since r5413). Mercs grow
+- **Food and water** (`FOOD`, off by default; in the trunk since r5413 —
+  [full guide](features/food.md)). Mercs grow
   hungry and thirsty hour by hour; letting either run low caps morale, slows energy and
   breath recovery, hurts assignment performance, and eventually costs health and
   strength points. Buy meals from merchants across Arulco, refill canteens in sectors
   with drinkable water — beware, swamp water is poisonous — and watch the indicators on
   merc portraits.
-- **Covert operations** (in the trunk since r5529; needs the new trait system). Any merc
+- **Covert operations** (in the trunk since r5529; needs the new trait system —
+  [full guide](features/covert-ops.md)). Any merc
   can change into civilian clothes and pass as a local; a merc with the **Covert Ops**
   trait can also take a soldier's uniform and walk through enemy positions openly armed.
   Cover is blown by visible weapons or camouflage, suspicious behavior, or getting too
   close — and a garotte or neurotoxin dart gives spies quiet ways to kill.
-- **Prisoners of war** (`ALLOW_TAKE_PRISONERS`; in the trunk since r5709). Handcuff
+- **Prisoners of war** (`ALLOW_TAKE_PRISONERS`; in the trunk since r5709 —
+  [full guide](features/prisoners.md)). Handcuff
   enemies instead of killing them — unconscious ones never resist — then release them
   after battle or ship them to one of Arulco's prisons (Tixa and Alma have the biggest).
   Keep prisons guarded to prevent riots; interrogating captives can recruit them into
