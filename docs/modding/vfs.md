@@ -49,7 +49,7 @@ These are the core VFS terms, from the bottom of the system to the top:
 | **Profile list (stack)** | The VFS is built from a list of profiles, processed left to right: the leftmost profile is included first, the rightmost last (on top of the stack). |
 | **Profile mode** | A profile is read-only by default, or read-write if declared so. You cannot write to a read-only profile. |
 
-!!! warning "You need exactly one sensible write profile"
+!!! warning "At least one profile must be writable"
     Some files must be written at runtime — temporary files, savegames, logs. At least
     one profile must therefore be read-write, and it should normally be the **top
     (rightmost)** profile. Otherwise a read-only file in a higher profile could block

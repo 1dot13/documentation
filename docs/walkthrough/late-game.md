@@ -21,9 +21,8 @@ Queen's favorite town (Balime), and finally Meduna itself.
 | Meduna | N3, N4, N5, O3, O4, P3 (+ underground) | The capital: airport, SAM site, arena, palace |
 
 Tixa and Orta start hidden — they do not appear on your map until you learn about them
-(see below). Neither can hold militia, and the Queen counterattacks both persistently
-after you take them, so garrison them with mercs or mobile militia if you want to keep
-them.
+(see below). Neither can have militia, and the Queen counterattacks both persistently
+after you take them, so garrison them with mercs if you want to keep them.
 
 ## Late-game enemies in 1.13
 
@@ -36,12 +35,14 @@ how this feels:
 - **Progress Speed of Item Choices** (New Game screen) sets how fast better equipment
   becomes available to both you and the enemy. On *Very Slow* you fight the pistol/SMG
   war much longer; on *Fast* the late game arrives early.
-- **`DROP_ALL`** (in `JA2_Options.ini`; on the New Game screen in r7609) makes enemies
-  drop all their items instead of a random selection — which in the late game means
-  mountains of high-end loot after every battle.
+- **`DROP_ALL`** (in `JA2_Options.ini` under `[Tactical Difficulty Settings]`; on the
+  New Game screen in r7609) makes enemies drop all their items instead of only a
+  chance-based selection — which in the late game means mountains of high-end loot
+  after every battle.
 
-Difficulty also matters more now: higher difficulty levels raise the Queen's total army
-size, the share of elite troops in patrols, and give enemies extra APs. See
+Difficulty also matters more now: higher difficulty levels give the Queen a much larger
+troop pool and convert part of every enemy group into extra elites (25% on Expert, 50%
+on Insane), and on Insane enemies get bonus APs on top. See
 [New Game options](../playing/new-game-options.md) and
 [recommended settings](../configuration/recommended-settings.md) for details, and the
 [glossary](../reference/glossary.md) for the progress/coolness jargon.
@@ -111,9 +112,9 @@ Warden's husband will hand it to you:
    southeast corner.
 2. Be nice to **Brewster Woltz**, the Warden's husband. He tells you everything about
    his wife, and if you keep talking to him he gives you the key to her office.
-3. At **17:00** the Warden leaves her office — sneak into the jail house then to catch
-   her off guard. (It takes about 3 hours to walk from the adjacent sector J10, so
-   leave J10 around 14:00.) Outside that window she is in the office.
+3. Sneak into the jail house at **17:00** to catch the Warden off guard — enter at any
+   other time and she will be sitting in her office. (It takes about 3 hours to walk
+   from the adjacent sector J10, so leave J10 around 14:00.)
 4. Kill her **before she reaches the switches**, ideally with suppressed weapons.
 
 Her office has two switches: a red button that alerts the guards to mask up, and a
@@ -127,8 +128,9 @@ regularly, so stay low and use the gas clouds as concealment.
 
 Dynamo is locked in a cell on the western side of the ground floor. He is wounded —
 give him first aid, then talk to him again to complete Matt Duncan's quest (this also
-boosts loyalty in Alma). A merc with modest Leadership can then recruit him for
-$50/day — or **for free** if he refuses your first offer and you ask again.
+boosts loyalty in Alma). A merc with modest Leadership can then recruit him: he asks
+for $50/day, but if your Leadership is good enough you can refuse that offer and he
+joins **for free**.
 
 ### The dungeon and Shank
 
@@ -186,7 +188,7 @@ in and opens a store room **full of Rocket Rifles**.
 
 Like Tixa, Orta counts as strategically important to the Queen: expect a serious
 retake attempt shortly after you capture it, and repeated attempts afterwards. You
-cannot train or station trained militia here, so keep mercs or mobile militia around.
+cannot have militia here at all, so leave a squad behind if you want to hold it.
 
 ## Balime (L11–L12): the Queen's favorites
 
@@ -201,7 +203,8 @@ its shops, its museum, and as your doorstep to the capital.
   runs at longer ranges than in other towns, and there are almost no accessible flat
   roofs — all vantage points are on the ground. Several soldiers bunker up in the manor
   house at the southern end; its doors are trapped, and lethal interrupts are easy to
-  walk into even at night.
+  walk into even at night. The local aristocrats **Lora & Armand Ricci** live in this
+  half of town.
 - **L12 (Balime East).** The main avenue is a sniper corridor for both sides, and most
   defenders fight along it. Night ops are unusually hard here because the streets and
   stores are dotted with lights. The defenders carry assault and sniper rifles, so
@@ -335,10 +338,10 @@ them quietly) and explosive traps (high Explosives skill spots them in advance).
 Three named characters wait at the end of the road:
 
 - **Elliot**, the Queen's battered advisor — slapped on camera after every major battle
-  you win, and finally shot in the head (he survives, and apologizes for it) when he
-  reports your approach to Meduna. You find him in a section of the palace. He will not
-  fight you or hinder you, cannot be bribed, bought, or recruited, and refuses to
-  reveal where the Queen is.
+  you win, and finally shot in the head when he reports your approach to Meduna (he
+  survives, and promises to try harder to die next time). You find him in a section of
+  the palace. He will not fight you or hinder you, cannot be bribed, bought, or
+  recruited, and refuses to reveal where the Queen is.
 - **Joseph "Joe" Papanus**, Deidranna's enforcer/bodyguard: near-maximum combat stats,
   an H&K 21 with 7.62 NATO magazines, Spectra helmet and vest, and the Auto Weapons and
   Martial Arts skills.
@@ -392,5 +395,8 @@ Congratulations, Commander — Arulco is free.
   [Free Dynamo From Tixa](https://jaggedalliance.fandom.com/wiki/Free_Dynamo_From_Tixa),
   [Chalice of Chance](https://jaggedalliance.fandom.com/wiki/Chalice_of_Chance) —
   Jagged Alliance Wiki (Fandom) quest articles
-- Previous 1.13 starter documentation (play guide, r8741 era) — progress/coolness,
-  Progress Speed of Item Choices, `DROP_ALL`, and difficulty-level effects
+- Previous 1.13 starter documentation (play guide and recommended settings, r8741 era)
+  — progress/coolness, Progress Speed of Item Choices, and `DROP_ALL`
+- [`Data-1.13/TableData/DifficultySettings.xml`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/TableData/DifficultySettings.xml)
+  from the 1dot13/gamedir repository — difficulty effects on the Queen's troop pool,
+  extra elites, and enemy AP bonus

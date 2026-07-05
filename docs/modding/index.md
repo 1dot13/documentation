@@ -145,10 +145,10 @@ It is still online and remains the best source for several original design docum
   docs and more. The most important ones are incorporated into this site's pages.
 - **Modding Examples** — small downloadable packages, each demonstrating one
   externalized feature: Additional Difficulty Settings (two examples), Additional
-  Mercs, Additional Female IMPs, Additional Merchants, Briefing Room (two examples
-  plus a how-to text), Externalized Music, Externalized Vehicles, Extra Sector Items,
-  and New Minerals/Mines. These are walked through on the
-  [externalized features](externalization.md) page.
+  Mercs, Additional Female IMPs, Briefing Room (two examples), Externalized Music,
+  Externalized Vehicles, and New Minerals/Mines — plus how-to notes on Briefing Room
+  modding, Additional Merchants and Extra Sector Items. These are walked through on
+  the [externalized features](externalization.md) page.
 - **Tools** — EDT editors, NPC editors, Lua scripting material and an export tool.
 - **Weapons** and **Source Code** — reference material for item and code modders.
 

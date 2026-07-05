@@ -31,6 +31,13 @@ especially the legacy r7609 "stable" and mods based on it — have fewer files, 
 tags and **different index numbers**, so double-check against your own files before
 copying advice from old forum posts.
 
+Not everything tweakable is XML, either: gameplay toggles live in
+[`JA2_Options.ini`](options-ini.md), and skills and traits are tuned in
+`Skills_Settings.INI` and the other INI files one level up in `Data-1.13` — the
+[configuration overview](index.md) maps them all. As a rule of thumb, the INI files
+hold *settings* while the XML files hold *data*: the actual lists of items, people
+and places the game is built from.
+
 ## What's in TableData
 
 ### Subfolders
@@ -61,8 +68,8 @@ The files most players end up touching:
 | File | What it controls |
 | --- | --- |
 | `DifficultySettings.xml` | Per-difficulty campaign values: `<StartingCash>`, enemy AP bonus, kills per progress point, initial garrison percentages, minimum enemy group size, `<AllowReinforcements>` and more — each tag is documented in the comment block at the top of the file |
-| `Vehicles.xml` | One entry per vehicle, including `<SeatingCapacities>` (how many mercs fit inside) |
-| `MercProfiles.xml` | Mercenary and character profile data |
+| `Vehicles.xml` | One entry per vehicle: names, movement type, whether it is enabled, its armor (an `Items.xml` reference), its seats and `<SeatingCapacities>` (how many mercs fit inside) |
+| `MercProfiles.xml` | Profile data for every character in the game — AIM and M.E.R.C. mercs, RPCs, NPCs, vehicles and IMPs (up to 255 profiles) |
 | `MercOpinions.xml` | Mercs' opinions of one another |
 | `AIMAvailability.xml`, `MercAvailability.xml` | Merc availability for hire |
 | `IMPPortraits.xml`, `IMPVoices.xml` | The portraits and voices offered during IMP creation |
@@ -84,8 +91,8 @@ by `<uiIndex>`. The other files add class-specific data keyed to those items:
 
 | File(s) | What they define |
 | --- | --- |
-| `Items.xml` | The master item list: names, classes, flags, and per-item Bobby Ray availability (`<BR_NewInventory>`, `<BR_UsedInventory>`) |
-| `Weapons.xml`, `Magazines.xml`, `AmmoTypes.xml`, `AmmoStrings.xml`, `Launchables.xml` | Gun stats, magazines and ammo types |
+| `Items.xml` | The master item list: names, classes, flags, prices, weight, coolness, and per-item Bobby Ray availability (`<BR_NewInventory>`, `<BR_UsedInventory>`) |
+| `Weapons.xml`, `Magazines.xml`, `AmmoTypes.xml`, `AmmoStrings.xml`, `Launchables.xml` | Gun stats (magazine size, range, impact, autofire, recoil, overheating — with separate accuracy values for OCTH, `<bAccuracy>`, and NCTH, `<nAccuracy>`), magazines and ammo types |
 | `Armours.xml`, `Clothes.xml`, `CompatibleFaceItems.xml` | Armor, clothing and face gear |
 | `Attachments.xml`, `AttachmentSlots.xml`, `AttachmentInfo.xml`, `IncompatibleAttachments.xml`, `AttachmentComboMerges.xml` | The [New Attachment System](../playing/features/attachments.md); data model detailed in [NAS internals](../modding/nas-internals.md) |
 | `LoadBearingEquipment.xml`, `Pockets.xml`, `PocketPopups.xml` | LBE gear and pockets for the [New Inventory System](../playing/features/inventory.md) |
@@ -147,11 +154,14 @@ Two practical consequences:
     opens with: *"DO NOT CREATE NEW ENTRIES! INSTEAD MODIFY THE DIFFICULTY LEVEL YOU
     WANT TO PLAY ON!"*
 
-!!! warning "Index numbers differ between versions and mods"
-    For example, older documentation located the Hummer at `<uiIndex>` 160 in
-    `Vehicles.xml`, while the current file numbers its vehicles 0–9. Always search
-    your own copy of a file for the entry you want instead of trusting numbers from
-    old posts or from another mod.
+!!! warning "An index only means something in its own context"
+    The same number points at different things in different files. In
+    `Vehicles.xml`, `<uiIndex>` is documented as "the profile index from …
+    `TableData\MercProfiles.xml`" — the Hummer is entry 160 because that is its
+    *character profile* number, not its item number. Read each file's comment
+    header to learn what its indexes refer to, and always search your own copy of
+    a file for the entry you want: numbers can differ between 1.13 versions and
+    between mods.
 
 ## Editing safely
 
@@ -164,9 +174,10 @@ Two practical consequences:
 4. **Keep the XML well-formed.** Change only the values between tags. Keep every
    opening tag matched by its closing tag, and leave the file's structure and encoding
    alone.
-5. **Change one thing at a time**, then test in-game, so that when something misbehaves
-   you know which edit caused it. Note that some values by nature only matter for a new
-   campaign — `<StartingCash>` in `DifficultySettings.xml` is the obvious example.
+5. **Change one thing at a time**, then restart the game and test, so that when
+   something misbehaves you know which edit caused it. Note that some values by nature
+   only matter for a new campaign — `<StartingCash>` in `DifficultySettings.xml` is
+   the obvious example.
 6. **Compare against pristine copies.** The unmodified current files are always
    available in the [1dot13/gamedir repository](https://github.com/1dot13/gamedir/tree/master/Data-1.13/TableData),
    which makes it easy to diff your edits or restore a single file.
@@ -207,10 +218,12 @@ Current status (as of July 2026):
 - [Data-1.13/TableData listing in the 1dot13/gamedir repository](https://github.com/1dot13/gamedir/tree/master/Data-1.13/TableData),
   retrieved via the GitHub API, July 2026 (including the `Items`, `Inventory`,
   `NPCInventory`, `Army`, `Profiles`, `Map`, `Lookup`, `BriefingRoom`, `Email`,
-  `Layout`, `MapAction`, `Multiplayer` and `Sounds` subfolders)
+  `Layout`, `MapAction`, `Multiplayer` and `Sounds` subfolders, and the `Data-1.13`
+  root folder)
 - Current game data files fetched from 1dot13/gamedir: `DifficultySettings.xml`,
-  `Vehicles.xml`, `Items/Items.xml`, `NPCInventory/TonyInventory.xml`,
-  `Inventory/EnemyGunChoices.xml`
+  `Vehicles.xml`, `MercProfiles.xml`, `Items/Items.xml`, `Items/Weapons.xml`,
+  `NPCInventory/TonyInventory.xml`, `Inventory/EnemyGunChoices.xml`,
+  `Inventory/GunChoices_Enemy_Admin.xml`
 - [1dot13/xml-editor repository](https://github.com/1dot13/xml-editor) — README and
   [releases](https://github.com/1dot13/xml-editor/releases)
 - JA2 v1.13 Starter Documentation and Recommended Settings (previous community

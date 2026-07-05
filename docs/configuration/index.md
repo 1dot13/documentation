@@ -51,7 +51,7 @@ itself. The ones you are most likely to touch:
 !!! tip "Display problems?"
     The comment next to `SCREEN_MODE_WINDOWED` about switching Windows to
     16-bit color predates modern installs, which ship the cnc-ddraw wrapper to
-    handle exactly that. If the game looks wrong or won't display, see
+    handle display compatibility. If the game looks wrong or won't display, see
     [Troubleshooting](../getting-started/troubleshooting.md) before editing
     color-depth settings by hand.
 
