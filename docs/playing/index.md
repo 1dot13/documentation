@@ -49,6 +49,14 @@ an interrupt, which makes overwatch positioning a deliberate tactic. Current rel
 also ship an optional **Improved Interrupt System**, toggled with
 `IMPROVED_INTERRUPT_SYSTEM` in `JA2_Options.ini` (on by default).
 
+The improved system (originally by Sandro, in SVN builds since r4903) replaces the old
+spot-checks with an **interrupt counter**: every Action Point an enemy spends inside
+your merc's line of sight — or hearing — has a chance of being counted, and when the
+counter fills, your merc reacts. The chance per AP depends on experience level, distance, and traits; how much the
+counter must fill depends on agility, remaining APs, and injuries. Mercs close together
+can also trigger **collective interrupts** for one another, so a squad leader who holds
+his APs and watches the battlefield genuinely helps the mercs around him.
+
 Read more: [JA2_Options.ini tour](../configuration/options-ini.md).
 
 ### Aiming: improved OCTH, optional NCTH
@@ -91,6 +99,19 @@ snipers, an assistant can feed an adjacent machine gunner, and a radio operator 
 militia reinforcements or jam enemy communications.
 
 Read more: [hotkey reference](hotkeys.md) and [support roles](features/support-roles.md).
+
+### Tripwire and trap networks
+
+Explosives get an engineering discipline of their own (in trunk builds after r5217).
+**Tripwire** can be planted like a mine and wired to explosives: one careless step
+activates adjacent wires in a chain reaction and detonates every connected charge. Wires
+can belong to four different networks with hierarchy levels, so you can build layered
+defenses that go off differently depending on where the enemy walks in — and grenades and
+flares can be converted into makeshift tripwire mines. ++alt+shift+v++ cycles a display
+of your own trap networks, and a merc holding a metal detector reveals nearby mines and
+tripwire with ++alt+shift+c++.
+
+Read more: the trap display modes are in the [hotkey reference](hotkeys.md).
 
 ## Items and inventory
 
@@ -207,6 +228,42 @@ large force trivial; turning both down makes every gun you loot matter.
 
 Read more: [New Game options](new-game-options.md).
 
+## Survival and spycraft
+
+Years of later development — most of it by Flugente, announced feature by feature on the
+Bear's Pit forum's *Flugente's Magika Workshop* board — added entire optional subsystems
+on top of the campaign. The keys named below live in `JA2_Options.ini`, and several of
+these systems can also be toggled from the
+[1.13 Features screen](new-game-options.md#the-113-features-screen):
+
+- **Food and water** (`FOOD`, off by default; in the trunk since r5413). Mercs grow
+  hungry and thirsty hour by hour; letting either run low caps morale, slows energy and
+  breath recovery, hurts assignment performance, and eventually costs health and
+  strength points. Buy meals from merchants across Arulco, refill canteens in sectors
+  with drinkable water — beware, swamp water is poisonous — and watch the indicators on
+  merc portraits.
+- **Covert operations** (in the trunk since r5529; needs the new trait system). Any merc
+  can change into civilian clothes and pass as a local; a merc with the **Covert Ops**
+  trait can also take a soldier's uniform and walk through enemy positions openly armed.
+  Cover is blown by visible weapons or camouflage, suspicious behavior, or getting too
+  close — and a garotte or neurotoxin dart gives spies quiet ways to kill.
+- **Prisoners of war** (`ALLOW_TAKE_PRISONERS`; in the trunk since r5709). Handcuff
+  enemies instead of killing them — unconscious ones never resist — then release them
+  after battle or ship them to one of Arulco's prisons (Tixa and Alma have the biggest).
+  Keep prisons guarded to prevent riots; interrogating captives can recruit them into
+  your militia, reveal enemy troop movements, or earn ransom money. You can even offer
+  badly outmatched enemies the chance to surrender.
+- **Intel** (`RESOURCE_INTEL`; added in r8522, 2018). A second strategic resource for
+  spycraft: gain it by interrogating prisoners, gathering information in disguise,
+  photographing points of interest with a camera, and interactive actions like hacking
+  computers. Spend it on the Recon Intelligence Services website to reveal enemy
+  positions in a 4x4 block of the strategic map for a limited time, or at a San Mona
+  black market that sells exclusive hardware only for intel.
+- **Individual backgrounds** (`ENABLE_BACKGROUNDS`, on by default; in the trunk since
+  r6353). Every merc has a background — a former profession such as SWAT officer or
+  drill sergeant — shown in the laptop, with small stat bonuses and penalties to match.
+  Your IMPs choose theirs during character creation.
+
 ## Quality of life
 
 - **Resolutions.** Vanilla was locked to 640x480; 1.13 runs at higher and custom
@@ -262,3 +319,10 @@ where it came from, start at [What is 1.13](../getting-started/index.md).
 - Jagged Alliance 2 v1.13 Recommended Settings (community docs, r8741 era)
 - JA2_113_Hotkeys.pdf (r9389, 2022), from `Docs\Manuals` in the 1.13 game directory
 - Cover Display & Mines Display hotkeys document, from the 1.13 documentation set
+- [New feature: Mercs need food and water to survive — Flugente, Bear's Pit forum](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=20078)
+- [New feature: Covert operations — Flugente, Bear's Pit forum](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=20228)
+- [New feature: Take prisoners, interrogate them — Flugente, Bear's Pit forum](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=20543)
+- [New feature: Intel — Flugente, Bear's Pit forum](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=23643)
+- [New feature: Tripwire-triggered mines, directional mines (claymores), mines display, layered hierarchical trap networks — Flugente, Bear's Pit forum](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=19804)
+- [New feature: individual backgrounds — Flugente, Bear's Pit forum](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=21308)
+- [Improved Interrupt System — Sandro, Bear's Pit forum](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=18946)

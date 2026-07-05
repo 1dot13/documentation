@@ -163,8 +163,24 @@ It is still online and remains the best source for several original design docum
 
 - **The Bear's Pit forum** — [thepit.ja-galaxy-forum.com](http://thepit.ja-galaxy-forum.com/)
   is the home of 1.13. Its boards cover both playing and modding; feature-by-feature
-  documentation from the developers themselves lives in threads such as
-  [Flugente's Magika Workshop](http://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=283&).
+  documentation from the developers themselves lives in boards such as
+  [Flugente's Magika Workshop](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=283&).
+  For modding questions specifically, head for:
+    - [v1.13 Modding, Customising, Editing](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=241&)
+      — the main modding board, the right place for anything this site's modding pages
+      don't answer.
+    - [v1.13 XML Customization](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=204&)
+      — dedicated to the `TableData` XMLs and the XML Editor (Madd_Mugsy's classic
+      [1.13 Xml Editing](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=6244)
+      thread lives in this board), with a sibling board for
+      [INI customisation and help](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=268&).
+    - [v1.13 Time Capsule (How-to Library)](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=230&)
+      — a curated library of how-to threads, including gmonk's
+      [1.13 Map Editor Guide](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=15254)
+      and a [face STI tutorial](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=1033).
+
+    A fuller directory of useful boards and threads is on the
+    [Links & community](../reference/links.md) page.
 - **Discord** — the [Bear's Pit Discord](https://discord.gg/GqrVZUM) is the fastest
   place to get an answer from active modders and developers.
 - **GitHub** — bugs in the engine or the shipped data belong on the issue trackers of
@@ -188,3 +204,8 @@ If you end up extending the engine itself rather than the data, continue with th
   official GitHub, forum, Discord and SVN locations
 - Previous 1.13 starter documentation (r8741 era) from
   [github.com/1dot13/documentation](https://github.com/1dot13/documentation)
+- The Bear's Pit board index and the threads
+  [1.13 Xml Editing](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=6244),
+  [1.13 Map Editor Guide](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=15254) and
+  [How to create face sti's](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=1033)
+  (board and thread titles verified July 2026)

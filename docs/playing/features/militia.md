@@ -4,7 +4,7 @@ Militia are the volunteer soldiers who hold your towns while your mercs are off
 fighting somewhere else. In vanilla JA2 they were little more than colored dots that
 you trained, redistributed within a town and then hoped for the best. 1.13 turns them
 into a real second army: they cost money to maintain, they can be equipped, moved
-around the strategic map, sent roaming after enemy patrols, and — most famously — you
+around the strategic map, sent to intercept enemy patrols, and — most famously — you
 can give them direct orders in tactical combat.
 
 Almost everything on this page is tunable in `Ja2_Options.INI`. The defaults quoted
@@ -152,15 +152,38 @@ militia assignment window. That window is still there, with 1.13 shortcuts: hold
 ++shift++ to assign or remove all.
 
 1.13 goes further with **strategic militia command**
-(`[Militia Strategic Movement Settings]`):
+(`[Militia Strategic Movement Settings]`), introduced by Flugente in 2014 and
+expanded into full path-plotting in 2015 (r7727):
 
 - With `ALLOW_MILITIA_STRATEGIC_COMMAND = TRUE` (off in the shipped INI), you can plot
   travel paths for militia groups exactly as you do for merc squads or the helicopter:
   switch the map to the militia view, then left-click a sector containing militia.
-- With `MILITIA_STRATEGIC_COMMAND_REQUIRES_MERC = TRUE` (the default), commanding
-  militia this way requires either a controlled and staffed military HQ facility, a
-  merc in the same sector or town, or a [radio operator](support-roles.md) in an
-  adjacent sector.
+  This works for *all* militia, town garrisons included.
+- With `MILITIA_STRATEGIC_COMMAND_REQUIRES_MERC = TRUE` (the default), someone has to
+  relay the order: a merc in the same sector or town as the militia (asleep is fine,
+  comatose is not), a [radio operator](support-roles.md) in an adjacent sector or
+  town — or a staffed **military HQ** (Alma, on the standard map). The HQ's war room
+  is a facility assignment (`STRATEGIC_MILITIA_MOVEMENT` in
+  `TableData\Map\FacilityTypes.xml`) that demands an experienced merc — level 5,
+  Wisdom 70 and Leadership 70 — and in return lets you command militia anywhere in
+  the country. The assignment slowly trains Leadership and Wisdom, and modders can
+  give the same assignment to other facilities.
+- While plotting, a small overlay in the top-left lists the selected group. Tiny `+`
+  and `-` marks to the right of each militia-tier count let you split off part of the
+  sector's militia into the traveling group — they are notoriously hard to spot.
+  Right-clicking with a group selected clears its planned movement (also the fix if a
+  group refuses new orders).
+
+Militia groups travel about as fast as mercs, but slower at night — except between
+sectors of the same town — and at most 30 groups can be underway at once. Unlike merc
+squads, a traveling group counts as still being in its origin sector until it arrives,
+and until then it cannot be redistributed in the town militia window; a group also
+refuses to leave a sector where a battle is in progress. Traveling militia engage any
+enemy force they meet, and you can deliberately send them into enemy-held sectors —
+even towns — where the fight is auto-resolved. If merc squads and militia groups
+converge on the same hostile sector, the usual "wait for the other squads?"
+coordination prompt appears. Militia that can receive commands (per the rules above)
+can also retreat from an auto-resolve battle via the retreat button.
 
 On the map screen, press ++z++ to toggle the militia & enemies filter and ++r++ to
 toggle the **mobile militia restrictions** filter (see below). The full list is in the
@@ -168,36 +191,66 @@ toggle the **mobile militia restrictions** filter (see below). The full list is 
 
 ## Mobile (roaming) militia
 
-Militia are not tied to town garrisons. 1.13 introduced militia that roam the
-countryside and attack enemy patrols before those patrols ever reach your towns.
-According to the old 1.13 wiki, roaming militia can be generated automatically on a
-timer (every 24 hours or less) or trained manually, with an externalized cost
-multiplier of their own.
+Militia are not tied to town garrisons — but how out-of-town militia behave depends
+on which era of 1.13 you play:
 
-Verified details in current builds:
+**Old SVN builds (up to early 2018) and mods based on them.** Headrock's HAM features
+gave 1.13 self-roaming mobile militia: with `ALLOW_MOBILE_MILITIA = TRUE`, militia
+trained outside town formed patrols that wandered the countryside on their own and
+intercepted enemy patrols before they ever reached your towns. Where they roamed was
+governed by restriction settings (`RESTRICT_ROAMING`,
+`ALLOW_MILITIA_MOVEMENT_THROUGH_EXPLORED_SECTORS`,
+`ALLOW_DYNAMIC_RESTRICTED_ROAMING`) plus an in-game overlay: a flag-icon button next
+to the militia view button colored the map, and right-clicking sectors cycled them
+between allowed (green), forbidden (red) and "no-leave" (yellow) — mobiles could
+enter a no-leave sector but not exit it, turning it into a player-made roadblock or
+wilderness garrison. `ALLOW_MOBILE_MILITIA_REINFORCE_TOWN_GARRISONS` and
+`..._SAM_GARRISONS` controlled whether roamers moved back in to reinforce towns and
+SAM sites. If you play an old SVN-based mod, these are the settings to look for; the
+++r++ mobile-militia-restrictions map filter in the [hotkey reference](../hotkeys.md)
+stems from this system.
 
-- The strategic map has a dedicated **Mobile Militia Restrictions** filter (++r++ on
-  the map screen) for viewing where mobile militia are allowed to operate.
-- Mobile militia training benefits from the same Leadership rules as town training
-  (the Teaching trait bonus explicitly "also affects Mobile Militia training").
-- If militia use sector equipment (see below), mobile militia take their initial gear
-  from the sector they were trained in and carry it with them as they move.
+**Current builds.** The self-roaming feature was removed in March 2018 (r8548) in
+favor of strategic militia command (see above) — that is why none of the
+`MOBILE_MILITIA` or roaming settings appear in today's `Ja2_Options.INI`. Militia no
+longer patrol on their own; they only leave town, guard a crossroads or intercept a
+patrol when you order them to on the map. There is no separate "mobile" militia type
+in the code — any militia you march out of town is your mobile militia. Two details
+remain current:
 
-The fine-grained generation and movement tuning for mobile militia is not documented
-in the current `Ja2_Options.INI`; if you want to dig into it, ask on the
-[Bear's Pit forum](https://thepit.ja-galaxy-forum.com/), the home of 1.13 development.
+- The Leadership training rules (and the Teaching trait bonus) explicitly apply to
+  mobile militia training as well as town training.
+- If militia use sector equipment (see below), militia trained outside town take
+  their initial gear from the sector they were trained in and carry it with them as
+  they move.
 
 ## Commanding militia in tactical combat
 
 The headline feature: when a battle starts in a sector where you have both mercs and
 militia, you do not have to watch the militia AI charge into machine-gun fire. With
 `ALLOW_TACTICAL_MILITIA_COMMAND = TRUE` (the shipped default) you can take control of
-militia and give them orders:
+militia and give them orders: have a merc **talk to a militiaman** and an order menu
+pops up. The full menu in current builds:
 
-- Have a merc **talk to a militiaman** to issue orders — tell them to take cover, or
-  call them over to your position. The merc must be near the militiaman.
-- A merc equipped with an **extended ear** can give commands to *all* militia on the
-  map.
+| Order | Effect |
+| ----- | ------ |
+| Attack | Sets that militiaman to aggressively seek out the enemy. |
+| Hold Position | Sets him to stationary. |
+| Retreat | Orders him to fall back and go defensive. |
+| Come to me | Calls him over to your merc's position. |
+| Get down / Crouch | Drops him prone / into a crouch. |
+| Take cover | Sends him to the best cover spot near him. |
+| Move to | Real time only (grayed out in turn-based combat): click a spot on the map and he moves there and holds that position. |
+| All: Attack / Hold Position / Retreat / Come to me / Spread out / Get down / Crouch / Take cover | The same orders issued to **every** militiaman in the sector at once — plus **All: Spread out**, which only exists as a sector-wide order. |
+| Cancel | Closes the menu. |
+
+Communication rules and side effects:
+
+- Orders to a single militiaman require **line of sight** between the merc and that
+  militiaman — or an active **radio set**, which lets a
+  [radio operator](support-roles.md) direct militia he cannot see.
+- The **All:** commands require the selected merc to wear hearing-boosting headgear —
+  the classic **extended ear** — or to carry an active radio set.
 - Mercs who order militia around in tactical gain **Leadership** experience.
 
 Related conveniences:
@@ -208,12 +261,6 @@ Related conveniences:
   includes militia-related commands such as militia inspection.
 - If militia turns drag on in big battles, `MILITIA_TURN_SPEED_UP_FACTOR` in the INI
   speeds up their turn animations.
-
-!!! note "Sparse documentation"
-    The exact militia order menu and its options are not well documented in any
-    official 1.13 document — the summary above is what the sources verify. For
-    current details and tactics, ask at the
-    [Bear's Pit forum](https://thepit.ja-galaxy-forum.com/).
 
 ## Militia equipment
 
@@ -226,9 +273,10 @@ gear when killed by anyone except your mercs, `2` to always drop).
 
 ### Arming militia yourself
 
-`[Militia Equipment Settings]` contains an optional quartermaster system. With
-`MILITIA_USE_SECTOR_EQUIPMENT = TRUE` (off by default), militia no longer get random
-gear — they equip themselves from the inventory of the sector they are stationed in:
+`[Militia Equipment Settings]` contains an optional quartermaster system, added by
+Flugente in 2013 (r5869). With `MILITIA_USE_SECTOR_EQUIPMENT = TRUE` (off by
+default), militia no longer get random gear — they equip themselves from the
+inventory of the sector they are stationed in:
 
 - Per-category toggles control what they may take: `..._ARMOUR`, `..._FACE` (goggles
   and gas masks), `..._MELEE`, `..._GUN`, `..._AMMO`, `..._GUN_ATTACHMENTS`,
@@ -237,14 +285,18 @@ gear — they equip themselves from the inventory of the sector they are station
 - How much ammo each militiaman grabs is bounded by
   `MILITIA_USE_SECTOR_EQUIPMENT_AMMO_MIN` / `..._MAX` /
   `..._OPTIMAL_MAG_COUNT` — if militia are looting your ammo stockpile, remember to
-  restock it.
+  restock it. Militia also weigh ammo supply when choosing a gun: as Flugente put it,
+  they "will likely prefer a 1911 with 100 bullets over an M16 with 10 bullets".
 - To keep something out of militia hands, hover over it in the sector inventory and
   hold ++tab++ while left-clicking. With
   `MILITIA_USE_SECTOR_EQUIPMENT_CLASS_SPECIFIC_TABOOS = TRUE` you can even restrict
-  items per militia tier.
+  items per militia tier; the taboo sticks to the item even after a militiaman drops
+  it, so an "elite-only" rifle stays elite-only.
 - Militia return borrowed gear to the sector inventory when the sector unloads, and
   you can make them hand it over in tactical via the ++ctrl+period++ action menu's
-  **militia inspection** entry.
+  **militia inspection** entry. They remember exactly which items came from your
+  stockpile and return only those — anything militia steal during a battle stays
+  lost, as it always did.
 - Militia reinforcing another sector take their gear along, and mobile militia keep
   the gear from their training sector.
 
@@ -282,3 +334,20 @@ kills and assists, and a health ratio.
   [Instructions For New Features](http://ja2v113.pbworks.com/w/page/4218346/Instructions%20For%20New%20Features)
   (pbworks, 2008–2012 era; militia feature overview and tactical command instructions)
 - The previous 1.13 starter documentation (2019, r8741 era)
+- [New feature: strategic militia command](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=21720)
+  (Bear's Pit, Flugente, 2014; military HQ command requirements)
+- [Expanded Feature: Move militia in strategic map, part 2](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=22525)
+  (Bear's Pit, Flugente, 2015; path plotting, travel rules, group splitting, retreat,
+  and the 2018 removal of the old mobile militia feature)
+- [MANUAL Mobile Militia Restrictions](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=16509)
+  (Bear's Pit, Headrock, 2010; the SVN-era mobile militia restriction system)
+- [Need help w/ militia](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=24329)
+  (Bear's Pit, 2020; how militia movement works in post-2018 builds)
+- [New feature: Equip militia with guns/armour/etc.](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=20797)
+  (Bear's Pit, Flugente, 2013; militia sector-equipment behavior)
+- The 1.13 source code on GitHub —
+  [`Tactical/Militia Control.cpp`](https://github.com/1dot13/source/blob/master/Tactical/Militia%20Control.cpp)
+  and `i18n/_EnglishText.cpp` (the tactical order menu entries and their
+  line-of-sight/radio/extended-ear conditions), and
+  [`TableData/Map/FacilityTypes.xml`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/TableData/Map/FacilityTypes.xml)
+  from the gamedir repository (military HQ war-room requirements)

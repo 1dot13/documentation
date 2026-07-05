@@ -10,10 +10,8 @@ otherwise.
 - **[The Bear's Pit forums](https://thepit.ja-galaxy-forum.com/)** — the central
   Jagged Alliance community forum and the home of 1.13 development discussion since the
   project began. Feature announcements, mod releases, and tech support all happen here.
-    - [How to get latest 1.13, 7609, feature descriptions and more](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=24648&start=0&)
-      — the forum's sticky download-and-orientation thread.
-    - [Flugente's Magika Workshop](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=283&)
-      — the sub-forum where many of 1.13's newer features are documented and discussed.
+  See [Key forum boards and threads](#key-forum-boards-and-threads) below for where to
+  start.
 - **[The Bear's Pit Discord](https://discord.gg/GqrVZUM)** — real-time chat with
   players, modders, and the current developers; also has a bug-report channel.
 - **[The 1dot13 GitHub organization](https://github.com/1dot13)** — where 1.13
@@ -24,6 +22,58 @@ otherwise.
   executable, [gamedir issues](https://github.com/1dot13/gamedir/issues) for game data.
   How to write a useful report is covered in
   [Contributing](../development/contributing.md).
+
+### Key forum boards and threads
+
+The Bear's Pit is big, so here is a short map of the boards and long-lived threads that
+answer most 1.13 questions. All of these were checked and loading in July 2026. Many of
+the classic threads date from the SVN era — the mechanics they explain still apply
+unless a page on this site says otherwise, but treat exact numbers and revision
+references as historical.
+
+Boards:
+
+- **[Flugente's Magika Workshop](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=283&)**
+  — developer Flugente's board of feature-by-feature "New feature: …" threads; the
+  download sticky points here for descriptions of most newer 1.13 features.
+- **[v1.13 Bug Reports](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=216&)**
+  — the forum's bug board. For current builds, the GitHub issue trackers above are the
+  primary place; see [Contributing](../development/contributing.md).
+- **[v1.13 Modding, Customising, Editing](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=241&)**
+  — the main modding board, with dedicated sibling boards for
+  [XML customization](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=204&)
+  and [INI customisation and help](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=268&).
+- **[v1.13 Time Capsule (How-to Library)](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=230&)**
+  — a curated library of how-to and "how does it work" threads; several of the thread
+  links below live here.
+- **[v1.13 Combat/Weapon Academy](https://thepit.ja-galaxy-forum.com/index.php?t=thread&frm_id=240&)**
+  — combat mechanics, weapon choice and tactics, including Headrock's classic
+  ["Best of the Best" weapon comparison guide](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=13940).
+
+Threads:
+
+- **[How to get: latest 1.13, 7609, feature-descriptions and more](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=24648)**
+  — the sticky download-and-orientation thread; the forum's own "start here".
+- **[New Chance To Hit system — The Formula](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=16717)**
+  — Headrock's write-up of the NCTH math. Read
+  [NCTH explained](../playing/features/ncth.md) first for the player-level view.
+- **["How does it work?" Part 1: Bullet Impact](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=13701)**
+  — the first of Headrock's mechanics-explainer series; the other parts (character
+  skills, experience level, chance-to-hit, suppression, enemy gun selection, …) are in
+  the same Time Capsule board.
+- **[Power-gaming Item Reference Page for 1.13](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=23720)**
+  — item and equipment reference, updated for build 8891.
+- **[1.13 Map Editor Guide](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=15254)**
+  — gmonk's forum guide to the bundled Map Editor; pairs with this site's
+  [Map Editor page](../modding/map-editor.md).
+- **[1.13 Xml Editing](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=6244)**
+  — Madd_Mugsy's original XML modding thread; see
+  [XML modding](../modding/xml-modding.md) for the current worked examples.
+- **[How to create face sti's \[the basic tutorial\]](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=1033)**
+  — making portrait STI files; pairs with [Creating faces](../modding/faces.md).
+- **[Trunk AI and improvements](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=24289)**
+  — where most of the latest additions to current builds, especially the improved
+  enemy AI, are documented and discussed; the download sticky points here too.
 
 ## Downloads
 
@@ -104,4 +154,15 @@ Want to help improve these pages? See [Contributing](../development/contributing
 - `index.md` of the previous 1.13 starter documentation (by tais and Yunotchi, r8741 era)
 - "Additional 1.13 documents" pointer file from the 1.13 game directory `Docs` folder
   (dated 21.08.2023)
+- The Bear's Pit board index and the following threads, fetched to verify titles and
+  content in July 2026:
+  [How to get: latest 1.13, 7609, feature-descriptions and more](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=24648),
+  [New Chance To Hit system — The Formula](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=16717),
+  ["How does it work?" Part 1: Bullet Impact](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=13701),
+  ["Best of the Best" — 1.13 Weapon Comparison Guide](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=13940),
+  [Power-gaming Item Reference Page for 1.13](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=23720),
+  [1.13 Map Editor Guide](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=15254),
+  [1.13 Xml Editing](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=6244),
+  [How to create face sti's](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=1033),
+  [Trunk AI and improvements](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=24289)
 - Link availability spot-checked via HTTP in July 2026

@@ -167,10 +167,21 @@ in [starter tips](tips.md).
 ## Options that moved to JA2_Options.ini (r8610)
 
 The classic stable release **r7609** shows several extra feature switches on the new-game
-screen. In **r8610** these were moved into `JA2_Options.ini` so they could be changed
-mid-campaign, and the screen was reduced to the setup-only options listed above. If you play r7609 you will see these on the new-game
-screen; on anything newer, edit the INI instead (or use the
-[1.13 Features screen](#the-113-features-screen), which can override most of them):
+screen. In **r8610** (paired with GameDir r2442) these were moved into `JA2_Options.ini`
+so they could be changed mid-campaign, and the screen was reduced to the setup-only
+options listed above. Flugente announced the redesign on the Bear's Pit forum in
+September 2018 with a simple rule: the start screen should only hold choices that are
+stored in the savegame and genuinely cannot change later (squad size, Iron Man, and the
+like); anything the code can change at any point in a campaign — food, NCTH, the improved
+interrupt system, "half the start screen, really" — belongs in the INI. Two follow-ups
+landed later that month: **r8622** deleted the Max IMP Characters option outright (IMP
+slots are now defined purely by profiles marked `<Type>6</Type>` in `MercProfiles.xml`,
+which the standard game sets on every free slot — about 29 possible IMP slots), and
+**r8625** moved NCTH into the INI.
+
+If you play r7609 you will see these on the new-game screen; on anything newer, edit the
+INI instead (or use the [1.13 Features screen](#the-113-features-screen), which can
+override most of them):
 
 | r7609 screen option | Default | `JA2_Options.ini` key (current releases) |
 | ------------------- | ------- | ---------------------------------------- |
@@ -188,7 +199,7 @@ fit in the release timeline.
 
 ## Sources
 
-- [Bear's Pit forum: r8610 change announcement by Flugente](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=23855)
+- [Ongoing redesign: start options/ini/ingame options — Flugente, Bear's Pit forum (the r8610/r8622/r8625 announcements)](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=23855)
 - [`Data-1.13/TableData/DifficultySettings.xml`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/TableData/DifficultySettings.xml) from the 1dot13/gamedir repository
 - [`Data-1.13/Ja2_Options.INI`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/Ja2_Options.INI) from the 1dot13/gamedir repository
 - [`Ja2/GameInitOptionsScreen.cpp`](https://raw.githubusercontent.com/1dot13/source/master/Ja2/GameInitOptionsScreen.cpp), [`Ja2/GameSettings.cpp`](https://raw.githubusercontent.com/1dot13/source/master/Ja2/GameSettings.cpp), [`Ja2/GameSettings.h`](https://raw.githubusercontent.com/1dot13/source/master/Ja2/GameSettings.h), [`i18n/_EnglishText.cpp`](https://raw.githubusercontent.com/1dot13/source/master/i18n/_EnglishText.cpp) and [`i18n/_Ja25EnglishText.cpp`](https://raw.githubusercontent.com/1dot13/source/master/i18n/_Ja25EnglishText.cpp) from the 1dot13/source repository (master, fetched July 2026)
