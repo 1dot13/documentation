@@ -95,10 +95,12 @@ nav:
       - New game options: playing/new-game-options.md
       - Hotkeys & controls: playing/hotkeys.md
       - Starter tips: playing/tips.md
+      - Money & economy: playing/economy.md
       - Cheats & debug tools: playing/cheats.md
       - Feature guides:
           - New Chance to Hit (NCTH): playing/features/ncth.md
           - Suppression: playing/features/suppression.md
+          - Interrupts & reflexes: playing/features/interrupts.md
           - Inventory & LBE: playing/features/inventory.md
           - Weapon attachments: playing/features/attachments.md
           - Skills & traits: playing/features/traits.md
@@ -111,6 +113,7 @@ nav:
           - Prisoners of war: playing/features/prisoners.md
           - Drugs & disease: playing/features/drugs-disease.md
           - Know your enemy: playing/features/enemies.md
+          - Vehicles: playing/features/vehicles.md
   - Walkthrough:
       - walkthrough/index.md
       - First steps: walkthrough/first-steps.md
@@ -134,6 +137,7 @@ nav:
       - Externalizing content: modding/externalization.md
       - Map Editor: modding/map-editor.md
       - Faces & portraits: modding/faces.md
+      - Custom mercenaries: modding/custom-mercs.md
       - Lua scripting: modding/lua.md
   - Development:
       - development/index.md
