@@ -1,0 +1,138 @@
+site_name: JA2 v1.13 Documentation
+site_description: >-
+  Community documentation for Jagged Alliance 2 v1.13 — installation, gameplay,
+  configuration, modding and development.
+site_url: https://1dot13.github.io/documentation/
+repo_url: https://github.com/1dot13/documentation
+repo_name: 1dot13/documentation
+edit_uri: edit/master/docs/
+
+copyright: >-
+  Maintained by the JA2 v1.13 community —
+  <a href="https://thepit.ja-galaxy-forum.com">The Bear's Pit</a>
+
+theme:
+  name: material
+  logo: assets/113.png
+  favicon: assets/113.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/1dot13
+      name: JA2 v1.13 on GitHub
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/GqrVZUM
+      name: The Bear's Pit Discord
+    - icon: material/forum
+      link: https://thepit.ja-galaxy-forum.com
+      name: The Bear's Pit forums
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - getting-started/index.md
+      - Installation: getting-started/installation.md
+      - "Guided tutorial: your first campaign": getting-started/tutorial.md
+      - Troubleshooting: getting-started/troubleshooting.md
+      - FAQ: getting-started/faq.md
+  - Playing the Game:
+      - playing/index.md
+      - New game options: playing/new-game-options.md
+      - Hotkeys & controls: playing/hotkeys.md
+      - Starter tips: playing/tips.md
+      - Feature guides:
+          - New Chance to Hit (NCTH): playing/features/ncth.md
+          - Inventory & LBE: playing/features/inventory.md
+          - Weapon attachments: playing/features/attachments.md
+          - Militia: playing/features/militia.md
+          - Support roles: playing/features/support-roles.md
+  - Walkthrough:
+      - walkthrough/index.md
+      - First steps: walkthrough/first-steps.md
+      - Early game: walkthrough/early-game.md
+      - Mid game: walkthrough/mid-game.md
+      - Late game: walkthrough/late-game.md
+      - Side quests: walkthrough/side-quests.md
+      - NPCs & recruitment: walkthrough/npcs-recruitment.md
+  - Configuration:
+      - configuration/index.md
+      - JA2_Options.ini guide: configuration/options-ini.md
+      - Recommended settings: configuration/recommended-settings.md
+      - XML data files: configuration/xml-files.md
+  - Modding:
+      - modding/index.md
+      - Virtual File System (VFS): modding/vfs.md
+      - XML modding: modding/xml-modding.md
+      - Attachment system internals: modding/nas-internals.md
+      - Starting gear (NSGI): modding/starting-gear.md
+      - Externalizing content: modding/externalization.md
+      - Map Editor: modding/map-editor.md
+      - Faces & portraits: modding/faces.md
+      - Lua scripting: modding/lua.md
+  - Development:
+      - development/index.md
+      - Building from source: development/building.md
+      - Code overview: development/code-overview.md
+      - Contributing: development/contributing.md
+  - Multiplayer:
+      - multiplayer/index.md
+  - Reference:
+      - Mods based on 1.13: reference/mods.md
+      - Version history: reference/version-history.md
+      - Glossary: reference/glossary.md
+      - Links & community: reference/links.md

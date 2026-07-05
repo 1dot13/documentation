@@ -1,24 +1,42 @@
-# Jagged Alliance 2 v1.13 - Starter Documentation
+# JA2 v1.13 Documentation
 
-<p align="center">
-  <img src="113.png" alt="Jagged Alliance 2 1.13">
-</p>
+Community documentation for the **Jagged Alliance 2 v1.13** project, published at
+**https://1dot13.github.io/documentation/**
 
-> **THESE DOCUMENTS ARE A WORK IN PROGRESS.**
+The site covers installation, playing (including the full hotkey reference), a campaign
+walkthrough, configuration (INI/XML), modding (VFS, XML, Map Editor, Lua) and
+development (building the source).
 
-These pages are an attempt to create clear and structured starter documentation for people who want to start playing *Jagged Alliance 2 v1.13*.
+## Working on the docs
 
-[**Click here to view the starter documentation.**](https://1dot13.github.io/documentation/)
+The site is built with [MkDocs](https://www.mkdocs.org/) and the
+[Material theme](https://squidfunk.github.io/mkdocs-material/). All content is plain
+Markdown in the [`docs/`](docs/) folder; the navigation lives in
+[`mkdocs.yml`](mkdocs.yml).
 
-## Community
-- [The Bear's Pit forums](http://thepit.ja-galaxy-forum.com/)
-- [The Bear's Pit Discord](https://discord.gg/GqrVZUM)
+To preview locally:
+
+```bash
+pip install -r requirements.txt
+mkdocs serve
+```
+
+then open http://127.0.0.1:8000/documentation/.
+
+Small fixes are even easier: every page on the site has an edit button that takes you
+straight to the file on GitHub.
+
+## Deployment
+
+Pushes to `master` trigger the [deploy workflow](.github/workflows/deploy.yml), which
+builds the site and publishes it to GitHub Pages.
+
+> **Note:** the repository's Pages settings must be set to *Build and deployment →
+> Source: GitHub Actions* (not "Deploy from a branch").
 
 ## Credits
-- tais
-- Yunotchi
 
-## Contribute
-This documentation is far from complete. If it has made things easier for you to get started playing the 1.13 mod we hereby would like ask you to participate in extending the contents with anything you found missing.
-
-[This page](https://github.com/firstcontributions/first-contributions/blob/master/README.md) should give you an insight on how you can participate via GitHub.
+Built on the original starter documentation by **tais** and **Yunotchi**, the
+[pbworks wiki](http://ja2v113.pbworks.com/) authors, and the SVN-era documentation
+authors (BirdFlu and many others). Maintained by the JA2 v1.13 community —
+[The Bear's Pit](https://thepit.ja-galaxy-forum.com).
