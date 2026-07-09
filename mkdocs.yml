@@ -101,18 +101,30 @@ nav:
           - New Chance to Hit (NCTH): playing/features/ncth.md
           - Suppression: playing/features/suppression.md
           - Interrupts & reflexes: playing/features/interrupts.md
+          - Weapons & ballistics: playing/features/weapons.md
+          - Camouflage & stealth: playing/features/stealth.md
+          - Weather & environment: playing/features/environment.md
           - Inventory & LBE: playing/features/inventory.md
           - Weapon attachments: playing/features/attachments.md
           - Skills & traits: playing/features/traits.md
+          - Morale & opinions: playing/features/morale.md
           - Creating IMPs: playing/features/imp.md
+          - Hiring & contracts: playing/features/hiring.md
           - Bobby Ray & item progression: playing/features/bobby-ray.md
+          - Facilities & assignments: playing/features/facilities.md
           - Militia: playing/features/militia.md
           - Support roles: playing/features/support-roles.md
           - Covert operations: playing/features/covert-ops.md
           - Food & water: playing/features/food.md
           - Prisoners of war: playing/features/prisoners.md
           - Drugs & disease: playing/features/drugs-disease.md
+          - Fortifications & tripwire: playing/features/fortifications.md
+          - Explosives & breaching: playing/features/breaching.md
           - Know your enemy: playing/features/enemies.md
+          - Enemy tactical AI: playing/features/tactical-ai.md
+          - The strategic war: playing/features/strategic-war.md
+          - Rebel Command: playing/features/rebel-command.md
+          - Random events: playing/features/events.md
           - Vehicles: playing/features/vehicles.md
   - Walkthrough:
       - walkthrough/index.md

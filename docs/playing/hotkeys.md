@@ -5,6 +5,11 @@ official hotkey sheet `JA2_113_Hotkeys.pdf` ("Jagged Alliance 2 1.13 — 2022 Un
 Release, as of r9389"). It covers everything: vanilla JA2 keys, the many hotkeys 1.13
 adds on top, mouse commands, cheat codes and multiplayer keys.
 
+Because current GitHub-era builds have drifted from that 2022 sheet, the entries on
+this page have been cross-checked against the current game source (the input handlers
+listed under [Sources](#sources)). Where a current build behaves differently from the
+r9389 PDF, this page describes the **current** behavior and notes the change.
+
 The original documents live in the
 [`Docs/Manuals` folder of the 1.13 game directory on GitHub](https://github.com/1dot13/gamedir/tree/master/Docs/Manuals):
 
@@ -68,7 +73,7 @@ notes are kept in the tables. See the
 | ++p++ / ++x++ / ++c++ / ++s++ | Change to prone (++p++ or ++x++), crouch (++c++) or standing (++s++) stance. Standing also sets walk mode. |
 | ++r++ | Change to run mode. Changing to any stance, or sneaking, cancels it. |
 | ++j++ | Vault over obstacles (like fences); climb onto or drop down from flat roofs. |
-| ++backslash++ | Break window glass with a crowbar or any two-handed weapon. |
+| ++backslash++ | Break window glass with a crowbar or any two-handed weapon. If there is no window to break, start dragging an adjacent object or body instead. |
 | ++shift+j++ | Jump through a window. Must be facing the window with a free tile on the other side. Works on closed windows (unbroken glass) as well, but jumping through those causes minor cuts and damage. |
 | ++x++ | eXchange places: with the cursor on a non-hostile figure directly next to the merc, press ++x++. Useful when an NPC blocks a door. |
 | ++z++ | Toggle stealth mode. |
@@ -97,10 +102,13 @@ notes are kept in the tables. See the
 | ++alt+tilde++ | Put the quick-access item back into inventory and swap hands. |
 | ++shift+p++ | Fold/unfold stock. |
 | ++shift+t++ | Quick item transformation for the primary-hand item. |
+| ++shift+o++ | Quick-transform the scope attached to the primary-hand weapon (only scopes that define a transformation, e.g. switching magnification). |
+| ++shift+y++ | Quick-transform a laser attached to the primary-hand weapon (for laser attachments that define a transformation, e.g. switching it on/off). |
+| ++shift+l++ | Quick-transform a flashlight attached to the primary-hand weapon (e.g. switching it on/off). |
 | ++shift+n++ | Smart goggle swap: all mercs in the sector (who have them) equip sun goggles during the day, or night vision goggles at night.* |
 | ++ctrl+shift+n++ | Uniform goggle swap: all mercs in the sector equip sun goggles, or they all equip night vision goggles, regardless of whether it is day or night.* |
 | ++alt+shift+n++ | All mercs in the sector equip gas masks if they have one available. |
-| ++shift+b++ | All mercs in the sector drop backpacks ([New Inventory](features/inventory.md) only). |
+| ++shift+b++ | All mercs in the sector drop their backpacks; press again to pick them back up ([New Inventory](features/inventory.md) only). |
 | ++shift+"LMB"++ | Plant tripwire using the previous network settings. |
 | ++shift+a++ | Create ammo boxes using all ammo in the sector. |
 | ++ctrl+shift+a++ | Create ammo crates using all ammo in the sector. |
@@ -109,10 +117,16 @@ notes are kept in the tables. See the
 | ++ctrl+shift+f++ | Pick up all dropped backpacks (New Inventory only), then automatically perform both ++shift+f++ and ++shift+s++ above. |
 | ++ctrl+shift+m++ | Merge all valid items while stacking and sorting. This includes med kits, tool kits, canteens, gas cans, first aid kits, ammo, etc. |
 | ++shift+m++ | Move all items in the sector to the location of the selected merc. |
+| ++ctrl+alt+a++ | Fortification: open the construction settings dialog and choose which structure type (from the structures available for this sector's tileset) to build. |
+| ++ctrl+a++ | Fortification: mark the tile under the cursor for construction of the selected structure. |
+| ++ctrl+b++ | Fortification: mark the structure under the cursor for removal. |
 
 !!! note "* Goggle swaps"
     When using either goggle swap, any merc who does not have the "correct" type of
-    gear will simply wear none at all.
+    gear will simply wear none at all. With
+    `GOGGLE_SWAP_AFFECTS_ALL_MERCS_IN_SECTOR = FALSE` in `JA2_Options.ini` (default is
+    `TRUE`), the swaps only affect the currently selected squad instead of every merc
+    in the sector.
 
 ## Tactical screen — interface
 
@@ -122,9 +136,10 @@ notes are kept in the tables. See the
 | ++o++ | Bring up the options window (pop-up). |
 | ++h++ | Context-sensitive help window and index (pop-up). |
 | ++d++ | Turn-based: done/end turn. Real-time: activate turn-based mode. |
-| ++ctrl+d++ | Skip the player's interrupts for the turn (single player and old interrupt system). |
+| ++ctrl+d++ | End the turn AND skip the player's interrupts during the enemy turn (single player). |
 | ++tilde++ | Toggle between the team view and inventory panels. |
 | ++ctrl+left++ / ++ctrl+right++ | Move the selected merc to the left/right in the mercenary portrait panel. |
+| ++alt+shift+t++ | Re-sort the portrait panel by internal merc ID (undoes custom ++ctrl+left++ / ++ctrl+right++ ordering). |
 | ++e++ | Cycle through (locate) all enemies seen by the selected mercenary. |
 | ++enter++ | Cycle through (locate) all enemies any merc in the team knows about. |
 | ++n++ | Cycle through targets that overlap on the screen. |
@@ -208,6 +223,14 @@ display on or off.
     The mouse commands marked ** work in the strategic map and sector inventory as
     well.
 
+!!! info "Extended and alternative mouse commands"
+    The middle-button, MB4 and MB5 commands require `ENABLE_EXT_MOUSE_KEYS = TRUE`
+    (the default) in `JA2_Options.ini` under `[Tactical Interface Settings]`. The same
+    section also has `ALTERNATE_MOUSE_COMMANDS` (default `FALSE`): setting it to
+    `TRUE` switches the wheel and extra buttons to a different, extended scheme —
+    that scheme is documented in `JA2_113_Hotkeys_ALT_MOUSE.pdf` and
+    `JA2_113_Alternate_Mouse_Commands.xlsx` in the game's `Docs\Manuals` folder.
+
 ## Selecting mercs and squads — map screen
 
 | Key | Effect |
@@ -234,9 +257,10 @@ display on or off.
 | ++insert++ / ++delete++ | Up/down one sub-level. |
 | ++ctrl+"LMB"++ / ++ctrl+"RMB"++ | Assign/remove 5 in the [Militia](features/militia.md) Assignment window. |
 | ++shift+"LMB"++ / ++shift+"RMB"++ | Assign/remove ALL in the Militia Assignment window. |
-| ++shift+k++ | Swap valid weapons between gun sling and primary hand. |
-| ++shift+n++ | Smart goggle swap: all mercs in the sector (who have them) equip sun goggles during the day, or night vision goggles at night.* |
-| ++ctrl+shift+n++ | Uniform goggle swap: all mercs in the sector equip sun goggles, or they all equip night vision goggles, regardless of whether it is day or night.* |
+| ++shift+k++ | Swap valid weapons between gun sling and primary hand (inventory pane must be open). |
+| ++ctrl+shift+k++ | Equip sidearm; swap sidearm with gun sling (inventory pane must be open). |
+| ++alt+shift+k++ | Equip knife; swap knife with gun sling (inventory pane must be open). |
+| ++shift+n++ | Swap the selected merc's sun/night goggles (inventory pane must be open).* |
 | ++f1++ – ++f6++ | Sort the merc list by column 1–6 (NAME, ASSIGN, SLEEP, LOC, DEST, DEP). |
 | ++l++ | Open the laptop. |
 | ++c++ | Show the selected merc's contract. |
@@ -244,16 +268,22 @@ display on or off.
 | ++m++ | Toggle map filter: show/hide (M)ines, mine names and income (%). |
 | ++t++ | Toggle map filter: (T)eams & enemies. |
 | ++z++ | Toggle map filter: (Z) militia & enemies. |
-| ++r++ | Toggle map filter: mobile militia (R)estrictions. |
+| ++r++ | Toggle map filter: weathe(R) overlay — rain/snowstorms/sandstorms per sector (only when weather effects are enabled). The r9389 sheet had "mobile militia restrictions" on this key; that binding no longer exists. |
+| ++d++ | Toggle map filter: (D)isease overlay (only with the strategic [disease system](features/drugs-disease.md) enabled). |
+| ++q++ | Toggle map filter: intel overlay. |
 | ++a++ | Toggle map filter: (A)irspace. |
 | ++i++ | Toggle map filter: (I)nventory. |
 | ++u++ | Open the inventory screen for the highlighted sector. |
+| ++e++ / ++a++ / ++r++ | With the pre-battle window open: (E)nter sector, (A)uto-resolve, (R)etreat. |
 | ++home++ / ++end++ | Jump to the oldest (first) / newest (last) message. |
 | ++up++ / ++down++ | Scroll messages back/forward one line. |
+| ++shift+page-up++ / ++shift+page-down++ | Scroll messages back/forward one page. |
 
-!!! note "* Goggle swaps"
-    When using either goggle swap, any merc who does not have the "correct" type of
-    gear will simply wear none at all.
+!!! note "* Goggle swap on the map screen"
+    The r9389 sheet listed the same sector-wide smart/uniform goggle swaps here as on
+    the tactical screen. In current builds those are tactical-screen keys only; on
+    the map screen ++shift+n++ swaps goggles for the selected merc alone, and
+    ++ctrl+shift+n++ does nothing.
 
 ## Strategic map — sector inventory
 
@@ -264,6 +294,7 @@ display on or off.
 | ++period++ | Next inventory page. |
 | ++shift+w++ | Drop ALL items (selected merc), including armour, LBE and hands. |
 | ++shift+e++ | Drop CARRIED items (selected merc), NOT including armour, LBE or hands. |
+| ++alt+shift+e++ | Drop everything stored in the selected merc's backpack (keeps worn gear and other pockets). |
 | ++ctrl+shift+e++ | Pick up as many sector items as possible. |
 | ++tab+"LMB"++ | Restrict an item from militia use. Only with `Militia Use Sector Equipment = TRUE`. |
 | ++ctrl+tab+"LMB"++ | Restrict an item from the "Move Item" assignment in towns. |
@@ -273,7 +304,8 @@ display on or off.
 | ++delete+"LMB"++ | Delete the first (top) item in a slot. |
 | ++delete+shift+"LMB"++ | Delete all items in a slot. |
 | ++delete+y+"LMB"++ | Delete all items of the same type in sector inventory (this sector only). |
-| ++ctrl+delete++ | Delete all items from sector inventory (this sector only). |
+| ++ctrl+delete++ or ++ctrl+shift+d++ | Delete all items from sector inventory (yes/no prompt; this sector only). |
+| ++ctrl+shift+s++ | Sell all items in sector inventory (yes/no prompt; this sector only). Requires `SELL_ITEMS_WITH_ALT_LMB = TRUE` (default), the same setting that enables the Alt-click selling above. |
 | ++ctrl+"LMB"++ | Auto-move the first (top) item in a slot to merc/vehicle inventory. |
 | ++ctrl+shift+"LMB"++ | Auto-move all items in a slot to merc/vehicle inventory. |
 | ++ctrl++ (hold) | Hover over an item to compare its stats with the item in the Description Box. |
@@ -351,18 +383,25 @@ display on or off.
 | Key | Effect |
 |---|---|
 | ++page-up++ / ++page-down++ | Previous/next page. |
-| ++alt+a++ | Load the last auto-save (load screen only). |
-| ++alt+b++ | Load the next-to-last auto-save (load screen only). |
+| ++up++ / ++down++ | Move the slot selection up/down. |
+| ++enter++ | Save to / load from the selected slot. |
 | ++ctrl++ (hold) | Display the game settings for the highlighted save (load screen only). |
+
+!!! note "Loading auto-saves"
+    The r9389 sheet listed ++alt+a++ / ++alt+b++ on the load screen for loading the
+    last two auto-saves. Current builds no longer have those keys: the auto-saves
+    (five rotating timed auto-saves plus two end-of-turn saves) simply appear as the
+    top slots on the first page of the save list.
 
 ### Main menu
 
 | Key | Effect |
 |---|---|
-| ++n++ | Start a new game with the latest loaded game settings. |
+| ++n++ | Start a new game (opens the new-game options screen). |
 | ++m++ | Start a [multiplayer](../multiplayer/index.md) game. |
 | ++c++ | Continue a saved game (brings up the load game screen). |
 | ++alt+c++ | Load the last save game. |
+| ++i++ | Play the game intro. |
 | ++o++ | Bring up the options pop-up panel. |
 | ++s++ | Show the credits. |
 | ++q++ | Quit the game (NO confirmation prompt). |
@@ -390,39 +429,38 @@ Cheat mode must be enabled first, on the tactical screen:
 | ++alt+enter++ | Abort the enemy's turn. |
 | ++alt+e++ | Make all items and characters (enemies and NPCs) visible. |
 | ++alt+t++ | Teleport the selected merc to the cursor location. |
-| ++alt+r++ | Reload the selected merc's weapon without depleting ammo. |
+| ++alt+shift+r++ | Reload the selected merc's weapon without depleting ammo. This was ++alt+r++ in the r9389 sheet; plain ++alt+r++ now always performs a normal reload. |
 | ++alt+d++ | Refresh APs of all mercs. May require multiple uses to fully restore. |
-| ++ctrl+u++ | Refresh all characters' health and energy (heals all characters). |
+| ++ctrl+u++ | Refresh health and energy of all your mercs (and refuel vehicles). |
+| ++alt+h++ | Toggle hit-chance reporting: prints chance-to-hit information as interface messages. |
+| ++ctrl+f++ | Toggle the frame rate (FPS) display. |
 | ++alt+g++ | Spawn a merc: prompts for a profile ID in current builds (the r9389 sheet said "random merc"). |
-| ++ctrl+shift+g++ | Toggle GOD MODE on/off. |
-| ++alt+i++ | Create a random item at the cursor location. |
+| ++ctrl+shift+g++ | Toggle GOD MODE on/off (works on the map screen too). |
+| ++alt+i++ | Create a random gun at the cursor location (a random item from item IDs 1–35 — all guns). |
 | ++ctrl+alt+shift+i++ | Create a MASSIVE bunch of random items at the cursor location. |
 | ++alt+j++ | The selected merc's gun will jam on their next shot. |
 | ++ctrl+alt+k++ | The next shot by anyone is an automatic kill (100 damage). |
 | ++alt+b++ | Add an enemy soldier beneath the cursor. |
 | ++alt+c++ | Add a civilian beneath the cursor. |
-| ++alt+v++ | Add a robot beneath the cursor. |
 | ++ctrl+3++ | Spawn a hostile bloodcat at the cursor. |
 | ++ctrl+alt+2++ | Turn the selected merc into a baby crepitus.*** |
 | ++ctrl+alt+4++ | Put the selected merc in a wheelchair.*** |
 | ++ctrl+alt+5++ | Turn the selected merc into a large crepitus.*** |
 | ++ctrl+alt+6++ | Turn the selected merc into a bloodcat.*** |
-| ++ctrl+o++ | Add a large hostile crepitus beneath the cursor. |
-| ++alt+i++ | Add a random gun beneath the cursor. |
+| ++ctrl+o++ | Add a crepitus under your control beneath the cursor (the r9389 sheet described it as hostile). |
 | ++alt+period++ | Add an item by ITEM ID on the selected merc (or on the ground if there is no space). |
 | ++ctrl+alt+period++ | Add the previously spawned item on the selected merc (or on the ground if no space). |
 | ++ctrl+w++ | Create a flamethrower in the merc's primary hand.**** |
 | ++alt+w++ | Cycle forward through the item list by ITEM ID in the primary hand.**** |
 | ++alt+shift+w++ | Cycle backward through the item list instead.**** |
 | ++alt+q++ | Toggle roof graphics on/off (allows viewing the interior of all buildings). |
-| ++alt+y++ | Recruit Maria with a G41 rifle (100%, 30 rounds 5.56x45mm AP ammo). |
+| ++alt+y++ | Recruit Maria, armed with a G41 rifle at 100% status. |
 | ++ctrl+alt+shift+t++ | All mercs in the current sector are arrested by the Queen. |
-| ++alt+k++ | Cause a mustard gas explosion at the cursor position. |
-| ++ctrl+k++ | Cause a hand grenade explosion at the cursor position. |
+| ++ctrl+shift+t++ | Write a timed auto-save immediately. |
 | ++ctrl+h++ | Hurt the character under the cursor. |
 | ++alt+o++ | Kill all enemies in the current sector. |
-| ++page-up++ | Attempt to go UP towards ground level. |
-| ++page-down++ | Attempt to go DOWN to a lower level. |
+| ++ctrl+page-up++ | Attempt to go UP towards ground level (plain ++page-up++ in the r9389 sheet). |
+| ++ctrl+page-down++ | Attempt to go DOWN to a lower level (plain ++page-down++ in the r9389 sheet). |
 
 !!! note "*** Transformation cheats"
     Be sure the selected merc is STANDING before using these cheats!
@@ -431,12 +469,21 @@ Cheat mode must be enabled first, on the tactical screen:
     If the primary hand is empty, these functions simply create the item. WARNING:
     they will DELETE any item already in the merc's primary hand!
 
+!!! note "Cheats removed since r9389"
+    Three cheats from the r9389 sheet no longer exist — their key handlers are empty
+    in current source: ++alt+v++ (add a robot beneath the cursor), ++alt+k++
+    (mustard gas explosion at the cursor) and ++ctrl+k++ (hand grenade explosion at
+    the cursor).
+
 ### Map screen cheats
 
 | Key | Effect |
 |---|---|
 | ++ctrl+t++ | In travel mode, teleport the selected squad to the sector under the cursor. |
-| ++alt++ + Auto Resolve | Kill all enemies in the contested sector. |
+| ++alt++ + Auto Resolve | Kill all enemies in the contested sector (also works with ++alt++ + Go to Sector). |
+| ++ctrl+shift+a++ | Reveal the whole map: mark every sector as visited and show enemy presence. |
+| ++ctrl+a++ | Toggle "enemy ambush test mode". |
+| ++ctrl+z++ | Toggle "strategic AI awareness maxed" test mode. |
 
 ### Laptop cheats
 
@@ -446,6 +493,7 @@ Cheat mode must be enabled first, on the tactical screen:
 | ++minus++ | Decrease funds by $10,000. |
 | ++plus++ | Increase funds by $100,000. |
 | ++underscore++ | Decrease funds by $100,000. |
+| ++alt+b++ | Unlock access to the Bobby Ray's website immediately. |
 
 ## Multiplayer keys
 
@@ -474,3 +522,15 @@ The official hotkey sheet marks these as untested. See
   activation
 - The previous 1.13 starter documentation (2019, r8741 era) — the stuck Alt key
   workaround
+- Current game source at [github.com/1dot13/source](https://github.com/1dot13/source)
+  (master branch), against which the entries on this page were verified and updated:
+  `Tactical/Turn Based Input.cpp` (tactical keys, cheats, mouse commands),
+  `Strategic/mapscreen.cpp` and `Strategic/Map Screen Interface Border.cpp` (map
+  screen keys and filters), `Strategic/PreBattle Interface.cpp` and
+  `Strategic/Auto Resolve.cpp` (pre-battle/auto-resolve keys),
+  `Laptop/laptop.cpp` (laptop keys and money cheats), `Ja2/MainMenuScreen.cpp`,
+  `Ja2/SaveLoadScreen.cpp` and `Ja2/Cheats.h` (cheat-level mechanics)
+- [`Data-1.13/Ja2_Options.INI`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/Ja2_Options.INI)
+  from the current game directory — the `QUICK_ITEM_*`, `FAST_FORWARD_KEY`,
+  `ENABLE_EXT_MOUSE_KEYS`, `ALTERNATE_MOUSE_COMMANDS`,
+  `GOGGLE_SWAP_AFFECTS_ALL_MERCS_IN_SECTOR` and `SELL_ITEMS_WITH_ALT_LMB` settings
