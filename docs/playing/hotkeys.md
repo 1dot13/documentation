@@ -373,8 +373,14 @@ Cheat mode must be enabled first, on the tactical screen:
 
 | Key | Effect |
 |---|---|
-| ++ctrl++ + type `GABBI` | Enables cheat mode in the English version. |
-| ++ctrl++ + type `IGUANA` | Enables cheat mode in the German version. |
+| ++ctrl+g++ | Opens a yes/no prompt to activate (or deactivate) cheat mode. Not available in multiplayer. |
+
+!!! note "The old typed cheat codes are gone"
+    The r9389-era hotkey sheet (and vanilla JA2) enabled cheats by holding ++ctrl++ and
+    typing `GABBI` (English) or `IGUANA` (German). Current GitHub-era builds removed the
+    typed codes entirely — the ++ctrl+g++ confirmation prompt (verified in the game
+    source, `Tactical/Turn Based Input.cpp`) replaced them. See
+    [Cheats & debug tools](cheats.md) for details and side effects of enabling cheats.
 
 ### Tactical screen cheats
 
@@ -387,7 +393,7 @@ Cheat mode must be enabled first, on the tactical screen:
 | ++alt+r++ | Reload the selected merc's weapon without depleting ammo. |
 | ++alt+d++ | Refresh APs of all mercs. May require multiple uses to fully restore. |
 | ++ctrl+u++ | Refresh all characters' health and energy (heals all characters). |
-| ++alt+g++ | Add a random merc to your roster. |
+| ++alt+g++ | Spawn a merc: prompts for a profile ID in current builds (the r9389 sheet said "random merc"). |
 | ++ctrl+shift+g++ | Toggle GOD MODE on/off. |
 | ++alt+i++ | Create a random item at the cursor location. |
 | ++ctrl+alt+shift+i++ | Create a MASSIVE bunch of random items at the cursor location. |
