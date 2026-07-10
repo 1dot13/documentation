@@ -91,8 +91,8 @@ sunny, cyan = rain, blue = thunderstorm, orange = sandstorm, white = snow.
     Plain rain barely hurts your eyes (−5% sight) but cuts everyone's hearing by 30% —
     it is the best weather in the game for sneaking up on a garrison or slipping away
     from a lost fight. A thunderstorm is a different animal: everyone is nearly deaf,
-    stamina recovers at half speed or worse, and every lightning flash can expose your
-    people — keep them prone and in cover, and expect to be seen anyway. In a
+    stamina recovers 40% slower, and every lightning flash can expose your people —
+    keep them prone and in cover, and expect to be seen anyway. In a
     sandstorm, vision is so short that fights collapse into brutal close quarters;
     if you have the better long-range team, consider simply waiting it out (they
     rarely last more than a few hours). After any storm, check your weapons for
@@ -183,22 +183,22 @@ dissipate.
 | Smoke | Concealment. Anyone inside a smoke cloud becomes extremely difficult to spot, but also loses a large chunk of their own sight range. The go-to tool for crossing open ground or breaking contact. |
 | Tear gas | Breath (stun) damage each turn to anyone inside without a working gas mask. Hangs around longer than other gases. |
 | Mustard gas | Wound damage each turn without a mask — the lethal option. |
-| Creature gas | The Crepitus queen's attack — **gas masks do not help** against it. See [enemy classes](enemies.md). |
+| Creature gas | The noxious attack of the Crepitus (Sci-Fi mode) — **gas masks do not help** against it. See [enemy classes](enemies.md). |
 | Burnable gas | Fire-type cloud (e.g. from exploding gas cans). Counts as fire: gas masks are useless, armor fire resistance helps. |
 | Signal smoke | Red marker smoke used to call in artillery strikes — see [support roles](support-roles.md). |
 | Fire retardant | Sprayed by fire extinguishers; puts out fires and prevents tiles from catching fire. |
 
 Details worth knowing, all from the current source:
 
-- Robots are immune to all gas; zombies ignore tear and mustard gas but burn nicely
-  ([enemies](enemies.md)).
+- Robots ignore smoke, tear gas and mustard gas; zombies ignore tear and mustard gas
+  but burn nicely ([enemies](enemies.md)).
 - A merc caught in gas without protection gets the **gassed** condition, which
   seriously widens the aiming aperture under [NCTH](ncth.md) (`BASE_GASSED = -15.0`,
   `AIM_GASSED = -80.0` in `CTHConstants.ini`).
-- **Gas masks** block gas damage completely while in good condition, but every
-  exposure wears the mask down a few points. Below 70% status a mask *leaks*,
-  letting part of the breath damage through — repair or replace masks after a gas
-  fight.
+- **Gas masks** block gas damage completely while in good condition, but protecting
+  against damaging gas wears the mask down a few points each time. Below 70% status a
+  mask *leaks*, letting part of the breath damage through — repair or replace masks
+  after a gas fight.
 - ++alt+shift+n++ is the emergency command: every merc in the sector puts on a gas
   mask if they have one anywhere in their inventory ([hotkeys](../hotkeys.md)).
 - Enemy soldiers can wear gas masks too — soldier tooltips show NVGs and gas masks
@@ -210,9 +210,9 @@ Details worth knowing, all from the current source:
 
 !!! warning "Gas is an attack"
     As far as civilians and militia are concerned, walking into a cloud of gas *you*
-    created counts as being attacked by you (see the `[Tactical Weather Settings]`
-    neighbours `CAN_TRUE_CIVILIANS_BECOME_HOSTILE` / `CAN_MILITIA_BECOME_HOSTILE`).
-    Gassing a town square can turn it hostile.
+    created counts as being attacked by you (documented at the
+    `CAN_TRUE_CIVILIANS_BECOME_HOSTILE` / `CAN_MILITIA_BECOME_HOSTILE` settings in
+    `JA2_Options.ini`). Gassing a town square can turn it hostile.
 
 ## Fire
 
