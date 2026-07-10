@@ -130,10 +130,12 @@ chance of a whole Bobby Ray shipment going missing. See
       externalized in `Data-1.13\Helicopter_Settings.INI`
       (`HELICOPTER_DISTANCE_WITHOUT_REFUEL = 25` sectors, refuel time, repair costs
       that creep upward after every repair, SAM accuracy and more).
-    - `SERIOUSLY_DAMAGED_SKYRIDER_WONT_FLY = TRUE`: he refuses to fly a badly damaged
-      helicopter until it is repaired, and with `HELICOPTER_PAY_SKYRIDER_IN_BASE =
-      TRUE` he bills you after landing safely at base rather than up front. His radio
-      chatter can also be toned down.
+    - Back in `JA2_Options.ini`: `SERIOUSLY_DAMAGED_SKYRIDER_WONT_FLY = TRUE` makes
+      him refuse to fly a badly damaged helicopter until it is repaired, and with
+      `HELICOPTER_PAY_SKYRIDER_IN_BASE = TRUE` (the shipped default) he bills you
+      after landing safely at base rather than up front. His radio chatter can also
+      be toned down. The refueling sites themselves (Drassen B13, Estoni I6) are
+      externalized in `HeliSites.xml`.
 
 ## San Mona
 
@@ -216,8 +218,9 @@ Brenda, a customer harassing him in his store, is taken care of — find the **v
 (in a chest in the northeastern-most house of the sector, or on a side table in the
 Shady Lady's reception room) and give it to Hans. A merc with a modest Leadership
 (around 15–25) then gets waved through. Tony buys and sells weapons at fair prices,
-holds $15,000 (refreshed daily), trades around the clock, and sometimes "steps out" to
-restock for a day or two.
+keeps a large cash balance that is topped back up every day (about $15,000 in
+vanilla; 1.13 externalizes dealer cash to XML), trades around the clock, and
+sometimes "steps out" to restock for a day or two.
 
 **1.13:** Tony's inventory is substantially larger than in vanilla, and Tony and Hans
 only turn hostile if directly attacked. `CHANCE_TONY_AVAILABLE` in `JA2_Options.ini`
@@ -245,8 +248,10 @@ One quest, two rival quest-givers, and a choice at the end.
   helps), and you are safe once outside the museum.
 - **Outcomes:**
     - Give it to **Kingpin**: $20,000 cash.
-    - Return it to **Yanni**: instant 100% loyalty in Chitzena plus a 6% loyalty boost
-      in every town sector you control.
+    - Return it to **Yanni**: a big loyalty jump in Chitzena (+20 loyalty points,
+      multiplied about 1.75× by Chitzena's strong rebel sentiment) **plus** +10
+      loyalty points in *every* town, each scaled by that town's own sentiment — for
+      most towns that works out to somewhere between +5% and +15%.
     - Greedy option: hand it to Kingpin, take his money, then kill him — he keeps the
       chalice (and the reward cash) on his person, so you can loot it back and still
       return it to Chitzena. Expect the entire San Mona mob to object.
@@ -304,7 +309,7 @@ treatment and discounted care afterwards; at 100% town loyalty treatment becomes
     free-treatment bonus, and makes it impossible to recruit Dr. Vincent Beaumont.
 
 **Dr. Vincent Beaumont** — the best starting Medical stat of any recruitable character
-— joins for $400/day once Cambria loyalty is close to 100% and a high-Leadership merc
+— joins for $500/day once Cambria loyalty is close to 100% and a high-Leadership merc
 asks him. See [NPCs and recruitment](npcs-recruitment.md).
 
 ### Eliminate the Hicks
@@ -395,30 +400,32 @@ facilities, making it a handy mid-game base.
 ### Intercept's Most Wanted (Carmen Dancer's terrorist bounties)
 
 **Carmen Dancio** (often called "Carmen Dancer" by players) is a bounty hunter who
-appears randomly in bars: the Whipping Post (C5) and Alberto's (C6) in San Mona,
-Herve's (C13) and Peter's (D13) in Drassen, the Cambria bar (G9), and sometimes
-Grumm (H2).
+moves to a new bar each morning — always one of three sectors: **C5** (San Mona),
+**C13** (Drassen) or **G9** (Cambria).
 
 - **Start:** talk to him. He offers half the bounty on a list of wanted terrorists
   hiding in Arulco, hands you a diskette with their dossiers (copied to your laptop)
   and a machete — because they are wanted **dead**, and he needs their heads as proof.
-- **Steps:** the terrorists live under civilian cover in random towns. Kill one, then
+- **Steps:** the terrorists live under civilian cover in various towns. Kill one, then
   use any bladed weapon on the corpse's head to collect it as a unique item. Bring the
-  head to Carmen; he tells you to meet him in a Drassen bar in 24 hours for the payout.
+  head to Carmen; he tells you to meet him in a **Drassen (C13)** bar in 24 hours for
+  the payout.
 - **Reward:** **$10,000 per head** (your half of each $20,000 bounty).
 
-| Target | Cover identity | Where (varies per game) |
+| Target | Cover identity | Where |
 | --- | --- | --- |
 | Sammy "Charlie" Elgin, "The Druggist" | Bartender in Grumm | Always in H2 |
-| Annie, "Matron of Mayhem" | Innocuous Scottish woman | G8, C6, B2, L11 or I14 |
-| Kris Karver, "The Imposter" | Friendly "Canadian" on the street | F9, I14, G1, G2 or L11 |
-| Tiffany "Joe" Eddie | New York mobster "on vacation" | Alma, Grumm, Cambria, San Mona or Balime |
-| Jasmin "T-Rex" Rexall | Imposingly large militiaman | B2, G1, F9, H2 or H14 |
-| Richard "Slay" Ruttwen, "Terry" | Man in a wheelchair | F9, G1, G2, G8 or I14 |
+| Annie, "Matron of Mayhem" | Innocuous Scottish woman | Always in G8 (Cambria) in current 1.13 data |
+| Kris Karver, "The Imposter" | Friendly "Canadian" on the street | Random: F9, G1, G2, G8 or L11 |
+| Tiffany "Joe" Eddie | New York mobster "on vacation" | Always in I14 (Alma) in current 1.13 data |
+| Jasmin "T-Rex" Rexall | Imposingly large militiaman | Random: B2, F9, G1, H2 or H14 |
+| Richard "Slay" Ruttwen, "Terry" | Man in a wheelchair | Random: F9, G1, G2, G8 or I14 |
 
-In vanilla JA2 not all of the terrorists necessarily spawn in a single campaign.
-**1.13:** `ENABLE_ALL_TERRORISTS` (shipped default `TRUE`) makes all of them appear in
-every game.
+In vanilla JA2 not all of the terrorists spawn in a single campaign — Elgin plus 2–4
+others, weighted by difficulty. **1.13:** `ENABLE_ALL_TERRORISTS` (shipped default
+`TRUE`) makes all six appear in every game. Terrorists with a location set in
+`MercProfiles.xml` (currently Elgin, Annie and Tiffany) always spawn there; the rest
+roll a sector from the lists above at campaign start.
 
 !!! warning "Missable bounties"
     A head destroyed by a critical headshot or explosives can't be collected — no
@@ -480,8 +487,9 @@ persuaded to join your team.
 
 ### Hamous and the ice cream truck
 
-Hamous drives his "borrowed" ice cream truck along a random road sector — check D3,
-D7, D9, D11, F12 and G6. A merc with decent Leadership can hire him for **$250/day**,
+Hamous drives his "borrowed" ice cream truck along a random road sector — the game
+moves him daily between **D3, D7, D9, F12 and G6**. A merc with decent Leadership can
+hire him for **$250/day**,
 truck included; he doesn't take the truck back if you later dismiss him. The truck
 needs gas (two cans fill a tank), seats a full squad, needs an awake driver, and only
 drives on roads.
@@ -618,5 +626,17 @@ Defaults below are from the current GitHub release.
   [`Creatures_Settings.INI`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/Creatures_Settings.INI)
   from the current 1dot13/gamedir repository (all quoted setting names, defaults and
   descriptions)
+- 1.13 source code, [1dot13/source](https://github.com/1dot13/source):
+  `Tactical/Soldier Profile.cpp` (terrorist placement lists and campaign roll),
+  `Strategic/Quests.cpp` (`FACT_CARMEN_HAS_TEN_THOUSAND`, Warden/Dynamo/loyalty
+  facts), `Strategic/Map Screen Helicopter.cpp`/`.h` (Skyrider's $100/$1,000 fares
+  and B13/I6 refuel sites), and `Strategic/Strategic Town Loyalty.cpp`/`.h` (chalice
+  loyalty bonuses)
+- `Data-1.13/Scripts/StrategicEventHandler.lua` and `GameInit.lua` from
+  1dot13/gamedir — Carmen's daily C5/C13/G9 rotation, Devin's and Hamous's movement
+  lists, Father Walker's C13/D13 swap, Dave's 1-in-3 daily gas chance, Micky's
+  placement
+- [`Data-1.13/TableData/MercProfiles.xml`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/TableData/MercProfiles.xml)
+  from 1dot13/gamedir — terrorist fixed locations, Vince's salary
 - "JA2 v1.13 Recommended Settings" — the previous 2019-era (r8741) starter
   documentation

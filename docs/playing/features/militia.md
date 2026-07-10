@@ -97,19 +97,104 @@ have been in your service for 24 hours.
 
 ### Optional recruitment limits
 
-Two off-by-default systems make militia a strategic resource rather than a money sink:
+Two off-by-default systems make militia a limited strategic resource rather than a
+money sink. Both also appear as toggles (*Militia Volunteer Pool* and *Militia
+Requires Resources*) on the 1.13 features screen when starting a
+[new game](../new-game-options.md), and both plug into
+[Rebel Command](rebel-command.md) if that feature is active.
 
-- **Volunteer pool** (`MILITIA_VOLUNTEER_POOL = FALSE` by default): each town's
-  population and loyalty feed a limited pool of volunteers. Training militia drains the
-  pool; liberating sectors, controlling farm sectors, quests and interrogating
-  prisoners refill it. When the pool is empty, no one is left to train.
-- **Resource requirements** (`MILITIA_REQUIRE_RESOURCES = FALSE` by default): training
-  and promotions consume three abstract resources — Guns, Armour and Miscellaneous —
-  that you produce by converting items in the sector inventory with ++alt++ +
-  right-click. A green militiaman costs 1 Gun; promotion to regular adds 1 Armour;
-  promotion to elite adds 1 Misc. Resource totals are shown on the strategic map while
-  the militia view is active. This feature requires `MILITIA_USE_SECTOR_EQUIPMENT` to
-  be `FALSE`.
+#### The volunteer pool
+
+With `MILITIA_VOLUNTEER_POOL = TRUE`, Arulco holds a finite number of people willing
+to fight for you: a single country-wide pool of volunteers. Every militiaman trained
+consumes one volunteer, and with the pool empty the training assignment refuses to
+start ("There are no volunteers left for militia!"). If a training session finds
+fewer volunteers than the trainer could handle, the excess training effort goes into
+promoting the sector's existing militia instead.
+
+The pool fills from several sources, all verified in the current code:
+
+- **An hourly trickle from your towns.** Every town sector you control contributes
+  its population times its town's loyalty (its "loyal population"); the pool then
+  grows by `ln(1 + loyal population × modifier × 0.002)` per hour. The logarithm
+  means hard diminishing returns: holding more, and more loyal, towns always helps,
+  but volunteers never pour in.
+- **Farms.** Every farm sector you control outside a town raises the modifier in
+  that formula by 0.05 — controlling the food supply wins hearts and minds.
+- **Liberation.** The first time you liberate a town sector, you instantly gain
+  volunteers equal to 0.2 × that sector's loyal population.
+- **Prisoners.** Some interrogated [prisoners](prisoners.md) choose to volunteer
+  rather than defect straight into your militia.
+- **Recruiting civilians in tactical.** Some ordinary civilians are potential
+  volunteers: have a merc talk to an unhurt, friendly, unaffiliated civilian in a
+  peaceful sector you control, and if the merc's effective Leadership is high enough
+  he wins them over — the civilian joins a volunteer group in the sector and the pool
+  grows by one. The check is a hard threshold, not a dice roll, so retrying or
+  reloading does not help, and a sector remembers recent recruiting so freshly
+  spawned civilians won't volunteer for a while. In towns this requires the same
+  minimum loyalty as militia training. If a recruited volunteer civilian is later
+  killed, the pool shrinks by one.
+- **Rebel Command.** The *Draft Civilians* directive adds volunteers daily (at a
+  loyalty cost) and the *Civilian Aid* administrative action grows the pool per
+  region — both only exist when the volunteer pool is on; see
+  [Rebel Command](rebel-command.md). Per the INI, quests can also award volunteers.
+
+While the militia view is active, the strategic map's bottom-left corner shows
+"Volunteers: N (+hourly gain)", colour-coded against the training session size; the
+Rebel Command HQ overview lists the same number.
+
+| Setting (`[Militia Volunteer Pool Settings]`) | Default | Effect |
+| --- | --- | --- |
+| `MILITIA_VOLUNTEER_POOL` | `FALSE` | Master switch for the volunteer pool. |
+| `MILITIA_VOLUNTEER_POOL_GAINFACTOR_LIBERATION` | `0.2` | Instant volunteers for liberating a sector for the first time: its loyal population × this. |
+| `MILITIA_VOLUNTEER_POOL_MULTIPLIER_FARM` | `0.05` | Hourly-gain modifier increase per controlled farm sector. |
+| `MILITIA_VOLUNTEER_POOL_GAINFACTOR_HOURLY` | `0.002` | Factor inside the hourly gain formula above. |
+
+#### Resource requirements: Guns, Armour, Misc
+
+With `MILITIA_REQUIRE_RESOURCES = TRUE`, training and promoting militia costs
+equipment as well as money, in the form of three abstract country-wide resources:
+**Guns** (from firearms, launchers and ammo), **Armour** (from helmets, vests,
+pants, LBE gear and face items) and **Misc** (from melee weapons, grenades and
+bombs). Weapon attachments feed Guns, armour attachments and slings feed Armour, and
+explosive attachments (detonators, launcher grenades, bayonets, rockets) feed Misc.
+
+- A green militiaman costs **1 Gun**. Promoting green → regular costs **1 Gun +
+  1 Armour**; promoting regular → elite costs **1 Gun + 1 Armour + 1 Misc**.
+  Training will not start without enough resources ("Not enough resources to train
+  militia!"), and prisoners who defect into militia consume resources too — PMC
+  hires do not (per the INI).
+- You produce resources by **smelting items in the sector inventory**: hold ++alt++
+  and right-click an item to convert one item; also hold ++shift++ to convert the
+  whole stack, or ++y++ to convert every matching stack in the sector. Hovering with
+  ++alt++ held previews an item's resource value.
+- An item's value is its class modifier (see the table) × coolness × condition × a
+  progress modifier (`MILITIA_RESOURCES_PROGRESSFACTOR` divided by your highest
+  campaign progress). Ammo is valued per bullet. **Everything devalues as the
+  campaign advances** — including your existing stockpile, which is scaled down each
+  time your progress reaches a new high — so smelt cheap early-game guns early.
+- Resource totals appear at the bottom left of the strategic map while the militia
+  view is active. The [Rebel Command](rebel-command.md) *Militia Warehouses*
+  administrative action — which only exists when this feature is on — delivers daily
+  resources.
+- The feature requires `MILITIA_USE_SECTOR_EQUIPMENT = FALSE`: militia either draw
+  on your abstract stockpile or on your real one (see below), not both.
+
+| Setting (`[Militia Resource Settings]`) | Default |
+| --- | --- |
+| `MILITIA_REQUIRE_RESOURCES` (master switch) | `FALSE` |
+| `MILITIA_RESOURCES_PROGRESSFACTOR` | `10.0` |
+| `MILITIA_RESOURCES_ITEMCLASSMOD_GUN` (guns and launchers) | `0.9` |
+| `MILITIA_RESOURCES_ITEMCLASSMOD_ARMOUR` | `0.3` |
+| `MILITIA_RESOURCES_ITEMCLASSMOD_BOMB` | `0.25` |
+| `MILITIA_RESOURCES_ITEMCLASSMOD_MELEE` | `0.2` |
+| `MILITIA_RESOURCES_ITEMCLASSMOD_GRENADE` | `0.17` |
+| `MILITIA_RESOURCES_ITEMCLASSMOD_FACE` | `0.05` |
+| `MILITIA_RESOURCES_ITEMCLASSMOD_LBE` | `0.03` |
+| `MILITIA_RESOURCES_ITEMCLASSMOD_AMMO_BULLET` (per bullet) | `0.01` |
+| `MILITIA_RESOURCES_ITEMCLASSMOD_ATTACHMENT_LOW` / `_MEDIUM` / `_HIGH` | `0.05` / `0.1` / `0.2` |
+| `MILITIA_RESOURCES_WEAPONMOD_PISTOL` / `_M_PISTOL` / `_SMG` / `_RIFLE` | `0.6` / `0.7` / `0.8` / `0.9` |
+| `MILITIA_RESOURCES_WEAPONMOD_SN_RIFLE` / `_AS_RIFLE` / `_LMG` / `_SHOTGUN` | `1.0` each |
 
 ## Defending towns
 
@@ -351,3 +436,12 @@ kills and assists, and a health ratio.
   line-of-sight/radio/extended-ear conditions), and
   [`TableData/Map/FacilityTypes.xml`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/TableData/Map/FacilityTypes.xml)
   from the gamedir repository (military HQ war-room requirements)
+- Source files used to verify the volunteer pool and militia resources:
+  [`Strategic/Town Militia.cpp`](https://github.com/1dot13/source/blob/master/Strategic/Town%20Militia.cpp)
+  (pool gain formulas, training draw, resource conversion values, devaluation),
+  `Strategic/Assignments.cpp` (training gates, prisoner interrogation outcomes),
+  `Strategic/Player Command.cpp` (liberation volunteers),
+  `Tactical/Soldier Control.cpp` (tactical civilian recruitment),
+  `Strategic/Map Screen Interface Map Inventory.cpp` (++alt++ + right-click
+  conversion), `Strategic/Map Screen Interface Map.cpp` (map overlay) and
+  `Strategic/Rebel Command.cpp` (volunteer/resource hooks and feature gating)

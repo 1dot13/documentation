@@ -71,7 +71,7 @@ areas where 1.13 goes far beyond vanilla. In current releases (defaults from
 So IMP creation in 1.13 is a genuine point-buy system: you trade skill traits,
 disabilities and dumped attributes against raw stats. IMPs with expert traits can even
 receive different starting gear (`EXPERTS_GET_DIFFERENT_CHOICES`, backed by
-`TableData\IMPItemChoices.xml`), and the optional `ALTERNATIVE_IMP_CREATION` setting
+`TableData\Inventory\IMPItemChoices.xml`), and the optional `ALTERNATIVE_IMP_CREATION` setting
 ties the selectable merc backgrounds to your trait choices.
 
 **Multiple IMPs.** Unlike vanilla, 1.13 supports more than one IMP character. The old
@@ -131,7 +131,7 @@ Ira joins for free — like all the Omerta rebels, she costs no salary. Her base
 
 | Merc | HP | AGI | DEX | STR | WIS | LDR | MRK | MEC | EXP | MED | Lvl | Skills |
 | ---- | -- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------ |
-| Ira Smythe | 76 | 72 | 91 | 55 | 83 | 14 | 55 | 8 | 2 | 40 | 1 | Teaching (Expert) |
+| Ira Smythe | 76 | 72 | 91 | 55 | 83 | 14 | 55 | 8 | 2 | 40 | 2 | Teaching (Expert); with 1.13's new traits: Paramedic, Teaching, Scouting |
 
 She's a tolerable field medic, an expert teacher (great for training mercs and militia
 later), and her high wisdom means she improves quickly despite weak starting
@@ -149,7 +149,7 @@ visit.
 
 ### Miguel and Carlos come later
 
-Miguel himself (leadership 98, level 5, marksmanship 85 — one of the best recruitable
+Miguel himself (leadership 98, level 6, marksmanship 85 — one of the best recruitable
 NPCs in the game) and his advisor **Carlos Dasouza** won't join yet. In vanilla they
 only sign up after you have liberated several towns (five settlements, per the classic
 walkthroughs). 1.13 externalizes this: the `EARLY_REBELS_RECRUITMENT` setting in
@@ -162,7 +162,7 @@ walkthroughs). 1.13 externalizes this: the `EARLY_REBELS_RECRUITMENT` setting in
 | `3` | Vanilla behavior (default) — several towns including Omerta |
 | `4` | After liberating Omerta and solving the food quest |
 
-With the new trait system Miguel comes with Melee, Deputy and Night Ops. Story note:
+With the new trait system Miguel comes with expert Squadleader, Melee and Night Ops. Story note:
 if Miguel is still alive at the end of the game, the ending changes — details on the
 [recruitable NPCs page](npcs-recruitment.md).
 
@@ -236,7 +236,9 @@ Once the sector is clear:
 - **Father Walker** is usually in the church in the center of this sector during the
   day.
 - The small bar in the northeast sometimes hosts traveling traders: Micky O'Brien
-  (animal furs), Devin Connell (explosives) and the head-hunter Carmen Dancio.
+  (animal furs) can start the campaign here, and Devin Connell (explosives) passes
+  through on his daily rounds. The head-hunter Carmen Dancio makes his rounds through
+  the bars in C13, San Mona and Cambria instead.
 
 ## Father Walker and the food quest
 
@@ -244,7 +246,8 @@ The *Rebels need food* quest was given to you by Miguel: the rebels in Omerta ar
 starving, and Father John Walker in Drassen can arrange a supply line.
 
 1. Find Father Walker **during the daytime** — in the church in D13, or in the bar in
-   C13. He's nowhere to be found at night; if he's missing, let a few hours pass.
+   C13. He's nowhere to be found at night, and the game may move him between the two
+   sectors each morning — if he's missing, check the other sector or let a day pass.
 2. Talk to him with **Ira** in your squad (he has a soft spot for her) or with a
    high-leadership merc. Nobody else can persuade him.
 3. The supplies take **24 hours** to arrive. Then return to Omerta and speak to Miguel.
@@ -263,7 +266,7 @@ Dimitri joins for free once the food supply is secured:
 
 | Merc | HP | AGI | DEX | STR | WIS | LDR | MRK | MEC | EXP | MED | Lvl | Skills |
 | ---- | -- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------ |
-| Dimitri Guzzo | 75 | 73 | 51 | 71 | 56 | 21 | 77 | 71 | 12 | 17 | 1 | Throwing (Expert); in 1.13: Throwing, Demolitions |
+| Dimitri Guzzo | 75 | 73 | 51 | 71 | 56 | 21 | 77 | 71 | 12 | 17 | 1 | Throwing (Expert); with 1.13's new traits: Throwing, Stealthy |
 
 He's initially a better shot than Ira and useful for repairs (mechanical 71), though he
 comes with no toolkit — hand him one. His low wisdom means slow growth, and he has a
@@ -287,7 +290,9 @@ missing, Pablo took it.
 
 Note that Bobby Ray's itself occasionally misdirects shipments or sends them
 incomplete. If nothing is *missing from an opened crate*, it's not Pablo's fault, and
-punching him only gets you yelled at.
+punching him only gets you yelled at. If you'd rather skip this minigame entirely,
+1.13 can turn shipment theft off: set `STEALING_FROM_SHIPMENTS_DISABLED = TRUE` in
+`Ja2_Options.INI` (default `FALSE`).
 
 ## Training your first militia
 
@@ -368,4 +373,8 @@ Drassen also starts the *Find the helicopter pilot* quest, covered on the
 - [Letter from Enrico Chivaldori — Jagged Alliance Wiki](https://jaggedalliance.fandom.com/wiki/Letter_from_Enrico_Chivaldori)
 - [Rebels need food — Jagged Alliance Wiki](https://jaggedalliance.fandom.com/wiki/Rebels_need_food)
 - `Ja2_Options.INI` from the [1dot13/gamedir repository](https://github.com/1dot13/gamedir) (current master — all INI setting names and defaults)
+- `Data-1.13\TableData\MercProfiles.xml` and `MercStartingGear.xml` from the [1dot13/gamedir repository](https://github.com/1dot13/gamedir) — stats, levels, traits and starting gear for Ira, Dimitri, Miguel and the other NPCs named here
+- `Data-1.13\TableData\Map\SectorNames.xml` from the same repository — all sector designations (A9/A10, B13/C13/D13)
+- `Data-1.13\Scripts\StrategicEventHandler.lua` from the same repository — Father Walker's daily movement, Devin's and Carmen's bar rounds
+- `Tactical/Interface Dialogue.cpp`, `Strategic/Game Init.cpp` (Micky's random starting bar) and `Ja2/GameInitOptionsScreen.cpp` from the [1dot13/source repository](https://github.com/1dot13/source) — the 24-hour food-delivery timer and the squad-size-by-resolution rule
 - Jagged Alliance 2 v1.13 Play Guide (previous starter documentation, r8741 era — new game options, starter hires, tactical tips)

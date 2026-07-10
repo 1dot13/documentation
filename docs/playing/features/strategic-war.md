@@ -195,18 +195,57 @@ tanks from `TANK_MINIMUM_PROGRESS = 60`; enemy helicopters unlock when the AI le
 of your own helicopter use, or at `ENEMYHELI_DEFINITE_UNLOCK_AT_PROGRESS = 30` at the
 latest.
 
-## Supply convoys
+## Supply convoys: strategic transport groups
 
 With `STRATEGIC_TRANSPORT_GROUPS_ENABLED = TRUE` (default `FALSE`, in
-`[Strategic Gameplay Settings]`), the army runs **transport groups** between the
-capital and enemy-held towns — up to `MAX_SIMULTANEOUS_STRATEGIC_TRANSPORT_GROUPS = 5`
-at once, further limited by the number of mines the enemy holds. The source describes
-them frankly as "a loot piñata": convoy members drop *everything* they carry
-regardless of your drop settings, plus extra supplies — but they travel behind enemy
-lines, so you must go hunting. Every convoy that completes its round trip hands the
-enemy a small bonus, so intercepting them is both profit and sabotage. Convoy
-strength scales with progress, difficulty, and how many convoys you have hit
-recently.
+`[Strategic Gameplay Settings]`; also a toggle on the
+[new-game 1.13 features screen](../new-game-options.md)), the army runs **transport
+groups** — supply convoys, a third kind of enemy group besides patrols and attack
+groups. The source describes them frankly as "a loot piñata for the player": convoy
+members are flagged to drop *everything* they carry regardless of your drop
+settings, plus extra supplies — but convoys travel behind enemy lines, so you must
+go hunting. Verified in the current source (`Strategic Transport Groups.cpp`, a
+GitHub-era feature by rftr):
+
+- **Route.** Convoys spawn at the Queen's staging sector (P3 in Meduna on the
+  standard map; `STRATEGIC_AI_SPAWN_SECTOR_X/Y` in `Mod_Settings.ini`) and drive to
+  an enemy-held town with a working, enemy-controlled mine — no mining towns left to
+  the enemy, no convoys. On Expert and Insane only towns *fully* under enemy control
+  qualify. At the destination the convoy pauses about six hours, then returns home;
+  on Expert/Insane its arrival also deals a small country-wide loyalty hit.
+- **How many at once.** At most `MAX_SIMULTANEOUS_STRATEGIC_TRANSPORT_GROUPS = 5`
+  run simultaneously, further capped by the number of qualifying destination towns —
+  and every convoy you destroyed in the last 7 days lowers the cap by one.
+- **They are part of the reserve.** Convoy escorts are deducted from the Queen's
+  troop reserve when they deploy. A convoy that makes it home pays the army back
+  with interest: the reserve grows (+10/+15/+40 troops on
+  Experienced/Expert/Insane), the [ASD](#the-arulco-special-division-asd) — if
+  active — receives a cash-and-fuel injection, and the Queen immediately gets an
+  extra strategic decision. Intercepting convoys is therefore both profit and
+  sabotage; letting them run feeds the whole enemy war machine. (On Novice all of
+  these rewards are zero — convoys are pure loot with no downside.)
+- **The loot.** If the convoy has a jeep, the jeep is the treasure chest: several
+  guns each with a pile of ammo, launchers with rockets or grenades, medical kits,
+  first-aid kits, toolkits, gas cans, camouflage kits, weapon attachments and thrown
+  grenades. Foot escorts carry ammo boxes — deliberately only in calibers your mercs
+  actually use — plus backpacks and small extras. Modders tag which items may appear
+  in convoy manifests per item in `Items.xml`
+  (`<TransportGroupMinProgress>` / `<TransportGroupMaxProgress>`).
+- **Escalation.** Escort strength scales with campaign progress and difficulty, can
+  include ASD jeeps, tanks and robots past their usual progress thresholds, and each
+  interception in the last 7 days makes the next convoys stronger. Convoy raiding
+  stays profitable, but never becomes free.
+- **Finding them.** A merc with the Scouting [trait](traits.md) reveals convoys
+  within 1 sector, an awake [radio operator](support-roles.md) with a working set
+  within 3. A [covert operative](covert-ops.md) gathering intel in an enemy town —
+  or enough turncoats stationed there — flags that town when a convoy is inbound,
+  and turncoats traveling *inside* a convoy give its position away. Located convoys
+  and destinations are highlighted on the strategic map ("Transport group" /
+  "Transport group en route").
+- **Or bring them to you.** The [Rebel Command](rebel-command.md) agent mission
+  *Forge Transport Orders* plants a bogus supply request that orders a convoy to
+  your agent's sector. The mission is only offered while transport groups are
+  enabled, and requires one of your own mercs as the agent.
 
 ## Bandits and other opportunists
 
@@ -289,4 +328,9 @@ the stage-2 offensive at 85%.
   `Tactical/Campaign.cpp` (progress-triggered offensive stages),
   `Strategic/ASD.cpp` (ASD budget and helicopter raid targeting),
   `Strategic/Strategic Mines.cpp` (enemy mine income feeding the ASD),
-  `Strategic/Strategic Transport Groups.cpp`, `Ja2/GameSettings.cpp` (INI reading)
+  `Strategic/Strategic Transport Groups.cpp` (convoy routes, reserve/ASD rewards,
+  loot generation, interception escalation, detection),
+  `Strategic/Rebel Command.cpp` (Forge Transport Orders),
+  `Strategic/Map Screen Interface Map.cpp` (convoy map highlights),
+  `Tactical/XML_Items.cpp` (the `TransportGroupMin/MaxProgress` item tags),
+  `Ja2/GameSettings.cpp` (INI reading; `Mod_Settings.ini` staging-sector default)

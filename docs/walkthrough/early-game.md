@@ -104,8 +104,10 @@ there:
 
 Chitzena, in the far northwest, is Arulco's smallest town: the ancient ruins
 in **A2** and the miners' village with the mine in **B2**. The mine is the
-smallest in the country — about **$4,000 a day** at full loyalty — but it is a
-quick, cheap conquest and a stepping stone to the western map.
+smallest in the country — a base rate of **$2,000 a day** at full loyalty,
+though each campaign randomly hands out production bonuses that can roughly
+double that — but it is a quick, cheap conquest and a stepping stone to the
+western map.
 
 | Sector | What's there |
 |--------|--------------|
@@ -141,9 +143,11 @@ benefit of the rich. Yanni asks you to bring it home.
 Kingpin in San Mona wants the same chalice and pays **$20,000** for it, which
 makes this a quest with a choice:
 
-- **Return it to Yanni**: instant 100% loyalty in Chitzena plus a loyalty
-  boost (on the order of 6%) in every town you control — this boost is what
-  later makes militia training possible in Queen-friendly Balime.
+- **Return it to Yanni**: a 20-point loyalty bonus in Chitzena *plus* a
+  10-point loyalty bonus in every town — each scaled by the town's rebel
+  sentiment, which in pro-rebel Chitzena adds up to roughly half the loyalty
+  bar. The everywhere-bonus is what later makes militia training possible in
+  Queen-friendly Balime.
 - **Sell it to Kingpin**: $20,000 cash.
 
 The heist itself happens in Balime, deep in enemy territory, so this quest
@@ -155,9 +159,14 @@ the [side quests page](side-quests.md).
 
 Talking to John eventually prompts the couple to ask for an escort to Drassen
 airport. Walk **both** of them into the fenced-off airport area in B13 and
-Mary hands over **$2,000** in vacation money, while John mails you his two
-customized **Automag III** pistols — they arrive at Drassen as a shipment two
-days later. You get nothing if either of them dies on the way.
+Mary hands over **$2,000** in vacation money, while John mails you two
+**Automag III** pistols with ammo — they arrive at the Drassen airport like a
+Bobby Ray's shipment, roughly two days later. You get nothing if either of
+them dies on the way.
+
+**1.13 extra:** with `RECRUITABLE_JOHN_KULBA = TRUE` in `Ja2_Options.INI` (the
+default), John himself turns up on the M.E.R.C. website as a hireable merc 14
+days after the escort quest (tunable via `RECRUITABLE_JOHN_KULBA_DELAY`).
 
 ### After the fight
 
@@ -172,7 +181,7 @@ plus the ruins' stone wall go a long way; see
 ## San Mona
 
 San Mona (sectors **C5, C6, D4, D5**) is the Las Vegas of Arulco, and all of
-it belongs to one man: **Peter "Kingpin" Klaus**. He has an arrangement with
+it belongs to one man: **Peter "Kingpin" Klauss**. He has an arrangement with
 the Queen — her army stays out of town (the abandoned mine sector D4 is the
 exception), her off-duty soldiers relax there, and his people quietly remove
 anyone the Queen wants removed.
@@ -193,7 +202,7 @@ For you this means two unusual rules:
 | Sector | What's there |
 |--------|--------------|
 | C5 | Hans Vanderkilt's XXX shop (with Tony's hidden gun room), Kyle Lemmons' tattoo parlor, the Shady Lady brothel, Frank's Whipping Post bar |
-| C6 | The presentable side of town: a bar (Alberto de Santos) and Angel DaSilva's leather shop |
+| C6 | The presentable side of town: a bar (Alberto Santos) and Angel DaSilva's leather shop |
 | D4 | The abandoned San Mona mine — and Kingpin's money stash below it |
 | D5 | Kingpin's boxing club (north) and his guarded manor (south) |
 
@@ -219,13 +228,15 @@ an "extreme boxing" competition in the club on the north side of D5:
 - Darren takes a bet of **$1,000–$5,000** that your merc beats one of the
   club's fighters bare-handed. After the bell, the first merc to jump over the
   ropes is your fighter.
-- **No weapons** — guns, knives or blunt weapons disqualify you. The two
-  tolerated exceptions: **knuckle dusters** (bonus damage and stamina drain)
-  and smoke grenades that don't land on the opponent.
+- **Bare fists only**, with one exception the code explicitly tolerates:
+  **knuckle dusters** (brass knuckles). Hitting your opponent with a knife or
+  any other melee weapon gets you disqualified on the spot; attacking with
+  anything deadlier ends the show and starts a real fight.
 - Win by knockout — the loser is whoever stays floored for two turns (or
   dies). The winner collects **double the bet**.
 - Win three matches total and Kingpin invites you over. The three ringside
-  opponents get progressively harder; the last one knows Martial Arts.
+  opponents get progressively harder (and toughen up between sessions): the
+  second knows hand-to-hand fighting and the third is a martial artist.
 
 !!! tip "Boxing as a business"
     Send a martial artist or a high-strength brawler with knuckle dusters —
@@ -298,7 +309,7 @@ her, and Angel counts the quest failed. Full step-by-step detail is on the
 
 **Rewards:** the **deed to Angel's shop** — which **Kyle Lemmons**, the tattoo
 artist in C5 who has always dreamed of owning a leather shop, buys off you for
-about $10,000 — plus the kevlar leather jacket for free if you didn't buy it
+$10,000 — plus the kevlar leather jacket for free if you didn't buy it
 earlier (make sure a merc is inside the shop when Maria arrives, or the
 handover can glitch).
 
@@ -330,7 +341,7 @@ handover can glitch).
   stay neutral through it unless you attack them directly.
 - **Tony's shelves** stock rare items you cannot buy elsewhere, and his cash
   drawer makes him the best fence for captured weapons.
-- **The deed** (about $10,000 from Kyle) and Angel's kevlar leather jacket
+- **The deed** ($10,000 from Kyle) and Angel's kevlar leather jacket
   round out the Maria quest.
 
 ## The northern SAM sites
@@ -408,6 +419,27 @@ Grumm — continue with the [mid game](mid-game.md).
   [1dot13/source repository](https://github.com/1dot13/source) — counterattack
   group creation, staging and target sectors for Drassen and Chitzena; mine
   locations.
+- `Tactical/Boxing.cpp`, `Tactical/Overhead.cpp`, `Tactical/Soldier Control.cpp`
+  and `Tactical/Interface Dialogue.cpp` from the
+  [1dot13/source repository](https://github.com/1dot13/source) — boxing rules
+  (brass-knuckles exemption, disqualification vs. open war, two-turn knockout,
+  three boxers and their skills, double-the-bet payout), Kyle's $10,000 for the
+  deed, John Kulba's Automag III shipment.
+- `Data-1.13\TableData\MercProfiles.xml` from the
+  [1dot13/gamedir repository](https://github.com/1dot13/gamedir) — NPC names
+  (Kingpin's hitmen, "Klauss"), Iggy's $1,950 salary, civilian groups showing
+  Tony and Hans outside Kingpin's faction.
+- `Data-1.13\TableData\NPCInventory\Merchants.xml` from the same repository —
+  Tony's $15,000 cash drawer and daily refresh.
+- `Data-1.13\TableData\Map\SamSites.xml` and `SectorNames.xml` from the same
+  repository — SAM site sectors D2/D15/I8/N4 (all hidden at game start, terminal
+  repairable by elites) and town sector designations.
+- `Data-1.13\Scripts\initmines.lua` and `StrategicEventHandler.lua` from the
+  same repository — Chitzena's $500-per-period base production plus random
+  production bonuses; Tony's availability roll; Devin's and Carmen's daily bar
+  rounds; Darren's $15,000 daily bankroll.
+- `Data-1.13\Scripts\StrategicTownLoyalty.lua` from the same repository —
+  chalice loyalty bonuses (+20 Chitzena, +10 everywhere, sentiment-scaled).
 - *Features* page of the old 1.13 pbworks wiki (2008–2012 era; saved copy) —
   Drassen counterattack description.
 - Jagged Alliance 2 v1.13 Play Guide (previous starter documentation, r8741

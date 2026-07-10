@@ -108,6 +108,7 @@ nav:
           - Weapon attachments: playing/features/attachments.md
           - Skills & traits: playing/features/traits.md
           - Morale & opinions: playing/features/morale.md
+          - Snitches & informants: playing/features/snitches.md
           - Creating IMPs: playing/features/imp.md
           - Hiring & contracts: playing/features/hiring.md
           - Bobby Ray & item progression: playing/features/bobby-ray.md
@@ -117,6 +118,7 @@ nav:
           - Covert operations: playing/features/covert-ops.md
           - Food & water: playing/features/food.md
           - Prisoners of war: playing/features/prisoners.md
+          - Retreat, defeat & capture: playing/features/defeat.md
           - Drugs & disease: playing/features/drugs-disease.md
           - Fortifications & tripwire: playing/features/fortifications.md
           - Explosives & breaching: playing/features/breaching.md
@@ -139,7 +141,10 @@ nav:
       - configuration/index.md
       - JA2_Options.ini guide: configuration/options-ini.md
       - Recommended settings: configuration/recommended-settings.md
+      - AP & BP tuning: configuration/apbp.md
       - XML data files: configuration/xml-files.md
+      - Interface & display: configuration/display.md
+      - Savegames: configuration/savegames.md
   - Modding:
       - modding/index.md
       - Virtual File System (VFS): modding/vfs.md
@@ -149,6 +154,7 @@ nav:
       - Externalizing content: modding/externalization.md
       - Map Editor: modding/map-editor.md
       - Faces & portraits: modding/faces.md
+      - Sounds & music: modding/audio.md
       - Custom mercenaries: modding/custom-mercs.md
       - Lua scripting: modding/lua.md
   - Development:
@@ -156,6 +162,7 @@ nav:
       - Building from source: development/building.md
       - Code overview: development/code-overview.md
       - Contributing: development/contributing.md
+      - Translating 1.13: development/translations.md
   - Multiplayer:
       - multiplayer/index.md
   - Reference:

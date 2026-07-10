@@ -36,13 +36,13 @@ A sensible order is **Cambria first, then Alma, then Grumm**:
     In 1.13, the gear enemy soldiers carry improves with your **campaign
     progress** (not elapsed time) — the "Progress Speed of Item Choices" setting
     on the [New Game screen](../playing/new-game-options.md) controls how fast,
-    and it affects your militia's equipment too. On Expert, garrisons are 20%
-    larger with 25% more elites than the default; on Insane, the Queen's
-    reinforcements are unlimited and her attacks never taper off (by default —
-    both can be changed in `JA2_Options.ini`, see
-    [the options tour](../configuration/options-ini.md)). Mid game is where this
-    ramp becomes noticeable: loot the better weapons and armor that garrison and
-    SAM-site troops start dropping, and keep upgrading.
+    and it affects your militia's equipment too. On Expert, starting garrisons
+    are half again as large as on Experienced (150% vs 100% placement) and 25%
+    of troops in enemy groups are upgraded to elites; on Insane, garrisons are
+    doubled and the Queen's troop pool is unlimited. All of these numbers live
+    in `Data-1.13\TableData\DifficultySettings.xml` and can be edited. Mid game
+    is where this ramp becomes noticeable: loot the better weapons and armor
+    that garrison and SAM-site troops start dropping, and keep upgrading.
 
 ## Cambria
 
@@ -122,8 +122,9 @@ agrees, escort him straight back to Martha in G8 — if a fight breaks out on th
 way, park him somewhere safe (a windowless room, behind a rock) until the
 sector is clear.
 
-Rewards: a 20% loyalty jump in Cambria, working hospital treatment, and one of
-the preconditions for recruiting Vince.
+Rewards: a 15-point loyalty jump in Cambria (trimmed a little by the town's
+lukewarm rebel sentiment), working hospital treatment, and one of the
+preconditions for recruiting Vince.
 
 ### Recruiting Dr. Vince Beaumont
 
@@ -131,7 +132,7 @@ Vince is a surgeon at the hospital who despises the Queen — the staff say he
 talks about taking down the regime himself. Once Cambria's loyalty is close to
 100% (finish Find Joey and clear out the Hicks) and you kept your hands off the
 medical supplies, a merc with high Leadership can convince him to join for
-**$400/day**.
+**$500/day**.
 
 He arrives with the highest starting Medical stat of any recruitable character
 in the game, backed by very high Wisdom, the Teaching skill and ambidexterity —
@@ -173,7 +174,7 @@ Guardian Vests, within his cash limit).
 
 ### Perko's repair shop
 
-Alex "Perko" Perkolopolis, also in G9, repairs damaged equipment for a fee. He
+Alish "Perko" Perkopoulos, also in G9, repairs damaged equipment for a fee. He
 is sloppy and frequently misses his own deadlines; he works faster if you hand
 items in shortly after midnight and collect them one at a time. He refuses to
 touch electronics — for those he sends you to Fredo in Grumm (see below).
@@ -306,9 +307,11 @@ squeeze out of the scientists there, is covered in the
 If you started the campaign with Sci-Fi mode on, the mid game is usually when
 the **Crepitus** wake up. The giant insects — created by the Queen's
 experiments, much like the bloodcats — infest one of *your* mines once either
-trigger fires: you capture **three or more mines**, or you stumble into the
-hatch below Tixa prison that leads to a cavern full of larvae. The infested
-mine is generally the first one you took, often Drassen.
+trigger fires: you hold **three or more of the four big mines** (Drassen,
+Cambria, Alma, Grumm), or you stumble into the hatch below Tixa prison that
+leads to a cavern full of larvae. The game then picks the infested mine at
+random from those four — skipping any that the enemy holds or whose head miner
+you attacked.
 
 You get some warning in the form of a cutscene where the Queen orders Elliot to
 stop feeding bodies to the bugs. Then the head miner reports the infestation:
@@ -374,7 +377,7 @@ and a LAW-carrying soldier in the commercial district.
 - **Tina Elzan** (H1) runs a fabrics shop.
 - **Sammy "Charlie" Elgin** tends the bar in H2 — and he is the one target in
   the Intercept's Most Wanted terrorist hunt who is *always* present, always in
-  this spot. Manny de Santos, the barboy, is one of the Santos brothers. See
+  this spot. Manny Santos, the barboy, is one of the Santos brothers. See
   [Side quests](side-quests.md).
 - **Richard "Slay" Ruttwen** — there is a chance of finding Slay, another
   wanted terrorist, sitting in a wheelchair in one of the G1 houses (he can
@@ -415,12 +418,13 @@ Worth knowing about SAM sites:
 
 !!! tip "Watch the roads for an ice cream truck"
     **Hamous**, an old Jagged Alliance hand, wanders Arulco's roads in a stolen
-    ice cream truck — usually somewhere between Drassen and Cambria or between
-    San Mona and Cambria. A merc with decent Leadership (A.I.M. mercs may have
-    better luck than IMPs) can hire him for **$250/day, truck included**. His
-    Marksmanship is respectable for the price, he is stealthy, and the truck
-    doubles as ground transport. In 1.13 he carries a Hunter's Vest and has the
-    Primitive and Heat Tolerant traits. Don't expect brains: his Wisdom is 35.
+    ice cream truck — the game moves him each morning between five road
+    sectors: D3, D7, D9, F12 and G6. A merc with decent Leadership (A.I.M.
+    mercs may have better luck than IMPs) can hire him for **$250/day, truck
+    included**. His Marksmanship (78) is respectable for the price, he has the
+    Stealthy skill and the Primitive character trait, and in 1.13 his
+    "Metaviran Native" background makes him thrive in jungle and swamp
+    terrain. Don't expect brains: his Wisdom is 35.
 
 ## Holding what you take
 
@@ -464,3 +468,23 @@ are ready for the
 - [Orta — Jagged Alliance Wiki](https://jaggedalliance.fandom.com/wiki/Orta)
 - [Hamous — Jagged Alliance Wiki](https://jaggedalliance.fandom.com/wiki/Hamous)
 - "JA2 v1.13 Features" page from the old pbworks wiki (difficulty levels, enemy item progression, militia features)
+- `Data-1.13\TableData\MercProfiles.xml` and `Backgrounds.xml` from the
+  [1dot13/gamedir repository](https://github.com/1dot13/gamedir) — Vince's
+  $500/day salary and Paramedic/Ambidextrous/Teaching traits, Conrad's
+  Machinegunner/Teaching traits and 95 Marksmanship, Dynamo's $50/day, Hamous's
+  stats and Metaviran Native background, NPC names (Alish "Perko" Perkopoulos,
+  Manny Santos) and sectors
+- `Data-1.13\TableData\DifficultySettings.xml` from the same repository —
+  garrison percentages, elite bonuses and the unlimited Insane troop pool
+- `Data-1.13\TableData\NPCInventory\Merchants.xml` from the same repository —
+  Keith's $1,500 cash drawer with daily refresh
+- `Data-1.13\TableData\Map\SectorNames.xml` and `SamSites.xml` from the same
+  repository — town and SAM sector designations
+- `Data-1.13\Scripts\StrategicEventHandler.lua` and `StrategicTownLoyalty.lua`
+  from the same repository — Hamous's daily road sectors, quest loyalty bonuses
+  (Joey, Hicks, bloodcats, Dynamo, Krott)
+- `Strategic/Creature Spreading.cpp`, `Strategic/strategicmap.cpp` and
+  `Tactical/Interface Dialogue.cpp` from the
+  [1dot13/source repository](https://github.com/1dot13/source) — Crepitus quest
+  triggers (three of the four big mines, or the Tixa cave) and random lair
+  selection; Conrad's $5,500 asking price dropping to $3,300

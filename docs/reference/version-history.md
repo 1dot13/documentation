@@ -85,6 +85,93 @@ releases are tagged `v1`, `v2`, … and published as **all-in-one** packages (se
     only v1, v5 and Latest (unstable). The v2–v4 dates above are the dates of the
     commits those tags point to, taken from the GitHub API.
 
+### What each stable release changed
+
+The release notes on GitHub are raw lists of merged pull requests — over a hundred for
+v1 alone — so here is a digest of the headline changes. Since v2–v4 never had release
+notes published, their entries below are reconstructed from the Git commit history
+between the tags.
+
+**v1 (July 28, 2023)** — the transition release, wrapping up the first year on GitHub:
+
+- The build system moved from Visual Studio project files to CMake, with releases
+  produced by automated GitHub builds — the setup described on
+  [Building the exe](../development/building.md).
+- The game now detects cnc-ddraw and disables its own windowed mode when it is present
+  — the basis of the modern display setup
+  ([Troubleshooting](../getting-started/troubleshooting.md)).
+- [Rebel Command](../playing/features/rebel-command.md) gained its agent missions ("ARC
+  expansion: missions").
+- New on the strategic layer: enemy transport groups — see
+  [the strategic war](../playing/features/strategic-war.md).
+- New options and tweaks: an option to start attacks at maximum aiming level, reduced
+  stat growth at high levels, scalable tooltips, bigger squads at 720p resolutions, and
+  the cosmetic "fake light" circle drawn around mercs now defaults to off
+  ([environment & lighting](../playing/features/environment.md)).
+- The [Map Editor](../modding/map-editor.md) was repaired and added to the automated
+  builds.
+- Many crash fixes, plus quality-of-life touches: ++shift+b++ also picks up backpacks,
+  enemies wear their backpacks properly
+  ([inventory](../playing/features/inventory.md)), militia's initial orders changed
+  from stationary to on-guard ([militia](../playing/features/militia.md)), and
+  [Mini Events](../playing/features/events.md) can no longer roll a stat change of
+  zero.
+
+**v2 (tagged April 9, 2025)** — twenty months of development, the biggest of the
+note-less tags:
+
+- Merc stat evolution was replaced by growth rates, and grenade bonuses moved from the
+  Demolitions trait to Throwing — see [skills & traits](../playing/features/traits.md).
+- [IMP creation](../playing/features/imp.md) gained an alternative background selection.
+- The enemy AI learned to retreat from a tactical battle
+  ([tactical AI](../playing/features/tactical-ai.md)).
+- Custom music can now be added, including separate night-time battle and
+  enemy-present tracks ([externalized music](../modding/externalization.md)).
+- Backgrounds and facilities can define specific drug types and addiction risks
+  ([drugs & disease](../playing/features/drugs-disease.md),
+  [facilities](../playing/features/facilities.md)).
+- The food system's item handling was reworked, and merc opinions moved to a new
+  `MercOpinions.xml` format ([food](../playing/features/food.md),
+  [morale & opinions](../playing/features/morale.md)).
+- A wave of resolution work: multi-resolution battle panel and load screens, color
+  variants for the radar and overhead maps, the version number on the main menu — and
+  the legacy 8-bit display mode was removed ([display](../configuration/display.md)).
+- On Linux and macOS the DLL override that Wine needs is now set automatically
+  ([Troubleshooting](../getting-started/troubleshooting.md)), and a batch of vehicle
+  bugs (fuel use after cancelled moves, group IDs after loading, vehicles destroyed by
+  ramming) was fixed ([vehicles](../playing/features/vehicles.md)).
+
+**v3 (tagged August 7, 2025)** — a fix release, and the savegame-compatibility
+baseline that v5's notes refer back to:
+
+- A long series of JA2: Unfinished Business repairs: M.E.R.C. hiring and contracts, the
+  helicopter, the power generator fan, ten-merc squads at 720p, and the bloodcat quest
+  sector externalized for modders.
+- A savegame-compatibility fix for the merc profile structure — see
+  [savegames](../configuration/savegames.md).
+- Surrender is no longer offered in [multiplayer](../multiplayer/index.md).
+- A new INI option lets food items appear in the game without the
+  [food system](../playing/features/food.md) enabled.
+
+**v4 (tagged September 12, 2025)**:
+
+- Backpack AP stance costs now scale with the pack's actual weight instead of a flat
+  "backpack worn" check ([inventory](../playing/features/inventory.md)).
+- You can build an IMP with three major traits and no minor traits
+  ([IMP](../playing/features/imp.md)).
+- Right-clicking the time-compression controls fast-forwards a single hour.
+- The chance of the Queen losing control of a sector was fully externalized for
+  modders ([strategic war](../playing/features/strategic-war.md)), and an off-by-one
+  error in [Rebel Command](../playing/features/rebel-command.md)/ASD gas can handling
+  was fixed.
+- Fixed a bug where combat did not end when an entire team retreated, and the merc
+  nationality list was expanded and sorted.
+
+**v5 (September 28, 2025)** — the current stable. Its release notes republish the whole
+v3→v5 changelog, but the commit history shows exactly one change over v4: release
+builds stopped using link-time optimization — the "important stability fix" the notes
+advertise alongside keeping v3's "pre-ITS" savegame compatibility.
+
 ### The "Latest (unstable)" channel
 
 Alongside the numbered stables there is a rolling prerelease tagged `latest`, titled
@@ -95,6 +182,30 @@ notes are a running changelog of every pull request merged since v1.
 "Unstable" means "newest features first", not "broken": it is where fixes land before
 they reach a numbered release. If a mod or forum post tells you to use "latest", this is
 what it means.
+
+Headline changes in Latest that are not in any numbered stable yet (as of the
+July 2, 2026 build):
+
+- **Increased Team Sizes (ITS)** — the biggest change of the current cycle, and the
+  reason v5's notes stress "pre-ITS savegame compatibility": saves do not carry across
+  the ITS boundary ([savegames](../configuration/savegames.md)).
+- Contract quality-of-life: contract renewal improvements, and one- and two-week
+  contract offers now show the daily cost
+  ([hiring & contracts](../playing/features/hiring.md)).
+- The reload hotkey now also clears a jammed weapon
+  ([weapon mechanics](../playing/features/weapons.md)).
+- Prisoner handling: items can be taken from POWs who have not collapsed, and captured
+  enemies in your line of sight no longer keep the game stuck in turn-based mode
+  ([prisoners](../playing/features/prisoners.md)).
+- Laptop emails were externalized from the legacy `Emails.EDT` format into `Emails.xml`,
+  and the Unfinished Business tunnel enemies were externalized — both for modders.
+- Tank suppression fire was fixed ([suppression](../playing/features/suppression.md)),
+  and the helicopter and enemy battle sounds now respect the volume sliders.
+- [Rebel Command](../playing/features/rebel-command.md)'s daily update no longer runs a
+  second time when you load an autosave, and the unused, unfinished ATM laptop feature
+  was removed.
+- Treating disease became the highest priority for doctors
+  ([drugs & disease](../playing/features/drugs-disease.md)).
 
 ### What an all-in-one contains
 
@@ -138,7 +249,11 @@ whether you are on a stable release or Latest.
 
 - [GitHub releases of 1dot13/source](https://github.com/1dot13/source/releases) — tags,
   dates, release notes and assets retrieved via the GitHub API, July 2026 (v2–v4 dates
-  from their tagged commits)
+  from their tagged commits); the v1, v5 and Latest digests summarize the pull-request
+  lists in those releases' notes
+- GitHub compare API for 1dot13/source (`v1...v2` through `v4...v5`), July 2026 — used
+  to reconstruct what the note-less v2–v4 tags changed and to isolate the single v4→v5
+  change
 - [Bear's Pit thread: "How to get: latest 1.13, 7609, feature-descriptions and more"](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=24648) —
   SCI definition, SVN-era distribution, October 2022 move to GitHub
 - README of [github.com/1dot13/source](https://github.com/1dot13) — SVN ending in 2022,

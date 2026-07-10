@@ -108,7 +108,7 @@ Every source of Rocket Rifles in the game:
 | --- | --- |
 | **Orta (K4), underground labs** | The motherlode: threaten Dr. Ernest Poppin until he opens a store room holding **six clean Rocket Rifles** plus ammunition. Getting into the basement at all is a puzzle — see [Late game: Orta](late-game.md). |
 | **Alma (H13), shooting range** | One clean rifle in Sergeant Krott's firing range. The moment the base goes on alert, someone hits the red button in the command room and blows the stash, wounding Krott — you must secure the command room unseen. See [Mid game: Alma](mid-game.md). |
-| **Iggy Palkov** | The recruitable deserter in San Mona carries one — imprinted on him, so it is only useful in his hands. See [NPCs & recruitment](npcs-recruitment.md). |
+| **Iggy Palkov** | The recruitable deserter appears in San Mona (C5) at 70% campaign progress and carries one — imprinted on him, so it is only useful in his hands. See [NPCs & recruitment](npcs-recruitment.md). |
 | **Elite enemies** | Late in the campaign, elite soldiers occasionally carry (and drop) Rocket Rifles — locked, so budget a trip to Fredo. |
 
 !!! tip "The robot wants a *virgin* rifle"
@@ -149,9 +149,11 @@ The burst-capable **Auto Rocket Rifle** is even rarer:
 
 ### San Mona: Kingpin's basement
 
-The single richest stash in the game. Deep inside the abandoned **D4 mine** is a room
-full of chests, each holding a massive amount of Kingpin's cash, with a ladder
-leading up into his house (the room above is wired with alarms — think twice).
+The single richest stash in the game. Enter through the abandoned **D4 mine**: the
+tunnels end in a chest-filled money room directly beneath Kingpin's house — the game
+data places it in the D5 basement level (`KINGPIN_MONEY_SECTOR` in
+`Mod_Settings.ini`) — with a ladder leading up into the house itself (the room above
+is wired with alarms — think twice).
 Several NPCs, including Angel and Joey, hint at it. Taking the money starts a
 72-hour countdown to repay it **plus a 25% "service fee"**, after which Kingpin's
 disguised hitmen start hunting your mercs. Full consequences and strategies:
@@ -220,7 +222,8 @@ Hummer waits one sector west at L10.
 ## Hidden people, hidden places
 
 These NPC hideouts are randomized per campaign using the same alternate-map trick as
-the weapon caches (the candidate sectors below are listed in the 1.13 source):
+the weapon caches (the candidate sectors below come from the game's startup scripts
+and `Mod_Settings.ini`):
 
 - **Skyrider's shack** — the helicopter pilot hides in a swamp sector near Drassen:
   one of **B15, E14, D12 or C16**. See
@@ -233,9 +236,10 @@ the weapon caches (the candidate sectors below are listed in the 1.13 source):
   [NPCs & recruitment](npcs-recruitment.md).
 - **Gabby's shack** (Sci-Fi mode only) — the other runaway scientist appears in
   **H11 or I4**, selling glass jars and scent-masking elixirs.
-- **Micky O'Brien** — the animal-parts buyer wanders between **C5, C6, D13, H2 and
-  G9**; Carmen the bounty hunter and Devin the explosives dealer roam similarly (see
-  [NPCs & recruitment](npcs-recruitment.md)).
+- **Micky O'Brien** — the animal-parts buyer is placed in one of **C5, C6, D13, H2 or
+  G9** at campaign start and stays there. Devin the explosives dealer rotates through
+  the same five bars; Carmen the bounty hunter only ever visits **C5, C13 and G9**
+  (see [NPCs & recruitment](npcs-recruitment.md)).
 
 ## Creature lairs
 
@@ -284,6 +288,10 @@ this table may look completely different.
   `Strategic/strategicai.cpp` (cache count roll, guard formula) and
   `Strategic/Campaign Init.cpp` (alternate-map sectors for caches, Skyrider and
   MadLab)
+- `Data-1.13/Scripts/GameInit.lua` and `StrategicEventHandler.lua` from
+  1dot13/gamedir — Skyrider/MadLab/Gabby/Micky placement and the Carmen/Devin
+  movement lists; `Mod_Settings.ini` for `KINGPIN_MONEY_SECTOR`,
+  `ROCKETRIFLE_POSITION` (Krott's rifle in Alma) and the MadLab sector overrides
 - "Extra Sector Items" modding note by Headrock (1.13 modding docs)
 - Jagged Alliance Wiki (Fandom) pages:
   [Rocket Rifle](https://jaggedalliance.fandom.com/wiki/Rocket_Rifle),

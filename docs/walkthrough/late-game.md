@@ -76,11 +76,13 @@ stash — Estoni then works as a refueling station and landing pad for Skyrider'
 helicopter.
 
 !!! tip "1.13: the Junkyard facility"
-    In 1.13, Estoni's junkyard is a **facility** that increases the efficiency of item,
-    vehicle, and helicopter repair. Combined with the fuel supply, that makes Estoni an
-    ideal mid-to-late-game base camp — park mobile militia in the sector to defend it,
-    since you cannot train any there. A garrison here also slows down and gives early
-    warning of enemy patrols heading for your towns.
+    In 1.13, Estoni's junkyard is a **facility** that boosts repair work: 120%
+    performance for item repair, 110% for vehicle repair, and 175% for repairing
+    MadLab's robot. Combined with the fuel supply, that makes Estoni an ideal
+    mid-to-late-game base camp — park mobile militia in the sector to defend it, since
+    you cannot train any there. A garrison here also slows down and gives early
+    warning of enemy patrols heading for your towns. See
+    [town facilities](../playing/features/facilities.md).
 
 !!! note "Shank not showing up as a chopper pad?"
     A known bug can prevent Skyrider from recognizing the new refueling site after
@@ -159,6 +161,12 @@ helicopter refueling described above. Both recruits are covered in more detail o
     dungeon. Wiping it out immediately triggers a Crepitus attack on your mine; if you
     raid it after killing the Crepitus Queen, the lair is empty.
 
+!!! tip "1.13: Tixa is the best POW prison"
+    Once Tixa is yours, its prison complex becomes a 1.13 **prison facility** — by far
+    the largest in the game (60 inmates, four interrogator slots at high efficiency).
+    If you play with the prisoner-of-war system, this is where captured enemy soldiers
+    should go. See [taking prisoners](../playing/features/prisoners.md).
+
 ## Orta (K4): the secret weapons facility
 
 Orta never appears on your map at the start — it is always at sector K4, and you can
@@ -213,10 +221,14 @@ its shops, its museum, and as your doorstep to the capital.
 
 ### Loyalty and militia
 
-Balime is heavily aligned with Deidranna's regime. When you conquer it, loyalty starts
-**below 20%**, which makes [militia training](../playing/features/militia.md)
-impossible at first. Completing the *Chalice of Chance* quest for Chitzena is the
-practical way to push loyalty over the 20% threshold so you can start training.
+Balime is heavily aligned with Deidranna's regime. Its "rebel sentiment" in the game
+data is a mere 12, so when loyalty tracking starts here it starts at **12%** — below
+the militia-training threshold (`MIN_LOYALTY_TO_TRAIN_MILITIA`, default 20), which
+makes [militia training](../playing/features/militia.md) impossible at first. That
+same low sentiment also scales every loyalty gain down, so Balime warms to you
+slowly. Returning the *Chalice of Chance* to Yanni in Chitzena adds loyalty in every
+town — only around +6% in Balime's case, but combined with battles won in and around
+the town it is the practical way to get over the 20% threshold.
 
 ### The museum and the Chalice of Chance
 
@@ -226,9 +238,10 @@ who doubles as tour guide and night watchman. The display case has a siren tripw
 switch in the security office (or a merc with very high Mechanical skill and the
 Electronics trait) disables it. Do **not** simply shoot Eldin — killing him cripples
 your already-poor loyalty in Balime. Kingpin in San Mona pays $20,000 for the Chalice;
-returning it to Yanni in Chitzena instead grants instant 100% loyalty there plus a 6%
-loyalty boost in all your city sectors. The full quest, including how to get it from
-Kingpin and stealth options, is on the [side quests page](side-quests.md).
+returning it to Yanni in Chitzena instead earns a huge loyalty jump there (roughly
++35%, thanks to Chitzena's strong rebel sentiment) plus around +10 loyalty points in
+every town, scaled by each town's own sentiment. The full quest, including how to get
+it from Kingpin and stealth options, is on the [side quests page](side-quests.md).
 
 ### Shops
 
@@ -347,14 +360,15 @@ Three named characters wait at the end of the road:
   Martial Arts skills.
 - **Queen Deidranna** herself, either in the throne room (guarded by elites) or down in
   the secret shelter. She fights with an Auto Rocket Rifle loaded with HEAP
-  mini-rockets and wears a full Compound 18 Spectra set (helmet, vest, leggings) — she
-  has the Auto Weapons skill, the Psycho trait, and 90 marksmanship, so do not treat
-  her as a pushover.
+  mini-rockets and wears a full Compound 18 Spectra set (helmet, vest, leggings) — her
+  profile carries expert Auto Weapons, the Psycho disability, and 90 marksmanship, so
+  do not treat her as a pushover.
 
 !!! tip "Buying Joe off"
     Joe can be bribed — but you must act within the first tactical round after spotting
-    him. Run a merc up to him and hand over a large sum of cash; if you pull it off, he
-    walks away ("She is all yours. I'm out of here.") and leaves you to the Queen.
+    him. Run a merc up to him and hand over cash: the code accepts the bribe once he
+    has received **$10,000 or more** in total. If you pull it off, he walks away ("She
+    is all yours. I'm out of here.") and leaves you to the Queen.
 
 ### Victory
 
@@ -366,9 +380,11 @@ your executioner with care.
 Two curiosities from the endgame, for completeness:
 
 - If any of your mercs are captured or surrender, an interrogation scene plays at the
-  **N7 military base**, where Deidranna appears in person alongside Elliot and Joe (Joe
-  does the punching). A well-known glitch lets players end the game right there by
-  planting a mine in the doorway she walks through before the scene.
+  **N7 military base** (the sector is `INTERROGATE_POW_SECTOR` in `Mod_Settings.ini`),
+  where Deidranna appears in person alongside Elliot and Joe (Joe does the punching).
+  A well-known glitch lets players end the game right there by planting a mine in the
+  doorway she walks through before the scene. 1.13 reworks what happens to captured
+  mercs afterwards — see [defeat and capture](../playing/features/defeat.md).
 - Deidranna murdered her husband Enrico Chivaldori's father, framed Enrico, and seized
   power — which is why Enrico hired you in the first place. Killing her completes the
   contract that started on day one.
@@ -400,3 +416,14 @@ Congratulations, Commander — Arulco is free.
 - [`Data-1.13/TableData/DifficultySettings.xml`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/TableData/DifficultySettings.xml)
   from the 1dot13/gamedir repository — difficulty effects on the Queen's troop pool,
   extra elites, and enemy AP bonus
+- 1.13 source code, [1dot13/source](https://github.com/1dot13/source):
+  `Tactical/NPC.cpp` and `NPC.h` (Walter's `WALTER_BRIBE_AMOUNT` of $20,000, Joe's
+  $10,000 bribe threshold), `Strategic/Strategic Town Loyalty.cpp`/`.h` (town rebel
+  sentiment values, chalice loyalty bonuses), and `Strategic/Meanwhile.cpp` (the N7
+  interrogation scene)
+- `Ja2_Options.INI` (`MIN_LOYALTY_TO_TRAIN_MILITIA = 20`) and `Mod_Settings.ini`
+  (`INTERROGATE_POW_SECTOR`, Orta/Tixa quest sectors) from the 1dot13/gamedir
+  repository
+- [`Data-1.13/TableData/MercProfiles.xml`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/TableData/MercProfiles.xml)
+  and `FacilityTypes.xml`/`Facilities.xml` from 1dot13/gamedir — Queen's profile
+  stats, NPC sectors, and the Estoni Junkyard facility numbers
