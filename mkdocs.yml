@@ -34,6 +34,7 @@ theme:
         name: Switch to light mode
   features:
     - navigation.tabs
+    - navigation.tracking
     - navigation.indexes
     - navigation.top
     - navigation.footer
