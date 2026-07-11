@@ -77,6 +77,7 @@ what it was checked against.
 ## Quick links
 
 - :material-download: **[Download the latest release](https://github.com/1dot13/source/releases)** — all-in-one packages that include 1.13, the Map Editor and Unfinished Business support
+- :material-book-open-variant: **[All 30+ feature guides](playing/features/index.md)** — every 1.13 system explained, from NCTH to Rebel Command
 - :material-github: **[The 1.13 project on GitHub](https://github.com/1dot13)** — source code, game data and tools
 - :material-forum: **[The Bear's Pit forums](https://thepit.ja-galaxy-forum.com)** — the home of the 1.13 community since 2004
 - :fontawesome-brands-discord: **[The Bear's Pit Discord](https://discord.gg/GqrVZUM)** — where development discussion happens today
