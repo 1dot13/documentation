@@ -11,7 +11,10 @@ without breaking your install.
     Your game folder contains an `INI Editor.exe`. Long-standing community
     advice is to **not** use it — it is known to cause problems. Edit INI and
     XML files with a plain text editor instead, such as
-    [Notepad++](https://notepad-plus-plus.org/).
+    [Notepad++](https://notepad-plus-plus.org/). The
+    [Tools page explains why](../reference/tools.md#ini-editor): the editor's
+    setting schema is out of date, and saving with it can silently reset
+    settings it doesn't know about.
 
 !!! note "Playing a mod instead of plain 1.13?"
     Wherever this documentation says `Data-1.13`, substitute the data folder of

@@ -13,6 +13,15 @@ files so it can serve as a base for further mods. See
 
 ## A
 
+**A.R.C.** — The Arulcan Rebel Command website on the laptop, hub of the
+[Rebel Command](../playing/features/rebel-command.md) feature. Unlocks after the
+Omerta food-delivery quest when the feature is enabled.
+
+**ASD** — The enemy's Arulcan Special Distribution: a budget system the Queen uses to
+buy and field tanks, combat jeeps, helicopters and robots. See
+[Know your enemy](../playing/features/enemies.md) and
+[The strategic war](../playing/features/strategic-war.md).
+
 **AIM** — The Association of International Mercenaries, the in-game website where you
 hire most of your mercenaries via the laptop. See
 [First steps](../walkthrough/first-steps.md) for hiring advice. Not to be confused with
@@ -93,6 +102,13 @@ See [Inventory & LBE](../playing/features/inventory.md).
 
 ## M
 
+**MeLoDy** — A laptop website (unlocked with dynamic opinions) that analyzes your
+team's personalities and relationships. See
+[Morale & opinions](../playing/features/morale.md).
+
+**Mini Events** — Optional random campaign events that pop up on the strategic screen
+with two choices each. See [Random events](../playing/features/events.md).
+
 **MERC** — More Economic Recruiting Center, the game's second hiring website, offering
 cheaper mercenaries than AIM. See [First steps](../walkthrough/first-steps.md).
 
@@ -128,6 +144,10 @@ on the AIM website and lets each merc offer up to five selectable gear kits, def
 **OCTH** — See **NCTH / OCTH** above.
 
 ## P
+
+**PMC** — A private military contractor website that sells regular and veteran militia
+once you have started training militia; hired militia arrive via airports, harbors and
+border posts. See [Hiring & contracts](../playing/features/hiring.md).
 
 **Progress** — A hidden value that increases as you play the campaign. Together with
 item *coolness* it determines which items appear in shops and in enemy hands; the

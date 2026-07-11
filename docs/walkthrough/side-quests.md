@@ -445,6 +445,9 @@ Full terrorist details are on [NPCs and recruitment](npcs-recruitment.md).
 
 ### Madlab and the robot
 
+*For using, upgrading and repairing the robot once you have it, see
+[The Robot](../playing/features/robot.md).*
+
 Dr. Nathaniel "MadLab" Kairns, a scientist who fled the Queen's employ, hides in a
 random sector in **southern Arulco** (sightings include H7, H16, I11 and E4). Look for
 a lone house and a barn that is bigger outside than in: a switch hidden in the house's

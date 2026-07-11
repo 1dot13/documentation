@@ -86,6 +86,22 @@ top of `Ja2_Options.INI` still points to it as an easy way to edit the file.
     people actually change, and the INI file's own comment blocks document every
     setting in place.
 
+**Why it causes problems.** The old warning was never explained, but the mechanism is
+visible in the shipped files. The editor is not a generic INI tool — it is driven
+entirely by its hand-maintained schema (`INIEditorJA2Options.xml`), which lists every
+setting it knows with its type, range and default. That schema has fallen out of sync
+with the game: as currently shipped, the schema knows 807 settings while
+`Ja2_Options.INI` contains 809 — including **31 current settings the editor has never
+heard of** (`CHEAT_MODE`, `REBEL_COMMAND_ENABLED`, the `MINI_EVENTS_*` block, the
+`ASD_*` robot settings, the merc growth modifiers and more) plus 29 stale entries for
+settings the game has since removed. And per the INI file's own header rule, *any line
+missing from the file silently reverts to its default at startup* — so a GUI that
+rewrites the file from an outdated schema can quietly reset your newest settings with
+no error shown. This gets worse with every release, since the editor has no public
+source repository through which the schema could be kept current. (Ironically,
+`Ja2_Options.INI`'s own header still recommends the editor — trust the community
+warning instead.)
+
 ## STI graphics tools
 
 Almost all of JA2's 2D graphics — portraits, item pictures, interface art, tiles — are

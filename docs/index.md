@@ -12,7 +12,9 @@ mod — almost anything.
 This site is the central place for 1.13 documentation: how to install and play it, how to
 configure it, and how to mod and develop it. It replaces the scattered older sources
 (the pbworks wiki, SVN text files and forum threads), which are linked from each page
-where they remain useful.
+where they remain useful — and unlike those sources, the mechanics described here are
+verified against the current game data and source code, with each page listing exactly
+what it was checked against.
 
 <div class="grid cards" markdown>
 

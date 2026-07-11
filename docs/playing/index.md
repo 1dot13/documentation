@@ -265,7 +265,7 @@ these systems can also be toggled from the
   black market that sells exclusive hardware only for intel.
 - **Individual backgrounds** (`ENABLE_BACKGROUNDS`, on by default; in the trunk since
   r6353). Every merc has a background — a former profession such as SWAT officer or
-  drill sergeant — shown in the laptop, with small stat bonuses and penalties to match.
+  drill sergeant — shown in [the laptop](laptop.md), with small stat bonuses and penalties to match.
   Your IMPs choose theirs during character creation.
 
 ## Quality of life

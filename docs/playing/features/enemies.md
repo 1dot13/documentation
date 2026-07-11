@@ -251,6 +251,7 @@ tank settings above govern them too.
 Enemy vehicles joining patrols is managed by a second strategic AI, the **Arulco
 Special Division** (`ASD_ACTIVE`, default `FALSE`, also a new-game toggle). The ASD
 has its own budget and buys, fuels and repairs its assets — tanks, jeeps and robots
+(not to be confused with [your own robot](robot.md))
 (`ASD_ASSIGNS_TANKS/JEEPS/ROBOTS`, all `TRUE` once ASD is on). That budget is
 attackable: its assets cost money and fuel, so stealing fuel deliveries or destroying
 expensive hardware genuinely hurts the AI. The INI explicitly flags this feature as
