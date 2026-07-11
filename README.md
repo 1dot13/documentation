@@ -3,9 +3,11 @@
 Community documentation for the **Jagged Alliance 2 v1.13** project, published at
 **https://1dot13.github.io/documentation/**
 
-The site covers installation, playing (including the full hotkey reference), a campaign
-walkthrough, configuration (INI/XML), modding (VFS, XML, Map Editor, Lua) and
-development (building the source).
+The site covers installation, playing (including the full hotkey reference and 30+
+feature guides), a campaign walkthrough, configuration (INI/XML), modding (VFS, XML,
+Map Editor, Lua) and development (building the source) — 85+ pages in total. Mechanics
+are verified against the current game data and source code; every page lists what it
+was checked against in its Sources section.
 
 ## Working on the docs
 
