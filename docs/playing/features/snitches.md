@@ -97,11 +97,16 @@ indulge. The policing can be toggled per snitch under **Snitch → Team Informan
 
 ## Passive reputation gain
 
-Every day a snitch's own morale is above his complaint threshold, he talks you up to
-the folks back home: your player reputation (the employer rating from
-`Reputation_Settings.INI` that influences merc hiring and contract decisions)
-improves by `PASSIVE_REPUTATION_GAIN` (default +3). Keep your snitches happy and they
-quietly repair the damage that dead teammates and unpaid wages do to your name.
+Every day a snitch's own morale is above his complaint threshold, he is *supposed* to
+talk you up to the folks back home, improving your player reputation (the employer
+rating from `Reputation_Settings.INI` that influences merc hiring and contract
+decisions) by `PASSIVE_REPUTATION_GAIN` (default +3).
+
+!!! warning "Inverted in current builds"
+    The code passes the gain value where the reputation function expects an *event
+    ID*, which selects the −3 "poor morale" reputation slot instead — so with default
+    files a happy snitch currently **worsens** your reputation by 3 per day. See the
+    verified analysis on the [reputation page](reputation.md).
 
 ## Town assignments
 

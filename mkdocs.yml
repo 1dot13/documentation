@@ -93,9 +93,11 @@ nav:
   - Playing the Game:
       - playing/index.md
       - New game options: playing/new-game-options.md
+      - Difficulty levels compared: playing/difficulty.md
       - Hotkeys & controls: playing/hotkeys.md
       - Starter tips: playing/tips.md
       - Money & economy: playing/economy.md
+      - The laptop: playing/laptop.md
       - Cheats & debug tools: playing/cheats.md
       - Feature guides:
           - New Chance to Hit (NCTH): playing/features/ncth.md
@@ -108,6 +110,7 @@ nav:
           - Weapon attachments: playing/features/attachments.md
           - Skills & traits: playing/features/traits.md
           - Morale & opinions: playing/features/morale.md
+          - Reputation: playing/features/reputation.md
           - Snitches & informants: playing/features/snitches.md
           - Creating IMPs: playing/features/imp.md
           - Hiring & contracts: playing/features/hiring.md
@@ -128,6 +131,7 @@ nav:
           - Rebel Command: playing/features/rebel-command.md
           - Random events: playing/features/events.md
           - Vehicles: playing/features/vehicles.md
+          - The Robot: playing/features/robot.md
   - Walkthrough:
       - walkthrough/index.md
       - First steps: walkthrough/first-steps.md
@@ -147,8 +151,10 @@ nav:
       - Savegames: configuration/savegames.md
   - Modding:
       - modding/index.md
+      - "Your first mod: a tutorial": modding/tutorial.md
       - Virtual File System (VFS): modding/vfs.md
       - XML modding: modding/xml-modding.md
+      - Items.xml field reference: modding/items-reference.md
       - Attachment system internals: modding/nas-internals.md
       - Starting gear (NSGI): modding/starting-gear.md
       - Externalizing content: modding/externalization.md
