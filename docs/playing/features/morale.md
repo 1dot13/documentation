@@ -48,7 +48,7 @@ The AI is affected too, twice over:
 - Enemy soldiers have the same 0–100 morale value, with the same shooting penalties.
   When [enemy officers](enemies.md) are present in the sector, the whole enemy team's
   morale modifier is boosted (`ENEMY_OFFICERS_MORALE_MODIFIER = 0.1` per officer rank,
-  in `Ja2_Options.ini`).
+  in `Ja2_Options.INI`).
 - Separately, each AI soldier keeps a five-step *combat* morale (hopeless, worried,
   normal, confident, fearless) computed from the threat around him. It drives tactical
   decisions: fearless soldiers push forward, hopeless ones hide or flee. An enemy who
@@ -187,7 +187,7 @@ minimum no matter who else is around, an AIM merc will refuse to extend his cont
 no enemies are in the sector).
 
 **Prejudices** modify opinions on top of that, tuned in `[Morale Settings]` in
-`Ja2_Options.ini`: reactions to appearance (`MORALE_MOD_APPEARANCE = 1`), snob vs.
+`Ja2_Options.INI`: reactions to appearance (`MORALE_MOD_APPEARANCE = 1`), snob vs.
 slob refinement (`MORALE_MOD_REFINEMENT = 2`), hated nationalities
 (`MORALE_MOD_HATEDNATIONALITY = 3`), racism (`MORALE_MOD_RACISM = 3`), sexism
 (`MORALE_MOD_SEXISM = 1`) and xenophobic backgrounds
@@ -199,7 +199,7 @@ anti-smokers get on each other's nerves (fellow smokers bond slightly).
 
 Flugente's **dynamic opinions** feature (added to the SVN trunk in May 2014, r7240)
 makes relationships evolve in play, and it is **on by default** in current builds.
-The switches sit in `[Dynamic Opinion Settings]` in `Ja2_Options.ini`:
+The switches sit in `[Dynamic Opinion Settings]` in `Ja2_Options.INI`:
 
 ```ini
 DYNAMIC_OPINIONS = TRUE

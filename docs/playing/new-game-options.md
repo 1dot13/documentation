@@ -2,7 +2,7 @@
 
 When you click *Start New Game*, 1.13 replaces the tiny vanilla options dialog with a full
 **INITIAL GAME SETTINGS** screen. The choices you make here are locked in for the whole
-campaign — unlike almost everything in [`JA2_Options.ini`](../configuration/options-ini.md),
+campaign — unlike almost everything in [`Ja2_Options.INI`](../configuration/options-ini.md),
 they cannot be changed later without starting over.
 
 This page describes the screen as it appears in current GitHub-era releases. It was
@@ -10,7 +10,7 @@ verified against the 1.13 source code and game data on
 [github.com/1dot13](https://github.com/1dot13) (fetched July 2026; the new-game screen code
 was last changed in December 2025). If you play the legacy **r7609** build, your screen has
 several extra options — see
-[Options that moved to JA2_Options.ini](#options-that-moved-to-ja2_optionsini-r8610) below.
+[Options that moved to Ja2_Options.INI](#options-that-moved-to-ja2_optionsini-r8610) below.
 
 ## The options
 
@@ -77,7 +77,7 @@ The *Extra Difficulty* selector has grown from two to four modes:
   enemies in the sector as long as combat has not started.
 - **Extreme Iron Man** — you can only save at one fixed in-game hour per day. The hour is
   set by `EXTREME_IRON_MAN_SAVING_HOUR` in the `[Strategic Interface Settings]` section of
-  `JA2_Options.ini` (engine default: hour 0, i.e. midnight).
+  `Ja2_Options.INI` (engine default: hour 0, i.e. midnight).
 
 !!! warning "Iron Man is forever"
     The game asks for confirmation when you pick any Iron Man mode, because the choice
@@ -102,13 +102,13 @@ enable or disable many of the mod's optional systems without editing INI files. 
 as an override layer:
 
 - The master switch **Use These Overrides** must be on for the screen to do anything.
-  It is **off by default**, in which case your `JA2_Options.ini` values apply unchanged.
+  It is **off by default**, in which case your `Ja2_Options.INI` values apply unchanged.
 - When it is on, each toggle takes precedence over one specific boolean in
-  `JA2_Options.ini` (hover over a toggle in-game to see which).
+  `Ja2_Options.INI` (hover over a toggle in-game to see which).
 - The toggles are stored in `Ja2_Features.ini` (section `[JA2 Feature Flags]`), separate
   from your other settings.
 
-| Feature toggle | Overrides (`JA2_Options.ini` unless noted) |
+| Feature toggle | Overrides (`Ja2_Options.INI` unless noted) |
 | -------------- | ------------------------------------------ |
 | New Chance to Hit | `[Tactical Gameplay Settings]` `NCTH` |
 | Enemies Drop All | `[Tactical Difficulty Settings]` `DROP_ALL` |
@@ -164,10 +164,10 @@ in [starter tips](tips.md).
     In particular, do not enable *Drassen Counterattack* on a first game — the screen's
     own help text calls it "not recommended for new players".
 
-## Options that moved to JA2_Options.ini (r8610)
+## Options that moved to Ja2_Options.INI (r8610)
 
 The classic stable release **r7609** shows several extra feature switches on the new-game
-screen. In **r8610** (paired with GameDir r2442) these were moved into `JA2_Options.ini`
+screen. In **r8610** (paired with GameDir r2442) these were moved into `Ja2_Options.INI`
 so they could be changed mid-campaign, and the screen was reduced to the setup-only
 options listed above. Flugente announced the redesign on the Bear's Pit forum in
 September 2018 with a simple rule: the start screen should only hold choices that are
@@ -183,7 +183,7 @@ If you play r7609 you will see these on the new-game screen; on anything newer, 
 INI instead (or use the [1.13 Features screen](#the-113-features-screen), which can
 override most of them):
 
-| r7609 screen option | Default | `JA2_Options.ini` key (current releases) |
+| r7609 screen option | Default | `Ja2_Options.INI` key (current releases) |
 | ------------------- | ------- | ---------------------------------------- |
 | New Chance to Hit System | Off | `NCTH` in `[Tactical Gameplay Settings]` (default `FALSE`; moved at r8625) |
 | Enemies Drop All Items | Off | `DROP_ALL` in `[Tactical Difficulty Settings]` (default `0`; `1` = drop everything, `2` = drop everything but normally-undropped items are severely damaged) |
@@ -193,7 +193,7 @@ override most of them):
 | Inventory Manipulation Costs AP | Off | `INVENTORY_MANIPULATION_COSTS_AP` in `[Tactical Interface Settings]` (default `FALSE`) |
 | Max IMP Characters | 1 | Removed entirely at r8622 — the number of IMP slots is now determined by how many profiles are marked as IMP type (`<Type>6</Type>`) in `MercProfiles.xml` |
 
-See the [JA2_Options.ini tour](../configuration/options-ini.md) for what these settings do
+See the [Ja2_Options.INI tour](../configuration/options-ini.md) for what these settings do
 in depth, and [version history](../reference/version-history.md) for where r7609 and r8610
 fit in the release timeline.
 

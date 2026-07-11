@@ -99,7 +99,7 @@ resulting `.exe` files to `CMAKE_RUNTIME_OUTPUT_DIRECTORY`.
 To debug the game from Visual Studio, `CMAKE_RUNTIME_OUTPUT_DIRECTORY` must point to
 a **working 1.13 installation** — and that includes the full 1.13 game data, not
 just the original JA2 files. The executable is placed directly in the game folder,
-so it finds `ja2.ini`, the `Data-1.13` folder and everything else it needs at
+so it finds `Ja2.ini`, the `Data-1.13` folder and everything else it needs at
 startup.
 
 !!! tip "Set up a play install first"

@@ -189,7 +189,7 @@ the game unless you also lower the attachment count.
 One more setting worth knowing: `USE_DEFAULT_SLOTS_WHEN_MISSING` makes the game
 generate default slots for items that have no NAS data — useful when playing an old
 XML mod that was never updated for NAS, though expect some odd attachment choices.
-See the [JA2_Options.ini tour](../../configuration/options-ini.md) for more.
+See the [Ja2_Options.INI tour](../../configuration/options-ini.md) for more.
 
 ## Modding NAS
 

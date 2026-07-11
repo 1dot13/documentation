@@ -25,7 +25,7 @@ single-CPU affinity — is legacy and applies to old installs. See
 ## The Drassen counterattack is too difficult!
 
 1.13 sends a large enemy counterattack at Drassen shortly after you take the town. If
-you don't want to face it, open `JA2_Options.ini` and set
+you don't want to face it, open `Ja2_Options.INI` and set
 `TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN` to `FALSE`. If you'd rather fight it
 out, see the survival advice in [Starter tips](../playing/tips.md) and the
 step-by-step battle plan in the [early game walkthrough](../walkthrough/early-game.md)
@@ -34,10 +34,10 @@ step-by-step battle plan in the [early game walkthrough](../walkthrough/early-ga
 ## The new-game screen is missing options I've seen in guides or videos. Where did they go?
 
 In revision **r8610**, several options were moved from the New Game screen into
-`JA2_Options.ini`, so older guides and screenshots show a longer options screen than
+`Ja2_Options.INI`, so older guides and screenshots show a longer options screen than
 current releases do. Everything is still configurable — it just lives in the INI file
 now. [New game options](../playing/new-game-options.md) covers the current screen and
-lists what moved; [JA2_Options.ini](../configuration/options-ini.md) shows where to
+lists what moved; [Ja2_Options.INI](../configuration/options-ini.md) shows where to
 change the relocated settings.
 
 ## What is the difference between OCTH and NCTH?

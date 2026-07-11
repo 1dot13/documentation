@@ -89,7 +89,7 @@ in the game.
   [New game options](../playing/new-game-options.md).
 - Up to six IMP mercs with far deeper customization, appearance options, and
   trait choices.
-- Nearly everything is exposed in `JA2_Options.ini` and XML data files — see
+- Nearly everything is exposed in `Ja2_Options.INI` and XML data files — see
   the [configuration section](../configuration/index.md).
 
 **And more**

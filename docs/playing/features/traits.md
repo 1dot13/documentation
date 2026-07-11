@@ -17,7 +17,7 @@ everything else about the new system *is* configurable, in
 `Data-1.13\Skills_Settings.INI`.
 
 !!! note "New traits need XML profiles (Profex)"
-    `Ja2_Options.ini` states: "You must have the Profex ACTIVATED to be able to play
+    `Ja2_Options.INI` states: "You must have the Profex ACTIVATED to be able to play
     with the NEW TRAIT SYSTEM!" — that is, `READ_PROFILE_DATA_FROM_XML = TRUE`, so
     merc data comes from `TableData\MercProfiles.xml` instead of the old `PROF.DAT`.
     This is the default in current releases, so you normally never have to touch it.
@@ -54,7 +54,7 @@ If you select *Old* skill traits you get the vanilla-style list, with each skill
 available at normal or expert level: Lockpicking, Hand-to-Hand, Electronics, Night
 Ops, Throwing, Teaching, Heavy Weapons, Auto Weapons, Stealthy, Ambidextrous, Thief,
 Martial Arts, Knifing, Sniper and Camouflage. According to the old 1.13 wiki the Thief
-trait is unused and gives no benefit at all. A few `Ja2_Options.ini` settings apply
+trait is unused and gives no benefit at all. A few `Ja2_Options.INI` settings apply
 only to old-trait games and say so in their comments — for example
 `MORTAR_CTH_DIVISOR` and `TEACHER_TRAIT_EFFECT_ON_LEADERSHIP` are both marked "only
 used if Old Trait System is played".
@@ -189,7 +189,7 @@ ears); at most 3 leader bonuses stack on one soldier:
 - +20 bonus to triggering collective interrupts (Improved Interrupt System)
 - The leader himself resists fear (50%)
 
-With `AMBUSH_MERCS_SPREAD` enabled in `Ja2_Options.ini`, a high-leadership
+With `AMBUSH_MERCS_SPREAD` enabled in `Ja2_Options.INI`, a high-leadership
 squadleader also lets you deploy your mercs before entering an ambushed sector, and
 enemy soldiers with this trait act as officers if `ENEMYROLES` is on (lieutenant with
 one level, captain as expert).
@@ -243,7 +243,7 @@ One level each. Key defaults from `Skills_Settings.INI`:
 | Melee | +35 CtH with blades, +25 with blunt weapons; −20% APs per blade attack; +30% damage with both; +50% damage on aimed melee attacks; +30% dodge vs blades (+20% more when holding a blade), +20% vs blunt weapons. |
 | Throwing | Thrown blades: −20% APs, +15% range, +25 CtH (+5 per aim click), +15% damage (+10% per click), one extra aim click, 20% chance of a critical hit when unseen. Thrown grenades: +30 CtH, −25% APs, +20% range. |
 | Night Ops | +1 sight range in darkness; +1 hearing range always, +2 more in darkness; +2 interrupt bonus at night; reduced need for sleep. |
-| Stealthy | The AP surcharge for sneaking is halved; +40% chance to move silently; +25 overall stealth; −20 chance to be interrupted (Improved Interrupt System); movement is 25% less likely to reveal you. Each level also adds 15 points to your Cover System stealth value (`COVER_SYSTEM_STEALTH_TRAIT_VALUE` in `Ja2_Options.ini`). |
+| Stealthy | The AP surcharge for sneaking is halved; +40% chance to move silently; +25 overall stealth; −20 chance to be interrupted (Improved Interrupt System); movement is 25% less likely to reveal you. Each level also adds 15 points to your Cover System stealth value (`COVER_SYSTEM_STEALTH_TRAIT_VALUE` in `Ja2_Options.INI`). |
 | Athletics | −25% APs for movement; −33% stamina spent on movement. |
 | Bodybuilding | +25% damage resistance; +30% carrying capacity; half the stamina loss when hit hand-to-hand; twice the damage needed to be knocked down by leg hits. |
 | Demolitions | +25% damage from your bombs and mines; +50% to attaching detonators and to planting/removing explosives; your bombs are harder to detect; shaped charges are far more effective (multiplier 3). |
@@ -267,12 +267,12 @@ Creating an IMP merc in a new-traits game works like this:
 - Traits set **minimum attributes** (shown in brackets after the trait name on the
   attribute screen) as long as `SET_MINIMUM_ATTRIBUTES_FOR_TRAITS = TRUE`.
 - Every trait slot you leave empty is worth **+35** bonus attribute points
-  (`IMP_BONUS_POINTS_PER_SKILL_NOT_TAKEN` in `Ja2_Options.ini`), and taking a
+  (`IMP_BONUS_POINTS_PER_SKILL_NOT_TAKEN` in `Ja2_Options.INI`), and taking a
   disability gives **+25** points (`IMP_BONUS_POINTS_FOR_DISABILITY`).
 - Your starting gear depends on your traits, defined in
   `TableData\Inventory\IMPItemChoices.xml`; with `EXPERTS_GET_DIFFERENT_CHOICES =
   TRUE` (the default), expert traits get their own gear entries.
-- If `ALTERNATIVE_IMP_CREATION` is enabled in `Ja2_Options.ini` (off by default), your
+- If `ALTERNATIVE_IMP_CREATION` is enabled in `Ja2_Options.INI` (off by default), your
   choices of skills, character traits and disabilities filter which **backgrounds**
   are offered — backgrounds whose tags contradict your picks are hidden, and extra
   backgrounds become available to compensate. Backgrounds live in
@@ -295,7 +295,7 @@ system gave an absurd hidden CtH bonus.
 
 ## Traits on enemies and militia
 
-From `Ja2_Options.ini` (`[Tactical Difficulty Settings]` section):
+From `Ja2_Options.INI` (`[Tactical Difficulty Settings]` section):
 
 ```ini
 ASSIGN_SKILL_TRAITS_TO_ENEMY = TRUE
@@ -315,7 +315,7 @@ Militia benefit the same way; see [Militia](militia.md).
 | File | What it controls |
 |---|---|
 | `Data-1.13\Skills_Settings.INI` | All new-trait numbers: generic penalties, one section per trait. In the very first STOMP releases this file was called `Traits_Settings.INI`. |
-| `Data-1.13\Ja2_Options.ini` | IMP creation points and gear switches, enemy/militia trait assignment, background options, cover-system stealth value, ambush/officer interactions, plus a few old-system-only settings. |
+| `Data-1.13\Ja2_Options.INI` | IMP creation points and gear switches, enemy/militia trait assignment, background options, cover-system stealth value, ambush/officer interactions, plus a few old-system-only settings. |
 | `TableData\MercProfiles.xml` | Which traits each AIM/MERC/RPC merc has (requires Profex). |
 | `TableData\Inventory\IMPItemChoices.xml` | Starting gear per chosen trait (separate entries for experts). |
 | `TableData\Backgrounds.xml` | Backgrounds and their interaction with IMP trait choices. |

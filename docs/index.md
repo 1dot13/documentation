@@ -49,8 +49,8 @@ what it was checked against.
 
     ---
 
-    1.13 is famously customizable. Learn your way around `ja2.ini`,
-    `JA2_Options.ini` and the XML data files.
+    1.13 is famously customizable. Learn your way around `Ja2.ini`,
+    `Ja2_Options.INI` and the XML data files.
 
     [:octicons-arrow-right-24: Configuration](configuration/index.md)
 

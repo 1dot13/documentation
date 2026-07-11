@@ -96,10 +96,10 @@ orders.
     him drops Drassen loyalty and replaces him with Salvatore Lappus, who can lose
     entire shipments through sheer incompetence.
 
-**1.13:** `STEALING_FROM_SHIPMENTS_DISABLED` in `JA2_Options.ini` turns Pablo's
+**1.13:** `STEALING_FROM_SHIPMENTS_DISABLED` in `Ja2_Options.INI` turns Pablo's
 thieving off entirely, and `CHANCE_OF_SHIPMENT_LOSS` (default 10) sets the percentage
 chance of a whole Bobby Ray shipment going missing. See
-[JA2_Options.ini](../configuration/options-ini.md).
+[Ja2_Options.INI](../configuration/options-ini.md).
 
 ### Find the helicopter pilot (Skyrider)
 
@@ -122,7 +122,7 @@ chance of a whole Bobby Ray shipment going missing. See
   helicopter; too much damage aborts the trip and grounds it until repaired.
 
 !!! note "1.13 changes to Skyrider"
-    - **Hot LZ drops:** `ALLOW_SKYRIDER_HOT_LZ` in `JA2_Options.ini` lets Skyrider drop
+    - **Hot LZ drops:** `ALLOW_SKYRIDER_HOT_LZ` in `Ja2_Options.INI` lets Skyrider drop
       mercs into enemy-held sectors: `0` = vanilla (never), `1` = center of the map,
       `2` = at the map edge from the direction he entered (the shipped default), `3` =
       a location of your choosing.
@@ -130,7 +130,7 @@ chance of a whole Bobby Ray shipment going missing. See
       externalized in `Data-1.13\Helicopter_Settings.INI`
       (`HELICOPTER_DISTANCE_WITHOUT_REFUEL = 25` sectors, refuel time, repair costs
       that creep upward after every repair, SAM accuracy and more).
-    - Back in `JA2_Options.ini`: `SERIOUSLY_DAMAGED_SKYRIDER_WONT_FLY = TRUE` makes
+    - Back in `Ja2_Options.INI`: `SERIOUSLY_DAMAGED_SKYRIDER_WONT_FLY = TRUE` makes
       him refuse to fly a badly damaged helicopter until it is repaired, and with
       `HELICOPTER_PAY_SKYRIDER_IN_BASE = TRUE` (the shipped default) he bills you
       after landing safely at base rather than up front. His radio chatter can also
@@ -223,7 +223,7 @@ vanilla; 1.13 externalizes dealer cash to XML), trades around the clock, and
 sometimes "steps out" to restock for a day or two.
 
 **1.13:** Tony's inventory is substantially larger than in vanilla, and Tony and Hans
-only turn hostile if directly attacked. `CHANCE_TONY_AVAILABLE` in `JA2_Options.ini`
+only turn hostile if directly attacked. `CHANCE_TONY_AVAILABLE` in `Ja2_Options.INI`
 (default 80, the vanilla behavior) can be set to 100 so Tony is always home.
 
 ## Chitzena and Balime
@@ -347,7 +347,7 @@ asks him. See [NPCs and recruitment](npcs-recruitment.md).
   alongside elite guards late in the game.
 
 **1.13:** bloodcats can optionally raid your sectors at night — `RAID_BLOODCATS` in
-`JA2_Options.ini` (default `FALSE`), with companion settings for raid size and raids
+`Ja2_Options.INI` (default `FALSE`), with companion settings for raid size and raids
 per night.
 
 ### Free Dynamo from Tixa
@@ -437,7 +437,7 @@ roll a sector from the lists above at campaign start.
 serves in your squad for a week in exchange for safe passage. Carmen turns hostile if
 he sees Slay with you, and even rumors make him refuse further heads until you deliver
 Slay's within 24 hours — so if you want all six bounties *and* Slay's services, deal
-with Slay on his last day. **1.13:** `SLAY_STAYS_FOREVER = TRUE` in `JA2_Options.ini`
+with Slay on his last day. **1.13:** `SLAY_STAYS_FOREVER = TRUE` in `Ja2_Options.INI`
 lets Slay stay on your team indefinitely (with `SLAY_HOURLY_CHANCE_TO_LEAVE` governing
 how quickly he wanders off when it is `FALSE`).
 
@@ -509,7 +509,7 @@ matters if you ever grab a tank in Meduna).
 Some sectors on the map hold secret weapon caches — chests with mediocre-to-good
 equipment. In a normal campaign only some of these cache sectors are active.
 
-**1.13:** set `ENABLE_ALL_WEAPON_CACHES = TRUE` in `JA2_Options.ini` to activate every
+**1.13:** set `ENABLE_ALL_WEAPON_CACHES = TRUE` in `Ja2_Options.INI` to activate every
 cache sector. The individual cache locations aren't documented here; if you want them
 spoiled sector-by-sector, ask at the Bear's Pit forum (see
 [community links](../reference/links.md)).
@@ -549,8 +549,8 @@ content.
 
 ## Quest-related 1.13 settings
 
-All of these live in `Data-1.13\JA2_Options.ini`; see the
-[JA2_Options.ini tour](../configuration/options-ini.md) for context and
+All of these live in `Data-1.13\Ja2_Options.INI`; see the
+[Ja2_Options.INI tour](../configuration/options-ini.md) for context and
 [Recommended settings](../configuration/recommended-settings.md) for opinions.
 Defaults below are from the current GitHub release.
 

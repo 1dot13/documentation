@@ -113,7 +113,7 @@ on the new-game option:
 
 - `bOldSkillTrait` / `bOldSkillTrait2` — old-system skills, numbered 0–15
   (1 Lock Picking, 2 Hand-to-Hand, 3 Electronics, 4 Night Ops, 5 Throwing,
-  6 Teaching, 7 Heavy Weapons, 8 Auto Weapons, 9 Stealthy, 10 Ambidexterous,
+  6 Teaching, 7 Heavy Weapons, 8 Auto Weapons, 9 Stealthy, 10 Ambidextrous,
   12 Martial Arts, 13 Knifing, 14 Rooftop Sniping, 15 Camouflaged).
 - `bNewSkillTrait1` … `bNewSkillTrait4` — new-system (STOMP) traits. **Repeating the
   same major number in two tags makes the merc an expert** — Scope, for example, has
@@ -123,7 +123,7 @@ The STOMP numbers, from the file's own comment header:
 
 | Major traits | Minor traits |
 |---|---|
-| 1 Auto Weapons/Machinegunner | 10 Ambidexterous |
+| 1 Auto Weapons/Machinegunner | 10 Ambidextrous |
 | 2 Heavy Weapons/Bombardier | 11 Melee |
 | 3 Marksman/Sniper | 12 Throwing |
 | 4 Hunter/Ranger | 13 Night Ops |

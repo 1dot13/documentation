@@ -32,7 +32,7 @@ tags and **different index numbers**, so double-check against your own files bef
 copying advice from old forum posts.
 
 Not everything tweakable is XML, either: gameplay toggles live in
-[`JA2_Options.ini`](options-ini.md), and skills and traits are tuned in
+[`Ja2_Options.INI`](options-ini.md), and skills and traits are tuned in
 `Skills_Settings.INI` and the other INI files one level up in `Data-1.13` — the
 [configuration overview](index.md) maps them all. As a rule of thumb, the INI files
 hold *settings* while the XML files hold *data*: the actual lists of items, people

@@ -82,7 +82,7 @@ those troops actually show up: a massive counterattack that can make taking
 Drassen first feel like suicide if you are not ready for it. Survival advice is in
 the [starter tips](../playing/tips.md) and the [early game](early-game.md) page.
 If you would rather skip it, set `TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN`
-to `FALSE` in `JA2_Options.ini` — see
+to `FALSE` in `Ja2_Options.INI` — see
 [the options tour](../configuration/options-ini.md).
 
 ### Militia are a real army now
@@ -96,13 +96,13 @@ militia can be trained in city and SAM sectors. Details on the
 ### A more aggressive, scaling enemy
 
 - When you capture a town sector, enemies in neighboring sectors may come to
-  investigate, resulting in a near-immediate follow-up battle. `JA2_Options.ini`
+  investigate, resulting in a near-immediate follow-up battle. `Ja2_Options.INI`
   can extend this to all sectors or disable it entirely.
 - Enemies can call in reinforcements from adjacent sectors during battle — and so
   can your militia.
 - Patrol size, the number of elite troops in patrols, the chance of being
   ambushed, and how many moves the Queen makes per day are all configurable in
-  `JA2_Options.ini`.
+  `Ja2_Options.INI`.
 - Higher difficulty levels field larger garrisons and more elite troops, and the
   1.13-exclusive INSANE difficulty gives the Queen unlimited reinforcements that
   keep attacking for the whole campaign.

@@ -66,7 +66,7 @@ like `Data-1.13` overriding `Data` overriding the SLF archives in the classic se
 
 The VFS is configured in an INI file, by default `vfs_config.ini`. You can point the
 game at a different file with the `VFS_CONFIG_INI` key in the `[Ja2 Settings]` section
-of `ja2.ini`; if the key is absent it defaults to `vfs_config.ini`.
+of `Ja2.ini`; if the key is absent it defaults to `vfs_config.ini`.
 
 !!! note "What current releases ship"
     Modern 1.13 releases from GitHub ship four ready-made configurations in the game
@@ -284,7 +284,7 @@ WRITE = true
 !!! note
     The user profile directory has to exist, even if it is empty.
 
-Because the configuration filename is defined in `ja2.ini`, you can keep several VFS
+Because the configuration filename is defined in `Ja2.ini`, you can keep several VFS
 configuration files side by side and switch between them easily:
 
 ```ini
@@ -313,7 +313,7 @@ When initialized from an INI file, `key1` is a section, `key2` a key, and `prope
 the value of that section–key pair. The same structure can also be initialized from
 *multiple* INI files, where `+=` appends a new value to an already defined entry.
 
-The VFS uses this so that `VFS_CONFIG_INI` in `ja2.ini` accepts a **list** of
+The VFS uses this so that `VFS_CONFIG_INI` in `Ja2.ini` accepts a **list** of
 configuration files. Since a single value is just a one-element list, the extension
 fits into the system without requiring changes to existing configuration files.
 
@@ -369,7 +369,7 @@ PROFILE_ROOT = Profiles\UserProfile
 WRITE = true
 ```
 
-The actual combination of mods is then done in `ja2.ini`. This is the vanilla game:
+The actual combination of mods is then done in `Ja2.ini`. This is the vanilla game:
 
 ```ini
 [Ja2 Settings]

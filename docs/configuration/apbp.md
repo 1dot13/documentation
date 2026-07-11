@@ -4,7 +4,7 @@
 action a soldier can take in a turn — stepping onto a tile, dropping to a crouch,
 kicking a door, reloading a single round, handcuffing a prisoner — has its Action
 Point (AP) cost defined here, and most actions also have a Breath Point (BP) cost
-that drains the energy bar. Where [`JA2_Options.ini`](options-ini.md) decides *which*
+that drains the energy bar. Where [`Ja2_Options.INI`](options-ini.md) decides *which*
 rules are active, this file decides *how fast* everything happens, which makes it
 the main lever for the pacing and feel of turn-based combat.
 
@@ -98,13 +98,13 @@ soldier can lose at most one full turn in advance.
 
 Two practical notes:
 
-- Unlike `JA2_Options.ini`, most keys in this file are read **without** range
+- Unlike `Ja2_Options.INI`, most keys in this file are read **without** range
   checking — only a few (such as `AP_MAXIMUM`, clamped to 25–250, and `AP_MINIMUM`,
   clamped to 10–100) fall back to sane values when out of range. A typo elsewhere
   is taken at face value. If you delete a line entirely, the built-in default is
   used.
 - Updates overwrite `Data-1.13\APBPConstants.ini`. To keep your tuning across
-  updates, add the file to the `MERGE_INI_FILES` list in `ja2.ini` and put your
+  updates, add the file to the `MERGE_INI_FILES` list in `Ja2.ini` and put your
   changed keys in a copy in your user profile folder — see
   [keeping your changes across updates](index.md#keeping-your-changes-across-updates).
 
@@ -251,7 +251,7 @@ out of a vest pocket is quick, digging it out of a backpack is not:
 `AP_CLOSE_ZIPPER = 28` for opening and closing it. Whether shuffling items in the
 inventory screen costs APs at all is governed by `INVENTORY_MANIPULATION_COSTS_AP`
 (default `FALSE`) in `[Tactical Interface Settings]` of
-[`JA2_Options.ini`](options-ini.md), with `INV_AP_WEIGHT_DIVISOR` adjusting the
+[`Ja2_Options.INI`](options-ini.md), with `INV_AP_WEIGHT_DIVISOR` adjusting the
 weight-based part of the calculation.
 
 ## Field work: explosives, mines, fortifications

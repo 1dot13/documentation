@@ -176,7 +176,7 @@ the `[Tactical Tooltip Settings]` section). If you want more feedback, the
 
 Everything below lives in `Data-1.13\Ja2_Options.INI`, section
 `[Tactical Suppression Fire Settings]` unless noted. Values shown are the current
-defaults. See the [JA2_Options.ini tour](../../configuration/options-ini.md) for how to
+defaults. See the [Ja2_Options.INI tour](../../configuration/options-ini.md) for how to
 edit the file safely.
 
 | Setting | Default | What it does (per the INI comments) |

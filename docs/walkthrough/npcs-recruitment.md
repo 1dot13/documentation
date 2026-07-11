@@ -68,7 +68,7 @@ a certain state.
 | **Dr. Vincent "Vince" Beaumont** | Cambria hospital (F8) | Cambria loyalty close to 100% and a high-leadership talker | $500/day. **Medical 94** — the best starting medical stat of any recruit — plus Ambidextrous and Teaching (1.13: Paramedic). Claustrophobic: keep him above ground |
 | **Lt. Conrad Gillitt** | Alma training facility (H13) | Modestly high leadership; don't drag the conversation out — he gets bored and turns hostile | $5,500/day, dropping to **$3,300/day** if a high-leadership merc refuses his first offer. Marksmanship 95, level 5, Auto Weapons and Teaching (1.13: expert **Machinegunner** + Teaching, Assertive). Nonswimmer |
 | **Devin Connell** | Wanders the bars of northern Arulco (C5, C6, D13, H2, G9 — he moves every few days) | Free four cities; a merc with some leadership recommended | $800/day. Explosives 96, Electronics and Knifing (1.13: Demolitions, Melee). He is also the only local **explosives shop** — buy his stock *before* recruiting him, it disappears when he joins |
-| **Igmus "Iggy" Palkov** | San Mona bar north of the Shady Lady brothel (C5) | Appears once campaign progress reaches 70% (`GAME_PROGRESS_IGGY_AVAILABLE` in `JA2_Options.ini`) | $1,950/day. Deserter from the Queen's army; expert **Heavy Weapons** ("Bombardier"), comes with a Rocket Rifle. Miguel and Carlos distrust him |
+| **Igmus "Iggy" Palkov** | San Mona bar north of the Shady Lady brothel (C5) | Appears once campaign progress reaches 70% (`GAME_PROGRESS_IGGY_AVAILABLE` in `Ja2_Options.INI`) | $1,950/day. Deserter from the Queen's army; expert **Heavy Weapons** ("Bombardier"), comes with a Rocket Rifle. Miguel and Carlos distrust him |
 
 Two more join by circumstance: **MadLab's robot** (next) and **Slay**, who is also a
 wanted terrorist and gets his own section further down.
@@ -165,7 +165,7 @@ SLAY_HOURLY_CHANCE_TO_LEAVE = 15
 
 Set `SLAY_STAYS_FOREVER = TRUE` and he becomes a permanent squad member. If left at
 `FALSE`, the second setting is the hourly chance he wanders off when left alone in a
-sector. See [JA2_Options.ini](../configuration/options-ini.md) for how to edit these.
+sector. See [Ja2_Options.INI](../configuration/options-ini.md) for how to edit these.
 
 ## Key service NPCs
 
@@ -270,7 +270,7 @@ as Miguel.
 
 There are many more recruitment-related settings (merc availability, salaries,
 contract behavior) in the same file — the
-[JA2_Options.ini tour](../configuration/options-ini.md) covers the file section by
+[Ja2_Options.INI tour](../configuration/options-ini.md) covers the file section by
 section.
 
 ## Sources

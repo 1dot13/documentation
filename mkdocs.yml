@@ -64,6 +64,9 @@ markdown_extensions:
 
 plugins:
   - search
+  - git-revision-date-localized:
+      enable_creation_date: false
+      fallback_to_build_date: true
 
 validation:
   omitted_files: warn
@@ -100,6 +103,7 @@ nav:
       - The laptop: playing/laptop.md
       - Cheats & debug tools: playing/cheats.md
       - Feature guides:
+          - playing/features/index.md
           - New Chance to Hit (NCTH): playing/features/ncth.md
           - Suppression: playing/features/suppression.md
           - Interrupts & reflexes: playing/features/interrupts.md
@@ -143,7 +147,7 @@ nav:
       - Secrets & rare loot: walkthrough/secrets.md
   - Configuration:
       - configuration/index.md
-      - JA2_Options.ini guide: configuration/options-ini.md
+      - Ja2_Options.INI guide: configuration/options-ini.md
       - Recommended settings: configuration/recommended-settings.md
       - AP & BP tuning: configuration/apbp.md
       - XML data files: configuration/xml-files.md

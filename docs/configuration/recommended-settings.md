@@ -11,7 +11,7 @@ disappeared compared to older builds, the table says so.
 
 !!! note "Playing a mod instead of plain 1.13?"
     The paths below use `Data-1.13`. If you play a mod built on 1.13, edit the files in
-    that mod's data folder instead — for example `Data-AIM\JA2_Options.ini` for AIMNAS.
+    that mod's data folder instead — for example `Data-AIM\Ja2_Options.INI` for AIMNAS.
     See [Mods built on 1.13](../reference/mods.md) and
     [how the data folders layer](index.md).
 
@@ -24,9 +24,9 @@ disappeared compared to older builds, the table says so.
 
 ## INI tweaks
 
-These settings live in `Data-1.13\JA2_Options.ini`. Each row lists the `[Section]` the
+These settings live in `Data-1.13\Ja2_Options.INI`. Each row lists the `[Section]` the
 key sits under, so you can jump to it quickly. For a broader tour of the file, see
-[JA2_Options.ini](options-ini.md).
+[Ja2_Options.INI](options-ini.md).
 
 | Setting | Section | Why you might change it |
 | --- | --- | --- |
@@ -48,7 +48,7 @@ key sits under, so you can jump to it quickly. For a broader tour of the file, s
 
 Two entries from older versions of this list no longer work the way they used to:
 
-- **`ALLOW_REINFORCEMENTS`** — on the old r7609 build this was a `JA2_Options.ini`
+- **`ALLOW_REINFORCEMENTS`** — on the old r7609 build this was a `Ja2_Options.INI`
   setting. In current releases, battlefield reinforcements are enabled per difficulty
   level in `TableData\DifficultySettings.xml` instead (see
   [Reinforcements](#reinforcements) below). The only related INI key left is
@@ -56,7 +56,7 @@ Two entries from older versions of this list no longer work the way they used to
   restricts reinforcements to movement between city sectors and affects militia only.
 - **`SHOW_SKILLS_IN_HIRING_PAGE`** — this setting (a tooltip with skills and traits on
   merc portraits on the A.I.M. and M.E.R.C. hiring pages) existed in r7609/r8741-era
-  builds but is no longer present in the current `JA2_Options.ini`. If you still play
+  builds but is no longer present in the current `Ja2_Options.INI`. If you still play
   an old build, it remains available there.
 
 ## XML tweaks
@@ -122,7 +122,7 @@ In current releases this is controlled per difficulty in
   Off by default on Novice, on for Experienced and above.
 
 On the old r7609 build this was the single `ALLOW_REINFORCEMENTS` key in
-`JA2_Options.ini` instead.
+`Ja2_Options.INI` instead.
 
 ## Advanced: display and scaling
 

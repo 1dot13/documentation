@@ -65,7 +65,7 @@ Run `ja2.exe` in your game folder. That's it — the mod is active as soon as it
 
 A few things worth knowing right away:
 
-- **Where settings live.** Basic engine settings such as resolution and windowed mode are in `ja2.ini`, next to `ja2.exe`. The bulk of 1.13's gameplay options are in `Data-1.13\JA2_Options.ini`. See the [configuration overview](../configuration/index.md) before you start editing.
+- **Where settings live.** Basic engine settings such as resolution and windowed mode are in `Ja2.ini`, next to `ja2.exe`. The bulk of 1.13's gameplay options are in `Data-1.13\Ja2_Options.INI`. See the [configuration overview](../configuration/index.md) before you start editing.
 - **Display problems?** Current releases ship with *cnc-ddraw* to make the old engine behave on modern Windows. If you hit issues with higher resolutions, a black screen, or ++alt+tab++ not working, run `cnc-ddraw-config.exe` in the game folder and adjust its settings.
 - **Anything else broken?** See [troubleshooting](troubleshooting.md) — it also covers the legacy fixes (Wine DLLs, registry tweaks, CPU affinity) that old guides recommend for pre-GitHub installs, and playing on Linux or Mac via Wine.
 

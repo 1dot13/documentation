@@ -35,7 +35,7 @@ how this feels:
 - **Progress Speed of Item Choices** (New Game screen) sets how fast better equipment
   becomes available to both you and the enemy. On *Very Slow* you fight the pistol/SMG
   war much longer; on *Fast* the late game arrives early.
-- **`DROP_ALL`** (in `JA2_Options.ini` under `[Tactical Difficulty Settings]`; on the
+- **`DROP_ALL`** (in `Ja2_Options.INI` under `[Tactical Difficulty Settings]`; on the
   New Game screen in r7609) makes enemies drop all their items instead of only a
   chance-based selection — which in the late game means mountains of high-end loot
   after every battle.

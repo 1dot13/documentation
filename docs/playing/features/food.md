@@ -10,7 +10,7 @@ It is **disabled by default**. All current GitHub builds include it.
 
 ## Turning it on
 
-The switch lives in `Ja2_Options.ini` (in your `Data-1.13` folder), section
+The switch lives in `Ja2_Options.INI` (in your `Data-1.13` folder), section
 `[Tactical Food Settings]`:
 
 ```ini
@@ -21,7 +21,7 @@ FOOD = FALSE
 ```
 
 Set `FOOD = TRUE` and start a new campaign. See the
-[JA2_Options.ini tour](../../configuration/options-ini.md) for how to edit the file safely.
+[Ja2_Options.INI tour](../../configuration/options-ini.md) for how to edit the file safely.
 
 !!! warning "Decide before you start a campaign"
     Food cannot be switched on or off once a campaign has started. If you regret enabling

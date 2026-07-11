@@ -59,7 +59,7 @@ difficulty's `WeaponCacheTroops` setting):
 ### Turning all five on
 
 **1.13** exposes the cache roll as an INI setting in the
-`[Strategic Gameplay Settings]` section of `Data-1.13\JA2_Options.ini`:
+`[Strategic Gameplay Settings]` section of `Data-1.13\Ja2_Options.INI`:
 
 ```ini
 ENABLE_ALL_WEAPON_CACHES = FALSE
@@ -68,7 +68,7 @@ ENABLE_ALL_WEAPON_CACHES = FALSE
 Set it to `TRUE` before starting a new campaign and every one of the five sectors
 holds a cache. It sits right next to `ENABLE_ALL_TERRORISTS` (default `TRUE`), which
 does the same for Carmen's six bounty targets. See the
-[JA2_Options.ini tour](../configuration/options-ini.md) and
+[Ja2_Options.INI tour](../configuration/options-ini.md) and
 [recommended settings](../configuration/recommended-settings.md).
 
 !!! note "What's in the chests?"

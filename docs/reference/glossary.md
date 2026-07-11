@@ -65,7 +65,7 @@ and the [VFS page](../modding/vfs.md) for how the layering works.
 
 **Drassen counterattack** — A massive enemy counterattack the Queen launches at Drassen
 early in the game, infamous for wiping out unprepared squads. It is controlled by
-`TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN` in `JA2_Options.ini`; see
+`TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN` in `Ja2_Options.INI`; see
 [Starter tips](../playing/tips.md) for surviving it and
 [Early game](../walkthrough/early-game.md) for the details.
 
@@ -222,7 +222,7 @@ combine. See [Virtual File System](../modding/vfs.md).
 
 - The previous 1.13 starter documentation and play guide (2019, r8741 era) by tais and
   Yunotchi.
-- `JA2_Options.ini` and `APBPConstants.ini` from the current game data:
+- `Ja2_Options.INI` and `APBPConstants.ini` from the current game data:
   [github.com/1dot13/gamedir](https://github.com/1dot13/gamedir).
 - `VirtualFileSystem_Setup.txt` v1.1 by BirdFlu, from the 1.13 documentation.
 - The New Attachment System design document, the New Starting Gear Interface readme, and

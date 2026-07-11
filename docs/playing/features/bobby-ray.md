@@ -20,7 +20,7 @@ check it at any time by pressing ++v++ in tactical view, which shows the game ve
 difficulty, Bobby Ray settings and current progress.
 
 Four things can generate progress points. How much each may contribute is set in
-`JA2_Options.ini` under `[Strategic Progress Settings]`:
+`Ja2_Options.INI` under `[Strategic Progress Settings]`:
 
 | Source | INI key | Default | Can it drop again? |
 | ------ | ------- | ------- | ------------------ |
@@ -136,7 +136,7 @@ gear is never dropped from the catalog — the crappy pistols stay listed until 
 ### Ordering and shipping
 
 Ordering works like vanilla JA2, with a few 1.13 twists (settings in
-`JA2_Options.ini` under `[Bobby Ray Settings]` unless noted):
+`Ja2_Options.INI` under `[Bobby Ray Settings]` unless noted):
 
 - You can buy up to `BOBBY_RAY_MAX_PURCHASE_AMOUNT` of an item per shipment
   (default 30; vanilla allowed 10).
@@ -212,12 +212,12 @@ Work through this list:
    removes some weapons from the campaign entirely.
 5. **Impatient by design?** Start your next campaign with a higher Bobby Ray Quality,
    a faster *Progress Speed of Item Choices*, or set `GAME_PROGRESS_MINIMUM` /
-   `GAME_PROGRESS_MODIFIER` in `JA2_Options.ini`. Quality 10 (Awesome) puts the entire
+   `GAME_PROGRESS_MODIFIER` in `Ja2_Options.INI`. Quality 10 (Awesome) puts the entire
    catalog on sale from day one.
 
 For general early-game advice, see the [starter tips](../tips.md); for every other
 option on the new game screen, see [New game options](../new-game-options.md); for the
-full `JA2_Options.ini` tour, see [the options INI guide](../../configuration/options-ini.md).
+full `Ja2_Options.INI` tour, see [the options INI guide](../../configuration/options-ini.md).
 Jargon like coolness, progress and Tons of Guns is also summarized in the
 [glossary](../../reference/glossary.md).
 

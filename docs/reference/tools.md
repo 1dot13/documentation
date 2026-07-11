@@ -17,7 +17,7 @@ already in your game folder if you installed a current
 | Text editor (Notepad++) | Edit INI, XML and Lua files directly | [notepad-plus-plus.org](https://notepad-plus-plus.org/) | Active, third-party |
 | XML Editor | GUI for editing `Data-1.13\TableData` XML files | Bundled (`XML Editor.exe`); betas on [GitHub](https://github.com/1dot13/xml-editor/releases) | Maintained (beta) |
 | Map Editor | Edit and create tactical sector maps | Bundled with every all-in-one release | Maintained |
-| INI Editor | GUI for `JA2_Options.INI` | Bundled (`INI Editor.exe`) | **Not recommended** |
+| INI Editor | GUI for `Ja2_Options.INI` | Bundled (`INI Editor.exe`) | **Not recommended** |
 | STI-Edit & GRV | Classic editors/viewers for STI graphics | Forum mirror ([thread](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=12300)) | Abandoned, still used |
 | JA2STI | Adobe AIR-based STI editor suite by Tox | Mirror in [forum thread](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=22913) | Abandoned |
 | STI Image Editor | Newer STI import/export and palette tool | [Forum thread](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=24710) | Last release Dec 2020 |
@@ -74,15 +74,15 @@ Setup, workflow and the official manual and tutorial PDFs are all on the
 ## INI Editor
 
 Your game folder also contains `INI Editor.exe`, a GUI for browsing and changing
-`JA2_Options.INI` setting by setting, with description files
+`Ja2_Options.INI` setting by setting, with description files
 (`INIEditorJA2Options.xml` and friends) shipped next to it. The comment block at the
 top of `Ja2_Options.INI` still points to it as an easy way to edit the file.
 
 !!! warning "Do not use the bundled INI editor"
     The previous official 1.13 documentation is blunt about it: *"Do not use the
-    included INI editor. It is known to cause problems."* Edit `JA2_Options.INI` with a
+    included INI editor. It is known to cause problems."* Edit `Ja2_Options.INI` with a
     text editor such as Notepad++ instead. The
-    [JA2_Options.INI tour](../configuration/options-ini.md) walks through the settings
+    [Ja2_Options.INI tour](../configuration/options-ini.md) walks through the settings
     people actually change, and the INI file's own comment blocks document every
     setting in place.
 
@@ -195,7 +195,7 @@ What is actually there:
 - **`JA2 1.13 Export/ja2export.exe`** — a command-line tool that exports JA2 file
   formats (STI, JSD, …) to modern formats (PNG, 7z, XML), with a `ja2export Help.txt`
   next to it. It was built for an SVN-era experiment in loading PNG item images and
-  XML tilesets; the `ja2.ini` switches its help file refers to (such as
+  XML tilesets; the `Ja2.ini` switches its help file refers to (such as
   `USE_PNG_ITEM_IMAGES`) are not present in the current `Ja2.ini`, so treat the
   game-side integration as historical.
 - **`LUA Scripting`** — bundled installers for **Decoda** and **LuaEdit 3.0.3**, two

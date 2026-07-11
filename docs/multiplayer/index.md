@@ -138,7 +138,7 @@ and a moment later apply the damage anyway when the shooter's result arrives.
 ## File transfer (sharing maps and mods)
 
 Multiplayer includes a built-in file transfer system so a host can send modified game
-files — custom maps, tweaked XML data, a modified `JA2_Options.ini` — to the players who
+files — custom maps, tweaked XML data, a modified `Ja2_Options.INI` — to the players who
 connect. This means everyone plays with the same data without installing anything manually.
 
 Downloaded files never overwrite your own installation. They are stored in a
@@ -161,7 +161,7 @@ different servers with different settings without your own game data getting mes
 2. Place your modified files in it using the same relative paths they would have under
    `GAMEDIR\Data\` or `GAMEDIR\Data-1.13\`. For example, modified TableData XML files go
    into `GAMEDIR\MULTIPLAYER\Servers\My Server\TableData\`, and a modified
-   `ja2_Options.ini` goes directly into `GAMEDIR\MULTIPLAYER\Servers\My Server\`.
+   `Ja2_Options.INI` goes directly into `GAMEDIR\MULTIPLAYER\Servers\My Server\`.
 3. On the Host options screen, enable the **Sync MP Clients Directory** option.
 4. Host the game.
 

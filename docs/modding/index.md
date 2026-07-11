@@ -53,7 +53,7 @@ software are enough.
 
 | What | How | Details |
 |---|---|---|
-| Game rules and options | INI files (`JA2_Options.ini`, `CTHConstants.ini`, `APBPConstants.ini`, …) | [Configuration overview](../configuration/index.md), [JA2_Options.ini tour](../configuration/options-ini.md) |
+| Game rules and options | INI files (`Ja2_Options.INI`, `CTHConstants.ini`, `APBPConstants.ini`, …) | [Configuration overview](../configuration/index.md), [Ja2_Options.INI tour](../configuration/options-ini.md) |
 | Items, weapons, merchants, sector items | XML files in `Data-1.13\TableData` | [XML modding](xml-modding.md), [editing XML safely](../configuration/xml-files.md) |
 | Weapon attachments | New Attachment System XMLs (slots, incompatibilities) | [NAS internals](nas-internals.md) |
 | Mercs' starting equipment | `MercStartingGear.xml` (New Starting Gear Interface) | [Starting gear](starting-gear.md) |
@@ -69,7 +69,7 @@ relative path in your mod folder.
 
 Two practical notes that apply across all of these:
 
-- INI files listed under `MERGE_INI_FILES` in `Ja2.ini` (by default `Ja2_Options.ini`)
+- INI files listed under `MERGE_INI_FILES` in `Ja2.ini` (by default `Ja2_Options.INI`)
   are **merged across the layers** rather than replaced whole, reading from the top
   layer down. A mod therefore only needs to ship the settings it actually changes.
 - XML files are not merged — the topmost copy wins in full. Always start from the

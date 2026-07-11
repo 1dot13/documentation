@@ -25,17 +25,17 @@ without breaking your install.
 
 | File | Location | What it controls |
 | --- | --- | --- |
-| `ja2.ini` | game root (next to `ja2.exe`) | Engine-level settings: resolution, windowed mode, which game mode (VFS config) to load, tooltip scaling, intro playback, INI merging |
-| `JA2_Options.ini` | `Data-1.13` | The big one — the bulk of 1.13's gameplay settings |
+| `Ja2.ini` | game root (next to `ja2.exe`) | Engine-level settings: resolution, windowed mode, which game mode (VFS config) to load, tooltip scaling, intro playback, INI merging |
+| `Ja2_Options.INI` | `Data-1.13` | The big one — the bulk of 1.13's gameplay settings |
 | `CTHConstants.ini` | `Data-1.13` | Tuning for the New Chance to Hit (NCTH) system |
 | `APBPConstants.ini` | `Data-1.13` | Action Point (AP) and Breath Point (BP) costs and tuning |
 | Various `*_Settings.ini` and other INIs | `Data-1.13` | Per-subsystem settings: morale, skills, taunts, helicopter, and more |
 | XML files | `Data-1.13\TableData` | Game *data*: items, weapons, merc profiles, difficulty presets, vehicles… |
 | `vfs_config.*.ini` | game root | Definitions of the four playable modes (advanced; usually left alone) |
 
-### ja2.ini — resolution, window mode, game mode
+### Ja2.ini — resolution, window mode, game mode
 
-`ja2.ini` sits in the game root next to `ja2.exe` and holds the settings the
+`Ja2.ini` sits in the game root next to `ja2.exe` and holds the settings the
 engine needs before any game data is loaded. Everything lives in one
 `[Ja2 Settings]` section, and every key is explained by comments in the file
 itself. The ones you are most likely to touch:
@@ -60,7 +60,7 @@ itself. The ones you are most likely to touch:
 
 #### The four playable modes
 
-A 1.13 install can launch four different games. `VFS_CONFIG_INI` in `ja2.ini`
+A 1.13 install can launch four different games. `VFS_CONFIG_INI` in `Ja2.ini`
 selects which one by pointing at one of the four config files shipped in the
 game root:
 
@@ -82,15 +82,15 @@ Only one line may be active; the others stay commented out with `;`. Mods that
 ship their own data folder usually come with their own `vfs_config.XYZ.ini` —
 switching to the mod is the same one-line change.
 
-### JA2_Options.ini — the big one
+### Ja2_Options.INI — the big one
 
-`Data-1.13\JA2_Options.ini` is where the vast majority of 1.13's switches
+`Data-1.13\Ja2_Options.INI` is where the vast majority of 1.13's switches
 live: difficulty tweaks, economy, enemy behavior, item drops, squad sizes, and
 much more, organized into commented sections. Since r8610 it also holds a
 number of options that used to be on the New Game screen (see
 [New game options](../playing/new-game-options.md)).
 
-- [Guided tour of JA2_Options.ini](options-ini.md) — what's in each section
+- [Guided tour of Ja2_Options.INI](options-ini.md) — what's in each section
   and which settings people actually change.
 - [Recommended settings](recommended-settings.md) — opinionated suggestions
   for a first campaign.
@@ -182,8 +182,8 @@ you want to build your own mod layer or understand the syntax, see
 
 - **Use a plain text editor** — Notepad++ or similar. Not the bundled INI
   Editor, and not a word processor.
-- **Back up before you edit.** Copy the file (e.g. `JA2_Options.ini` →
-  `JA2_Options.ini.bak`) so you can always get back to a known-good state.
+- **Back up before you edit.** Copy the file (e.g. `Ja2_Options.INI` →
+  `Ja2_Options.INI.bak`) so you can always get back to a known-good state.
   Keeping a backup copy of your whole game folder is even better.
 - **Change one thing at a time**, then test in game. If something breaks, you
   know exactly which edit caused it.
@@ -198,10 +198,10 @@ you want to build your own mod layer or understand the syntax, see
 Updating 1.13 overwrites the INI files in `Data-1.13`, taking your carefully
 tuned settings with it. The engine has a fix for this: INI merging.
 
-`ja2.ini` ships with:
+`Ja2.ini` ships with:
 
 ```ini
-MERGE_INI_FILES = Ja2_Options.ini
+MERGE_INI_FILES = Ja2_Options.INI
 ```
 
 For every file named in this comma-separated list, you can place a personal
@@ -211,7 +211,7 @@ each under its original `[section]` header — not the whole file. At load time
 the game reads the base file from `Data-1.13` and then overwrites those values
 with yours.
 
-For example, a minimal `Profiles\UserProfile_JA2113\Ja2_Options.ini` that just
+For example, a minimal `Profiles\UserProfile_JA2113\Ja2_Options.INI` that just
 disables the Drassen counterattack:
 
 ```ini
@@ -219,18 +219,18 @@ disables the Drassen counterattack:
 TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN = FALSE
 ```
 
-Now updates can replace `Data-1.13\JA2_Options.ini` freely — your overrides in
+Now updates can replace `Data-1.13\Ja2_Options.INI` freely — your overrides in
 the profile folder survive untouched. To merge additional INI files, add their
 names to the `MERGE_INI_FILES` list.
 
 !!! note
-    Check the section name in your current `Data-1.13\JA2_Options.ini` when
+    Check the section name in your current `Data-1.13\Ja2_Options.INI` when
     writing an override — a key must appear under the same `[section]` header
     it has in the base file.
 
 ## Going deeper
 
-- [JA2_Options.ini tour](options-ini.md) — section-by-section guide to the
+- [Ja2_Options.INI tour](options-ini.md) — section-by-section guide to the
   main settings file
 - [Recommended settings](recommended-settings.md) — suggested tweaks for a
   smoother first campaign

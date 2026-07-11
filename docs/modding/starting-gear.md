@@ -50,7 +50,7 @@ Two related settings live in `[Recruitment Settings]` of the same file:
 | `GEARKITS_ALWAYS_AVAILABLE` | If `TRUE`, a merc's gear kits stay available on the A.I.M./M.E.R.C. sites on re-hire, even if their gear was already bought once. Default `FALSE`. |
 | `MERCS_RANDOM_GEAR_KITS` | Only takes effect with `MERCS_RANDOM_STATS = 4` (full merc randomization, which generates brand-new random kits): A.I.M. and M.E.R.C. mercs get a random kit instead of their original one. |
 
-See the [JA2_Options.ini tour](../configuration/options-ini.md) for how to edit this
+See the [Ja2_Options.INI tour](../configuration/options-ini.md) for how to edit this
 file safely.
 
 ## MercStartingGear.xml

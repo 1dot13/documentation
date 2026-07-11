@@ -43,7 +43,7 @@ The developers can only fix what they can reproduce. Include:
   shorter and more reliable the reproduction, the better.
 - **A savegame** from just before the problem occurs, attached to the issue. For crashes
   and combat oddities this is usually the single most helpful thing you can provide.
-- **Your setup**, where relevant: operating system, resolution, and any `JA2_Options.ini`
+- **Your setup**, where relevant: operating system, resolution, and any `Ja2_Options.INI`
   or other INI settings you changed from the defaults.
 
 !!! tip "One bug per issue"

@@ -6,7 +6,7 @@ merc gets to act first. 1.13 reworked this mechanic twice — first by allowing 
 interrupts per turn, and then, in 2011, with Sandro's **Improved Interrupt System
 (IIS)**, which replaces the old "spot check" with a reflex model built around an
 **interrupt counter**. The IIS is on by default in current releases
-(`IMPROVED_INTERRUPT_SYSTEM = TRUE` in `Ja2_Options.ini`) and can also be toggled on
+(`IMPROVED_INTERRUPT_SYSTEM = TRUE` in `Ja2_Options.INI`) and can also be toggled on
 the [new game screen](../new-game-options.md).
 
 This page explains both systems, every interrupt setting in the current INI files, and
@@ -163,9 +163,9 @@ contains no interrupt modifiers.
 
 ## Settings reference
 
-All of the interrupt keys in the current `Ja2_Options.ini` live in the
+All of the interrupt keys in the current `Ja2_Options.INI` live in the
 `[Tactical Gameplay Settings]` section. Descriptions are paraphrased from the INI's
-own comments; see the [JA2_Options.ini tour](../../configuration/options-ini.md) for
+own comments; see the [Ja2_Options.INI tour](../../configuration/options-ini.md) for
 editing basics.
 
 | Key | Default | What it does |
@@ -183,7 +183,7 @@ listed in the table above.
 
 ## Turning it off
 
-Set `IMPROVED_INTERRUPT_SYSTEM = FALSE` in `Ja2_Options.ini`, or turn off *Improved
+Set `IMPROVED_INTERRUPT_SYSTEM = FALSE` in `Ja2_Options.INI`, or turn off *Improved
 Interrupt System* among the feature flags on the
 [new game screen](../new-game-options.md) — those toggles can also be changed
 mid-campaign. The game then falls back to the classic

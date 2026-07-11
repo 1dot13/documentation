@@ -112,7 +112,7 @@ MINI_EVENTS_MIN_HOURS_BETWEEN_EVENTS = 120
 MINI_EVENTS_MAX_HOURS_BETWEEN_EVENTS = 240
 ```
 
-(See the [JA2_Options.ini tour](../configuration/options-ini.md) for the file
+(See the [Ja2_Options.INI tour](../configuration/options-ini.md) for the file
 itself.) The script's long header comment is effectively its manual: it documents the
 entry points (`BeginRandomEvent()` and `BeginSpecificEvent()` at the bottom of the
 file), says modders will "probably only need to modify the Events and HiddenEvents

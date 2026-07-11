@@ -31,7 +31,7 @@ A few hiring tips:
 
 - Hover over a mercenary's portrait to see their traits. The tooltips explain what
   each trait does.
-- With `SHOW_SKILLS_IN_HIRING_PAGE` enabled in `JA2_Options.ini`, skills and traits
+- With `SHOW_SKILLS_IN_HIRING_PAGE` enabled in `Ja2_Options.INI`, skills and traits
   show as a tooltip on merc portraits on both the AIM and MERC hiring pages — see
   [recommended settings](../configuration/recommended-settings.md).
 - Your IMP character (the custom merc you create at the start) has no upkeep cost, so
@@ -110,10 +110,10 @@ shots. Practical advice:
 - **Mines are your income.** Capturing towns with mines (Drassen is the classic first
   target) provides the steady cash flow that pays your mercs' salaries. Note that one
   mine will eventually run out of ore — the `WHICH_MINE_SHUTS_DOWN` setting in
-  `JA2_Options.ini` controls which one, and `MINE_INCOME_PERCENTAGE` scales how much
+  `Ja2_Options.INI` controls which one, and `MINE_INCOME_PERCENTAGE` scales how much
   mines pay out.
 - **Sell your loot.** Battles leave behind piles of enemy weapons. With
-  `SELL_ITEMS_WITH_ALT_LMB` enabled in `JA2_Options.ini`, you can sell items directly
+  `SELL_ITEMS_WITH_ALT_LMB` enabled in `Ja2_Options.INI`, you can sell items directly
   from the sector inventory screen. If you want enemies to drop everything they carry,
   look at the `DROP_ALL` setting — both are covered on the
   [recommended settings](../configuration/recommended-settings.md) page.
@@ -137,7 +137,7 @@ retake it. In 1.13 this attack is infamous for being very difficult to handle so
 in the campaign.
 
 !!! tip "You can turn it off"
-    In `Data-1.13\JA2_Options.ini`, set
+    In `Data-1.13\Ja2_Options.INI`, set
     `TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN` to `FALSE` to disable the
     counterattack entirely. This is the recommended choice for a first campaign — see
     [recommended settings](../configuration/recommended-settings.md) for this and

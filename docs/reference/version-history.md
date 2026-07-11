@@ -32,7 +32,7 @@ old documentation:
 | r4870 | December 11, 2011 | Official release of its day (the "previous release" on the old wiki). |
 | r7435 | August 28, 2014 | Official release; distributed as a full installer package. |
 | r7609 | October 25, 2014 | Update to r7435 and the last official *stable* of the SVN era. Known simply as **"the stable"** or **"7609"** — many classic [mods](mods.md) were built against it and still require it. |
-| r8610 | — | Moved several New Game screen options (NCTH, enemies drop all, food system and others) into `JA2_Options.ini`; r8622 then removed the "Max IMP Characters" option. See [New game options](../playing/new-game-options.md). |
+| r8610 | — | Moved several New Game screen options (NCTH, enemies drop all, food system and others) into `Ja2_Options.INI`; r8622 then removed the "Max IMP Characters" option. See [New game options](../playing/new-game-options.md). |
 | r8741 | ~2019 | The development build that the previous (2019-era) starter documentation was written against. |
 | r9389 | 2022 | The last widely documented SVN-era build: the official hotkeys PDF is titled "2022 Unstable Release (as of r9389)". It is the basis of this site's [hotkey reference](../playing/hotkeys.md). |
 

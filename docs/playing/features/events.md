@@ -15,7 +15,7 @@ rather than in C++ or XML, so it is also one of the easiest systems to mod.
 
 ## Turning it on
 
-Mini Events are **disabled by default**. Enable them in `Ja2_Options.ini`:
+Mini Events are **disabled by default**. Enable them in `Ja2_Options.INI`:
 
 ```ini
 [Mini Events Settings]
@@ -106,7 +106,7 @@ can keep a merc away for a week or more of game time.
 
 ## The event catalog (spoilers)
 
-The `Ja2_Options.ini` comment itself says: "See MiniEvents.lua for spoilers/more
+The `Ja2_Options.INI` comment itself says: "See MiniEvents.lua for spoilers/more
 information." The lists below summarize every event in the current
 `Data-1.13\Scripts\MiniEvents.lua` — 31 regular events plus 16 hidden follow-up
 events. Numbers are the indices in the Lua file. Randomized amounts are shown as

@@ -38,9 +38,9 @@ Two notation conventions carry over from the PDF:
   ++f1++ selects merc 1; pressing it again centers the screen on them.
 - Where the PDF separates alternative keys with a bar (`|`), this page writes "or".
 
-Several hotkeys depend on an in-game option or a setting in `JA2_Options.ini`; those
+Several hotkeys depend on an in-game option or a setting in `Ja2_Options.INI`; those
 notes are kept in the tables. See the
-[JA2_Options.ini guide](../configuration/options-ini.md) for the settings themselves.
+[Ja2_Options.INI guide](../configuration/options-ini.md) for the settings themselves.
 
 !!! tip "Mercs only moving backwards? Hotkeys acting up? It's the stuck Alt key"
     When you ++alt+tab++ out of the game and back in, the game sometimes thinks
@@ -98,7 +98,7 @@ notes are kept in the tables. See the
 | ++shift+k++ or ++alt+q++ | Swap weapons between gun sling and main hand. |
 | ++ctrl+shift+k++ | Equip sidearm; swap sidearm with gun sling. |
 | ++alt+shift+k++ | Equip knife; swap knife with gun sling. |
-| ++alt+1++ – ++alt+0++ | Quick access to items, which need to be defined in `JA2_Options.ini` under `[Tactical Interface Settings]`, keys `QUICK_ITEM_1` – `QUICK_ITEM_10`. |
+| ++alt+1++ – ++alt+0++ | Quick access to items, which need to be defined in `Ja2_Options.INI` under `[Tactical Interface Settings]`, keys `QUICK_ITEM_1` – `QUICK_ITEM_10`. |
 | ++alt+tilde++ | Put the quick-access item back into inventory and swap hands. |
 | ++shift+p++ | Fold/unfold stock. |
 | ++shift+t++ | Quick item transformation for the primary-hand item. |
@@ -124,7 +124,7 @@ notes are kept in the tables. See the
 !!! note "* Goggle swaps"
     When using either goggle swap, any merc who does not have the "correct" type of
     gear will simply wear none at all. With
-    `GOGGLE_SWAP_AFFECTS_ALL_MERCS_IN_SECTOR = FALSE` in `JA2_Options.ini` (default is
+    `GOGGLE_SWAP_AFFECTS_ALL_MERCS_IN_SECTOR = FALSE` in `Ja2_Options.INI` (default is
     `TRUE`), the swaps only affect the currently selected squad instead of every merc
     in the sector.
 
@@ -157,7 +157,7 @@ notes are kept in the tables. See the
 | ++k++ | Open the keys panel (the inventory panel must be open). |
 | ++v++ | Show game version, difficulty, Bobby Ray settings, progress, etc. |
 | ++shift++ (hold) | Increase screen scrolling speed when using the arrows or mouse. |
-| ++num-minus++ | Speed up the game. Useful for speeding up long enemy turns. Can be changed in `JA2_Options.ini` under `[Clock Settings]`, key `FAST_FORWARD_KEY`. |
+| ++num-minus++ | Speed up the game. Useful for speeding up long enemy turns. Can be changed in `Ja2_Options.INI` under `[Clock Settings]`, key `FAST_FORWARD_KEY`. |
 | ++backspace++ | Skip the current dialogue (if any). |
 | ++pause++ | Pause the game. Any key or ++"LMB"++ resumes. |
 | ++ctrl+v++ | Open the sector inventory manipulations menu. |
@@ -225,7 +225,7 @@ display on or off.
 
 !!! info "Extended and alternative mouse commands"
     The middle-button, MB4 and MB5 commands require `ENABLE_EXT_MOUSE_KEYS = TRUE`
-    (the default) in `JA2_Options.ini` under `[Tactical Interface Settings]`. The same
+    (the default) in `Ja2_Options.INI` under `[Tactical Interface Settings]`. The same
     section also has `ALTERNATE_MOUSE_COMMANDS` (default `FALSE`): setting it to
     `TRUE` switches the wheel and extra buttons to a different, extended scheme —
     that scheme is documented in `JA2_113_Hotkeys_ALT_MOUSE.pdf` and

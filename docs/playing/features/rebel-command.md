@@ -18,7 +18,7 @@ supply lines.
 
 ## Enabling it
 
-Set in `JA2_Options.ini`, section `[Rebel Command Settings]`:
+Set in `Ja2_Options.INI`, section `[Rebel Command Settings]`:
 
 ```ini
 REBEL_COMMAND_ENABLED = TRUE
@@ -30,7 +30,7 @@ a new campaign, but the feature can be enabled mid-campaign: the game then grant
 starting stock of Supplies based on the current day and campaign progress so you don't
 begin from zero.
 
-The master toggle lives in `JA2_Options.ini`; all the numbers behind the feature live
+The master toggle lives in `Ja2_Options.INI`; all the numbers behind the feature live
 in a separate file, `Data-1.13\RebelCommand_Settings.ini` (the options INI comment
 calls it "RebelCommand.ini", but `RebelCommand_Settings.ini` is the actual file the
 game loads). See [tuning](#tuning-rebelcommand_settingsini) below.

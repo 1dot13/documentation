@@ -11,7 +11,7 @@ page covers the friendly robot first and ends with how the enemy versions differ
 
 The robot is the reward of the **Madlab quest**, which only starts once your campaign
 [progress](bobby-ray.md) reaches the `GAME_PROGRESS_START_MADLAB_QUEST` threshold
-(default `35`, section `[Strategic Progress Settings]` of `JA2_Options.ini`). When you
+(default `35`, section `[Strategic Progress Settings]` of `Ja2_Options.INI`). When you
 cross it, a Meanwhile cutscene plays and Madlab can be found hiding out in southern
 Arulco.
 
@@ -117,7 +117,7 @@ holds the remote:
 The gun Madlab builds in is **fixed**: trying to swap it pops up "The robot's
 installed weapon cannot be changed.", and attachments cannot be added afterwards
 ("It is not possible to add attachments to the robot's weapon."). Two INI switches in
-`[Tactical Gameplay Settings]` of `JA2_Options.ini` affect how the weapon behaves:
+`[Tactical Gameplay Settings]` of `Ja2_Options.INI` affect how the weapon behaves:
 
 | Setting | Default | Effect |
 |---|---|---|

@@ -64,10 +64,10 @@ size** you can choose when starting a game (640x480 allows squads of 6, 800x600 
     [configuration basics](../configuration/index.md) for safe-editing advice.
 
 !!! tip "Everything else can wait"
-    `Data-1.13\JA2_Options.ini` contains hundreds of gameplay settings. The defaults
+    `Data-1.13\Ja2_Options.INI` contains hundreds of gameplay settings. The defaults
     give you the intended 1.13 experience — resist the urge to tweak before your first
     campaign. When you are ready, see the
-    [JA2_Options.ini tour](../configuration/options-ini.md) and the
+    [Ja2_Options.INI tour](../configuration/options-ini.md) and the
     [recommended settings](../configuration/recommended-settings.md).
 
 ## Step 3 — Start a new campaign
@@ -90,7 +90,7 @@ option in full):
 
 !!! note "Aiming system: leave it alone for now"
     Current releases use the classic chance-to-hit system (OCTH) by default; the New
-    Chance to Hit system (NCTH) is an opt-in setting in `JA2_Options.ini`. OCTH is more
+    Chance to Hit system (NCTH) is an opt-in setting in `Ja2_Options.INI`. OCTH is more
     predictable and easier to learn — keep it for your first campaign, and read
     [NCTH explained](../playing/features/ncth.md) if you get curious later.
 
@@ -298,7 +298,7 @@ The full defense guide is in the walkthrough:
 !!! note "You can turn the counterattack off"
     If it is simply too much for a first campaign, set
     `TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN = FALSE` in
-    `Data-1.13\JA2_Options.ini` (default `TRUE`). No shame — vanilla JA2 never had it.
+    `Data-1.13\Ja2_Options.INI` (default `TRUE`). No shame — vanilla JA2 never had it.
 
 Survive that, and you hold a town, an airport, a mine and an income. Your first
 campaign is truly under way.

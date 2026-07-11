@@ -108,10 +108,10 @@ Backpacks are the biggest containers, and they come with real combat penalties:
   `AP_JUMPFENCE` in `APBPConstants.ini`).
 - Climbing with a backpack is restricted. With the shipped defaults
   (`MAX_BACKPACK_WEIGHT_TO_CLIMB = 5`, `USE_GLOBAL_BACKPACK_SETTINGS = TRUE` under
-  `[Tactical Gameplay Settings]` in `JA2_Options.ini`), a merc can only climb while
+  `[Tactical Gameplay Settings]` in `Ja2_Options.INI`), a merc can only climb while
   wearing a very light pack (empty weight 0.5 kg or less). Both settings are documented
   in the INI if you want different rules — see
-  [JA2_Options.ini](../../configuration/options-ini.md).
+  [Ja2_Options.INI](../../configuration/options-ini.md).
 
 Because of this, 1.13 gives you hotkeys to ditch and recover packs quickly:
 
@@ -120,7 +120,7 @@ Because of this, 1.13 gives you hotkeys to ditch and recover packs quickly:
 | ++shift+b++ | All mercs in the sector drop their backpacks (NIV only). |
 | ++ctrl+shift+f++ | Pick up all dropped backpacks (NIV only), then automatically run ++shift+f++ (remove attachments/unload weapons in sector) and ++shift+s++ (sort sector inventory). |
 
-With `SHOW_BACKPACK_OWNER = TRUE` (the default in `JA2_Options.ini`), a dropped backpack
+With `SHOW_BACKPACK_OWNER = TRUE` (the default in `Ja2_Options.INI`), a dropped backpack
 shows its owner's name on the ground and in the taking-items interface, so packs go back
 to the right merc. The full list of inventory-related keys is on the
 [hotkeys reference](../hotkeys.md).

@@ -4,7 +4,7 @@ NCTH is 1.13's optional replacement for the shooting mechanics of the original g
 It was designed by Headrock for the HAM mod series as "a complete rework of the entire
 shooting mechanism for JA2 1.13, rethinking the way weapons are aimed and fired", and
 was later merged into 1.13 itself. It is **off by default** — you enable it with the
-`NCTH` setting in `JA2_Options.ini` (see [Turning NCTH on or off](#turning-ncth-on-or-off)).
+`NCTH` setting in `Ja2_Options.INI` (see [Turning NCTH on or off](#turning-ncth-on-or-off)).
 
 The original system is referred to as **OCTH** (Old Chance to Hit). Which one you play
 with is a matter of taste: OCTH is more predictable and easier to read, NCTH is more
@@ -68,7 +68,7 @@ At long range you will notice the outer circle grows huge and the crosshairs ref
 close all the way. That is NCTH telling you the shot is beyond your merc's current
 ability — move closer, aim more, go prone, or bring better optics.
 
-Two `JA2_Options.ini` settings refine the cursor itself:
+Two `Ja2_Options.INI` settings refine the cursor itself:
 
 | Setting | What it does |
 | ------- | ------------ |
@@ -197,7 +197,7 @@ Practical consequences:
   mid-burst — mixed tracer belts genuinely help long volleys.
 - Recoil trouble scales with range: at twice the normal distance, recoil is twice as
   bad and corrections half as accurate. Keep autofire for short and medium range.
-- With `USE_AIMED_BURST` enabled in `JA2_Options.ini` (current releases ship it on),
+- With `USE_AIMED_BURST` enabled in `Ja2_Options.INI` (current releases ship it on),
   you can add aim to burst and autofire with the mouse wheel, or ++comma++ if the
   wheel is unavailable.
 
@@ -225,7 +225,7 @@ Players switching from OCTH usually notice the following:
 
 ## Turning NCTH on or off
 
-NCTH is controlled by a single switch in `JA2_Options.ini` (in the `Data-1.13`
+NCTH is controlled by a single switch in `Ja2_Options.INI` (in the `Data-1.13`
 folder), under `[Tactical Gameplay Settings]`:
 
 ```ini
@@ -237,7 +237,7 @@ Set it to `TRUE` to play with NCTH, `FALSE` for the classic OCTH system. The set
 applies to everyone in the game — your mercs, militia and the enemy alike.
 
 On the old r7609 "stable" release this was a **New Game screen option** ("New Chance
-to Hit System"); it moved into `JA2_Options.ini` with r8610. See
+to Hit System"); it moved into `Ja2_Options.INI` with r8610. See
 [new game options](../new-game-options.md) for the other settings that moved.
 
 !!! tip "Pick one per campaign"
@@ -264,7 +264,7 @@ taste, this file is the sanctioned way to fix that.
 
 See the [configuration overview](../../configuration/index.md) for where the file
 lives and general INI editing advice, and the
-[JA2_Options.ini tour](../../configuration/options-ini.md) for the related gameplay
+[Ja2_Options.INI tour](../../configuration/options-ini.md) for the related gameplay
 switches.
 
 !!! warning "Edit with care"

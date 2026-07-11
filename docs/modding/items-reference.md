@@ -134,7 +134,7 @@ just the five text tags for localization.
 | Tag | Type | Meaning |
 | --- | --- | --- |
 | `ubWeight` | number | Weight in **tenths of a kilogram** (6 = 0.6 kg). The display divides by 10 (× 2.2 for pounds). Note: a stale comment in the source header claims "2 units per kilogram" — the code says otherwise. |
-| `ItemSize` | 0–34 | Size class for the [New Inventory System](../playing/features/inventory.md). Pocket capacities per size come from `Pockets.xml` (`ItemCapacityPerSize0`–`34`); the cap is `MAX_ITEM_SIZE` in `Ja2_Options.ini` (default 34). Setting `ItemSize` equal to `OLD_INVENTORY_ITEM_NUMBER` (default 99) makes the item **old-inventory-only** — it is excluded from NIV games. |
+| `ItemSize` | 0–34 | Size class for the [New Inventory System](../playing/features/inventory.md). Pocket capacities per size come from `Pockets.xml` (`ItemCapacityPerSize0`–`34`); the cap is `MAX_ITEM_SIZE` in `Ja2_Options.INI` (default 34). Setting `ItemSize` equal to `OLD_INVENTORY_ITEM_NUMBER` (default 99) makes the item **old-inventory-only** — it is excluded from NIV games. |
 | `ubPerPocket` | number | Stack size per pocket under the *old* inventory system (0 = doesn't fit in small pockets). NIV ignores it for normal pockets and uses the `Pockets.xml` capacity tables instead. |
 | `usPrice` | number | Base value in dollars. Drives shop prices and repair costs; 0 means dealers won't trade it. |
 | `ubCoolness` | 0–10 | Quality tier that gates availability by campaign [progress — see Bobby Ray's & coolness](../playing/features/bobby-ray.md). 0 = never sold by any shop. |
@@ -168,7 +168,7 @@ useful for alternate item sets:
 
 New items therefore need their picture appended to one of the `mdp*items.sti` files —
 see the [tools page](../reference/tools.md) for STI editors. By default the game loads
-three such files; `NUM_P_ITEMS` in `Ja2_Options.ini` (section *Data File Settings*,
+three such files; `NUM_P_ITEMS` in `Ja2_Options.INI` (section *Data File Settings*,
 max 20) raises that for mods with many new graphics, which also requires the
 XML-based `ja2set.dat.xml` (see the comments at that INI key). The engine can
 alternatively load loose PNGs from `Interface\mdguns\` and `Interface\MDP<N>ITEMS\`
@@ -349,7 +349,7 @@ The food and drug systems are optional; their per-item data lives in `Food.xml` 
 | `Soda` | Vending-machine soda can. |
 | `Medical` | Medical supply (routes to medical dealers; usable in treatment). |
 | `MedicalKit` / `FirstAidKit` | The doctor's medical bag / the small first-aid kit. |
-| `MedicalSplint` | Splint appliable to certain injuries/diseases. |
+| `MedicalSplint` | Splint applicable to certain injuries/diseases. |
 | `Bloodbag` / `EmptyBloodbag` | Blood bag that boosts surgery / its empty counterpart. |
 | `DiseaseprotectionFace` / `DiseaseprotectionHand` | Carrying this protects against contact infection (face mask / gloves). |
 | `Jar` / `ContainsLiquid` | Glass jar (fillable) / container holding liquid. |
@@ -442,4 +442,4 @@ accepted by the parser but ignored, so don't bother with them.
 - `Tactical/Items.cpp` — availability checks (`BigGunList`/`SciFi`/`NewInv`/`AttachmentSystem`), stacking, item-size and weight calculations, spotter/skill modifiers, dealer classification (with `Tactical/ArmsDealerInvInit.cpp`).
 - `Tactical/Interface Items.cpp` and `Tactical/InterfaceItemImages.*` — graphic type → STI file mapping, weight display units.
 - `Laptop/BobbyR.cpp` and `Laptop/BobbyRGuns.cpp` — `BR_NewInventory`/`BR_UsedInventory` restocking and the `BR_ROF` display.
-- Current game data from [1dot13/gamedir](https://github.com/1dot13/gamedir): `TableData/Items/Items.xml` (sample records), `Pockets.xml`, `Drugs.xml`, `TableData/Lookup/ItemClass.xml` and `Cursor.xml`, `Ja2_Options.ini` (`MAX_ITEM_SIZE`, `OLD_INVENTORY_ITEM_NUMBER`).
+- Current game data from [1dot13/gamedir](https://github.com/1dot13/gamedir): `TableData/Items/Items.xml` (sample records), `Pockets.xml`, `Drugs.xml`, `TableData/Lookup/ItemClass.xml` and `Cursor.xml`, `Ja2_Options.INI` (`MAX_ITEM_SIZE`, `OLD_INVENTORY_ITEM_NUMBER`).

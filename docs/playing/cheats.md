@@ -65,7 +65,7 @@ CHEAT_MODE = FALSE
 ```
 
 Set it to `TRUE` and every campaign starts at the maximum cheat level, no
-key code needed. See [JA2_Options.ini tour](../configuration/options-ini.md)
+key code needed. See [Ja2_Options.INI tour](../configuration/options-ini.md)
 for how to edit the file safely.
 
 !!! note "Cheat levels"

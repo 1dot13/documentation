@@ -6,9 +6,9 @@ and water is more than scenery. Almost every rule on this page applies to both s
 the enemy suffers in a sandstorm exactly like you do, and the AI actively avoids gas,
 deep water and lit spots at night.
 
-Everything below is taken from the current `JA2_Options.ini`, game data and source code;
+Everything below is taken from the current `Ja2_Options.INI`, game data and source code;
 settings live in the `[Tactical Weather Settings]` and `[Environment Hazard Settings]`
-sections unless noted (see the [JA2_Options.ini tour](../../configuration/options-ini.md)).
+sections unless noted (see the [Ja2_Options.INI tour](../../configuration/options-ini.md)).
 
 ## Dynamic weather
 
@@ -74,7 +74,7 @@ During thunderstorms, lightning periodically lights up the whole map for a momen
 - **In-game**: the new-game options screen has *Weather: Rain*, *Weather: Lightning*,
   *Weather: Sandstorms* and *Weather: Snow* toggles that override the INI — see
   [new-game options](../new-game-options.md).
-- **`JA2_Options.ini`**: master switches and frequency per type — `ALLOW_RAIN`,
+- **`Ja2_Options.INI`**: master switches and frequency per type — `ALLOW_RAIN`,
   `ALLOW_LIGHTNING`, `ALLOW_SANDSTORM`, `ALLOW_SNOW`, plus per-type
   `*_EVENTS_PER_DAY`, `*_CHANCE_PER_DAY` and `*_MIN`/`MAX_LENGTH_IN_MINUTES` keys.
   With stock settings rain is common (up to 5 events a day, 1–4 hours each), sandstorms
@@ -212,7 +212,7 @@ Details worth knowing, all from the current source:
     As far as civilians and militia are concerned, walking into a cloud of gas *you*
     created counts as being attacked by you (documented at the
     `CAN_TRUE_CIVILIANS_BECOME_HOSTILE` / `CAN_MILITIA_BECOME_HOSTILE` settings in
-    `JA2_Options.ini`). Gassing a town square can turn it hostile.
+    `Ja2_Options.INI`). Gassing a town square can turn it hostile.
 
 ## Fire
 

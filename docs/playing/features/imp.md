@@ -44,12 +44,12 @@ the [new game screen](../new-game-options.md)) you will see:
 3. **Personal details** — flavor drop-downs for your appearance, refinement,
    nationality and prejudices (hated nationality, racism, sexism, and how much you
    care). These feed the 1.13 morale system: mercs judge the people they share a
-   sector with (`[Morale Settings]` in `Ja2_Options.ini`).
+   sector with (`[Morale Settings]` in `Ja2_Options.INI`).
 4. **Traits** — up to 3 picks: at most 2 major traits (the same major twice makes you
    an *expert*), the rest minor. Details on every trait: [Skills & traits](traits.md).
 5. **Background** — if backgrounds are enabled (default), pick one from
    `TableData\Backgrounds.xml`. With `ALTERNATIVE_IMP_CREATION = TRUE` in
-   `Ja2_Options.ini` (off by default), your trait and disability picks filter which
+   `Ja2_Options.INI` (off by default), your trait and disability picks filter which
    backgrounds are offered — see [Skills & traits](traits.md#traits-at-imp-creation).
 6. **Attributes** — the point-buy screen, including your starting experience level
    (see below).
@@ -73,13 +73,13 @@ gender-restricted traits.
 
 !!! note "New Trait System needs profile XMLs"
     The New Trait System requires `READ_PROFILE_DATA_FROM_XML = TRUE` in
-    `Ja2_Options.ini` (the default). If you turned it off, the game will tell you the
+    `Ja2_Options.INI` (the default). If you turned it off, the game will tell you the
     new system is unavailable when starting a new game.
 
 ## The point budget
 
 All numbers below are the defaults from the `[Recruitment Settings]` section of
-`Data-1.13\Ja2_Options.ini` and can be changed there — see the
+`Data-1.13\Ja2_Options.INI` and can be changed there — see the
 [options guide](../../configuration/options-ini.md).
 
 | Setting | Default | Meaning |

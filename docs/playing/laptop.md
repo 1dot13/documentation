@@ -8,7 +8,7 @@ available. Deep mechanics live on the linked pages.
 
 !!! info "Version context"
     Everything below was checked against the current GitHub source
-    (`github.com/1dot13/source`) and `Ja2_Options.ini` defaults, i.e. the v5 /
+    (`github.com/1dot13/source`) and `Ja2_Options.INI` defaults, i.e. the v5 /
     "Latest (unstable)" releases. Older installs have fewer sites.
 
 ## Opening and closing it
@@ -18,7 +18,7 @@ bottom-right corner. A blinking envelope over that button means unread email. In
 the laptop, ++escape++ shuts it down again; the full key list is in the
 [hotkeys reference](hotkeys.md#laptop).
 
-Three `[Laptop Settings]` keys in `JA2_Options.ini` change how it feels:
+Three `[Laptop Settings]` keys in `Ja2_Options.INI` change how it feels:
 
 | Setting | Default (gamedir) | Effect |
 |---|---|---|
@@ -215,7 +215,7 @@ Missions are fully moddable via `TableData\BriefingRoom\BriefingRoom.xml`; see
 
 ### Encyclopedia
 
-An in-game encyclopedia site exists in the source, and `Ja2_Options.ini` still carries
+An in-game encyclopedia site exists in the source, and `Ja2_Options.INI` still carries
 `ENCYCLOPEDIA` / `ENCYCLOPEDIA_ITEM_MASK` keys — but the feature is compiled out of
 current builds (the INI itself notes it "is currently deactivated and does not do
 anything"). Setting the key to `TRUE` has no effect.
@@ -235,7 +235,7 @@ through a beginner's first laptop session in order.
 - [`Strategic/Town Militia.cpp`](https://raw.githubusercontent.com/1dot13/source/master/Strategic/Town%20Militia.cpp) — 1dot13/source (Kerberus and Militia Overview email triggers after militia training; R.I.S. email on first intel gain)
 - `Strategic/Assignments.cpp`, `Strategic/Game Init.cpp`, `Strategic/Game Event Hook.cpp`, `Strategic/Player Command.cpp` — 1dot13/source (militia-roster email from prisoner defections, M.E.R.C. intro timing, Bobby Ray's unlock on capturing a shipment sector)
 - `Laptop/AimLinks.cpp`, `Laptop/funeral.cpp`, `Laptop/BobbyR.cpp`, `Laptop/IMP HomePage.cpp` — 1dot13/source (A.I.M. Links page targets, Mortuary→Florist link, under-construction store, `XEP624` code)
-- [`Ja2/GameSettings.cpp`](https://raw.githubusercontent.com/1dot13/source/master/Ja2/GameSettings.cpp) and [`Ja2_Options.ini`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/Ja2_Options.ini) — INI keys, defaults and the feature-flag overrides
+- [`Ja2/GameSettings.cpp`](https://raw.githubusercontent.com/1dot13/source/master/Ja2/GameSettings.cpp) and [`Ja2_Options.INI`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/Ja2_Options.INI) — INI keys, defaults and the feature-flag overrides
 - [`i18n/_EnglishText.cpp`](https://raw.githubusercontent.com/1dot13/source/master/i18n/_EnglishText.cpp) — exact site names, bookmark strings, program titles and site text
 - Briefing Room feature/modding documentation text from the 1.13 documentation set (access code, EDT/XML layout)
 - [Bear's Pit: "Kerberus and questions thereof"](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=23569) — player-side confirmation of the Kerberus unlock email

@@ -65,7 +65,7 @@ The keys, in short (the [hotkey reference](../playing/hotkeys.md) has the full l
 Current builds have three separate auto-save mechanisms:
 
 - **Timed auto-saves.** `AUTO_SAVE_EVERY_N_HOURS` in the `[Troubleshooting Settings]`
-  section of `JA2_Options.ini` (default `12`, `0` disables) writes a save every N
+  section of `Ja2_Options.INI` (default `12`, `0` disables) writes a save every N
   *game* hours, rotating through the five *Auto Save* slots so you always keep the
   last five snapshots.
 - **End-of-turn saves.** The in-game options screen has a **Tactical End-Turn Save**
@@ -90,7 +90,7 @@ sector), **Soft Iron Man** (no saving in combat only) or **Extreme Iron Man** (s
 only at one fixed hour per day — on the hour exactly). The
 [new game options page](../playing/new-game-options.md#the-save-modes) describes all
 four modes; the Extreme Iron Man hour and its notification behavior are set in
-[`JA2_Options.ini`](options-ini.md).
+[`Ja2_Options.INI`](options-ini.md).
 
 When saving is not allowed, the save keys and buttons simply refuse with an Iron Man
 message. Auto-saves are the exception — Extreme Iron Man's INI options explicitly
@@ -116,7 +116,7 @@ Since build r8610 the new-game screen follows a deliberate design rule, announce
 1.13 developer Flugente on the Bear's Pit forum: the start screen only holds choices
 that are **stored in the savegame and genuinely cannot change later** — while anything
 the code can change at any point in a campaign ("half the start screen, really") was
-moved to `JA2_Options.ini` precisely so you can adjust it mid-game. The full story is on
+moved to `Ja2_Options.INI` precisely so you can adjust it mid-game. The full story is on
 the [new game options page](../playing/new-game-options.md#options-that-moved-to-ja2_optionsini-r8610).
 
 That means everything on the current new-game screen is fixed for the life of the
@@ -129,7 +129,7 @@ maximum squad size, and the Bobby Ray settings.
 
 ### Safe to change mid-campaign
 
-- **Most `JA2_Options.ini` settings.** This is the point of the r8610 redesign: INI
+- **Most `Ja2_Options.INI` settings.** This is the point of the r8610 redesign: INI
   settings are read at startup, not stored in the save. The
   [recommended settings](recommended-settings.md) can generally be applied to a running
   campaign — just remember that values consumed during campaign setup (starting cash,
@@ -145,7 +145,7 @@ maximum squad size, and the Bobby Ray settings.
 
 | Change | Risk | Where it's documented |
 | ------ | ---- | --------------------- |
-| `[System Limit Settings]` in `JA2_Options.ini` (`MAX_NUMBER_PLAYER_MERCS`, `MAX_NUMBER_PLAYER_VEHICLES`, the people-per-sector caps) | The INI warns these can make existing saves **unloadable**. The fix is equally documented: revert to your previous values and the "broken" saves load again. | [JA2_Options.ini tour](options-ini.md) |
+| `[System Limit Settings]` in `Ja2_Options.INI` (`MAX_NUMBER_PLAYER_MERCS`, `MAX_NUMBER_PLAYER_VEHICLES`, the people-per-sector caps) | The INI warns these can make existing saves **unloadable**. The fix is equally documented: revert to your previous values and the "broken" saves load again. | [Ja2_Options.INI tour](options-ini.md) |
 | Toggling the food system (`FOOD`) | Not designed to be switched once a campaign is running; there is a documented workaround to neutralize it instead. | [Food & water](../playing/features/food.md) |
 | Enabling Rebel Command mid-campaign | Loads fine, but the INI itself recommends a new campaign "unless you're up for a challenge". | [Rebel Command](../playing/features/rebel-command.md) |
 | Removing or renumbering entries in `Items.xml` (and friends) | Savegames store inventories as **item numbers**. Editing an existing item's values shows up in a running campaign, but deleting or renumbering entries makes saved inventories point at the wrong items — effectively scrambling or breaking the save. Item-set overhauls (mods) need a new campaign. | [XML files](xml-files.md), [XML modding](../modding/xml-modding.md) |

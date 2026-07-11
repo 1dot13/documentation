@@ -2,9 +2,9 @@
 
 1.13's screen and interface settings live in three places:
 
-- **`ja2.ini`** in the game root — resolution, windowed mode, tooltip scaling,
+- **`Ja2.ini`** in the game root — resolution, windowed mode, tooltip scaling,
   intro playback. Read by the engine before anything else loads.
-- **`Data-1.13\JA2_Options.ini`** — everything about *what* the interface shows:
+- **`Data-1.13\Ja2_Options.INI`** — everything about *what* the interface shows:
   tooltips, health bars, hit feedback, load screens, map overlays.
 - **The in-game Options screen** — toggles you flip while playing, saved to
   `Ja2_Settings.ini` in your user profile folder.
@@ -12,9 +12,9 @@
 This page covers all three. For the general layout of the config files and how to
 edit them safely, start at the [configuration overview](index.md).
 
-## Resolution and window mode (`ja2.ini`)
+## Resolution and window mode (`Ja2.ini`)
 
-`ja2.ini` sits next to `ja2.exe` and holds one `[Ja2 Settings]` section. The
+`Ja2.ini` sits next to `ja2.exe` and holds one `[Ja2 Settings]` section. The
 display-related keys:
 
 | Key | Default | What it does (from the file's comments) |
@@ -52,7 +52,7 @@ A few behaviors worth knowing, verified in the current source:
 - In windowed mode the game shaves a little off the window size (16 px width,
   70 px height) at 1024×768 and above so the window fits on the desktop.
 
-!!! note "On modern installs, cnc-ddraw controls the window — not `ja2.ini`"
+!!! note "On modern installs, cnc-ddraw controls the window — not `Ja2.ini`"
     Current releases ship the **cnc-ddraw** wrapper. When its `ddraw.dll` is
     active, the game detects it and **ignores `SCREEN_MODE_WINDOWED`** — windowed,
     borderless and fullscreen mode, scaling, and the renderer are all set through
@@ -62,7 +62,7 @@ A few behaviors worth knowing, verified in the current source:
     for the full cnc-ddraw walkthrough. `SCREEN_RESOLUTION` still applies — it
     sets the resolution the game renders at, which cnc-ddraw then scales.
 
-    The old comment in `ja2.ini` about switching Windows to 16-bit color for
+    The old comment in `Ja2.ini` about switching Windows to 16-bit color for
     windowed mode is legacy advice from the pre-cnc-ddraw era.
 
 Two lesser-known extras, both verified in the source:
@@ -74,13 +74,13 @@ Two lesser-known extras, both verified in the source:
   shipped file) that turns off edge-of-screen map scrolling in tactical view —
   handy in windowed mode, where the cursor tends to graze the window edges.
 
-The rest of `ja2.ini` (game mode selection via `VFS_CONFIG_INI`, INI merging,
+The rest of `Ja2.ini` (game mode selection via `VFS_CONFIG_INI`, INI merging,
 `CD`, `VFS_NO_UNICODE`, `USE_WINFONTS`) is covered in the
 [configuration overview](index.md).
 
-## Graphics options in `JA2_Options.ini`
+## Graphics options in `Ja2_Options.INI`
 
-The `[Graphics Settings]` section of `JA2_Options.ini` opens with: "These settings
+The `[Graphics Settings]` section of `Ja2_Options.INI` opens with: "These settings
 do not affect gameplay at all, only the visual aspect of the game." Highlights,
 with shipped defaults:
 
@@ -135,7 +135,7 @@ The rest of the family:
 
 Related tooltip settings elsewhere:
 
-- `TOOLTIP_SCALE_FACTOR` in `ja2.ini` scales the font of all tooltips (see above).
+- `TOOLTIP_SCALE_FACTOR` in `Ja2.ini` scales the font of all tooltips (see above).
 - `COVER_TOOLTIP_DISPLAY_DETAILED_TILE_PROPERTIES = TRUE` in
   `[Tactical Cover System Settings]` makes the ++f++ cover tooltip list detailed
   tile properties and values.
@@ -147,7 +147,7 @@ Related tooltip settings elsewhere:
 `[Tactical Interface Settings]` controls what the tactical screen tells you about
 soldiers and shots. The gameplay-affecting entries (CtH readout, hidden bullet
 count, NCTH cursors) are covered in the
-[JA2_Options.ini tour](options-ini.md); the purely visual ones:
+[Ja2_Options.INI tour](options-ini.md); the purely visual ones:
 
 | Setting | Default | Effect |
 | --- | --- | --- |
@@ -246,12 +246,12 @@ Description Box can additionally be limited to strategic or tactical only with
 
 !!! note "No INI settings for the team panel"
     The bottom team panel is not INI-configurable: there are no
-    `TEAMPANEL`-style keys in the current `ja2.ini` or `JA2_Options.ini` to
+    `TEAMPANEL`-style keys in the current `Ja2.ini` or `Ja2_Options.INI` to
     restyle or resize it.
 
 ## Sources
 
-- `Ja2.ini` (game root) and `Data-1.13/JA2_Options.INI` from the current
+- `Ja2.ini` (game root) and `Data-1.13/Ja2_Options.INI` from the current
   [1dot13/gamedir](https://github.com/1dot13/gamedir) repository — key names,
   defaults and comment text quoted from the files themselves
   (`[Graphics Settings]`, `[Tactical Interface Settings]`,

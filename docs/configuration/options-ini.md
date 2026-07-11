@@ -1,6 +1,6 @@
-# JA2_Options.ini guide
+# Ja2_Options.INI guide
 
-`JA2_Options.ini` is the master switchboard of 1.13. It is a plain text file of roughly
+`Ja2_Options.INI` is the master switchboard of 1.13. It is a plain text file of roughly
 4,800 lines, split into 55 `[Sections]`, and almost every headline feature of the mod —
 NCTH, the food system, drop-all, backgrounds, the strategic AI — has its on/off switch or
 tuning knobs in here. This page is a guided tour: where the file lives, how to edit it
@@ -9,7 +9,7 @@ safely, what each section does, and a closer look at the settings players actual
 Everything below (key names, defaults, value ranges) is taken from the current file in the
 [1dot13/gamedir](https://github.com/1dot13/gamedir) repository, which is what ships with
 the "Latest" releases. In current releases the file on disk is named `Ja2_Options.INI` —
-capitalization doesn't matter on Windows, and the community calls it `JA2_Options.ini`
+capitalization doesn't matter on Windows, and the community calls it `Ja2_Options.INI`
 either way.
 
 !!! note "Older installs differ"
@@ -21,7 +21,7 @@ either way.
 
 ## How to edit the file
 
-The file lives in your game folder at `Data-1.13\JA2_Options.ini`. If you play a mod that
+The file lives in your game folder at `Data-1.13\Ja2_Options.INI`. If you play a mod that
 uses its own data folder, edit that mod's copy instead (for example `Data-AIM\` for
 AIMNAS) — see [Configuration overview](index.md) for how the data folders stack.
 
@@ -48,7 +48,7 @@ A few rules the file itself spells out in its header:
     loadable again.
 
 Not everything lives in this one file anymore. Newer feature areas have their own INIs in
-`Data-1.13\`, and `JA2_Options.ini` refers you to them in its comments:
+`Data-1.13\`, and `Ja2_Options.INI` refers you to them in its comments:
 `Skills_Settings.INI` (traits and skill tuning), `Morale_Settings.INI`,
 `Mod_Settings.ini`, `RebelCommand_Settings.ini`, `AI.ini`, `Item_Settings.ini` and
 others. NCTH's math lives in `CTHConstants.ini` and action point costs in

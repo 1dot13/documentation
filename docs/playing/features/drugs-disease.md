@@ -118,7 +118,7 @@ will die of illness if you neglect them — so it is opt-in.
 
 ### Turning it on
 
-Set the keys in the `[Disease Settings]` section of `JA2_Options.ini`:
+Set the keys in the `[Disease Settings]` section of `Ja2_Options.INI`:
 
 | Setting | Default | What it does |
 | --- | --- | --- |

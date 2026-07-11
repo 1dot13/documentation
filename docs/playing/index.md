@@ -8,7 +8,7 @@ covers the topic in full.
 
 !!! tip "Almost everything is optional"
     Most 1.13 features can be tuned or switched off. Big choices live on the New Game
-    screen; hundreds more live in `JA2_Options.ini`. If a mechanic described here is not
+    screen; hundreds more live in `Ja2_Options.INI`. If a mechanic described here is not
     to your taste, there is probably a switch for it — see
     [Configuration](../configuration/index.md).
 
@@ -26,7 +26,7 @@ more vulnerable. It works on you exactly as it works on the enemy, and friendly 
 suppresses too.
 
 This changes tactics fundamentally: a machine gun burst that hits nothing can still win a
-turn. Suppression intensity can be adjusted or disabled in `JA2_Options.ini`.
+turn. Suppression intensity can be adjusted or disabled in `Ja2_Options.INI`.
 
 Read more: the [suppression guide](features/suppression.md) for the full mechanics, and
 [starter tips](tips.md) for using it effectively.
@@ -48,7 +48,7 @@ are possible, for your mercs and for the enemy — if you pass on the first chan
 get another. A merc who ends the turn with leftover AP has a better chance of triggering
 an interrupt, which makes overwatch positioning a deliberate tactic. Current releases
 also ship an optional **Improved Interrupt System**, toggled with
-`IMPROVED_INTERRUPT_SYSTEM` in `JA2_Options.ini` (on by default).
+`IMPROVED_INTERRUPT_SYSTEM` in `Ja2_Options.INI` (on by default).
 
 The improved system (originally by Sandro, in SVN builds since r4903) replaces the old
 spot-checks with an **interrupt counter**: every Action Point an enemy spends inside
@@ -58,7 +58,7 @@ counter must fill depends on agility, remaining APs, and injuries. Mercs close t
 can also trigger **collective interrupts** for one another, so a squad leader who holds
 his APs and watches the battlefield genuinely helps the mercs around him.
 
-Read more: [JA2_Options.ini tour](../configuration/options-ini.md).
+Read more: [Ja2_Options.INI tour](../configuration/options-ini.md).
 
 ### Aiming: improved OCTH, optional NCTH
 
@@ -72,7 +72,7 @@ The optional **NCTH** (New Chance to Hit) system replaces percentages entirely. 
 a circle around your target; the bullet can land anywhere inside it, and the circle
 shrinks as you spend AP aiming. It rewards scopes, stances, and patience, and plays very
 differently. On current releases you pick the system with the `NCTH` setting in
-`JA2_Options.ini` (off by default); on the old r7609 release it was a New Game screen
+`Ja2_Options.INI` (off by default); on the old r7609 release it was a New Game screen
 option.
 
 Read more: [NCTH explained](features/ncth.md).
@@ -87,7 +87,7 @@ Read more: [NCTH explained](features/ncth.md).
   each tile, so you can pick real cover instead of guessing.
 - Hold ++alt++ while hovering over an enemy to see a **soldier tooltip** describing their
   armor and weapon. How much it reveals (from a vague silhouette to an exact loadout) is
-  configurable in `JA2_Options.ini`.
+  configurable in `Ja2_Options.INI`.
 
 Stances matter more than ever: lower stances make your merc harder to see and hit, and a
 merc who is prone or crouched next to cover **rests their weapon** on it for better
@@ -189,7 +189,7 @@ Militia in 1.13 are a real part of your army:
   your towns, and nearby militia can reinforce your mercs when you attack a sector.
 - Veteran militia can be trained in city and SAM-site sectors.
 
-All of this is configurable in `JA2_Options.ini`.
+All of this is configurable in `Ja2_Options.INI`.
 
 Read more: [militia training and command](features/militia.md).
 
@@ -206,7 +206,7 @@ with unlimited reinforcements.
 !!! warning "The Drassen counterattack"
     Taking Drassen early without preparation can end a 1.13 campaign fast. You can
     disable the counterattack by setting `TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN`
-    to `FALSE` in `JA2_Options.ini` — no shame in it.
+    to `FALSE` in `Ja2_Options.INI` — no shame in it.
 
 Read more: [starter tips](tips.md) on surviving the early war.
 
@@ -214,7 +214,7 @@ Read more: [starter tips](tips.md) on surviving the early war.
 
 Mines are still your main income, and 1.13 makes them easier to manage: on the strategic
 map, ++m++ toggles a map filter showing mines, their names, and their income. In
-`JA2_Options.ini`, `MINE_INCOME_PERCENTAGE` scales how much cash mines produce, and
+`Ja2_Options.INI`, `MINE_INCOME_PERCENTAGE` scales how much cash mines produce, and
 `WHICH_MINE_SHUTS_DOWN` controls which mine runs out of ore during the campaign.
 
 Read more: [recommended settings](../configuration/recommended-settings.md).
@@ -233,7 +233,7 @@ Read more: [New Game options](new-game-options.md).
 
 Years of later development — most of it by Flugente, announced feature by feature on the
 Bear's Pit forum's *Flugente's Magika Workshop* board — added entire optional subsystems
-on top of the campaign. The keys named below live in `JA2_Options.ini`, and several of
+on top of the campaign. The keys named below live in `Ja2_Options.INI`, and several of
 these systems can also be toggled from the
 [1.13 Features screen](new-game-options.md#the-113-features-screen):
 
@@ -271,7 +271,7 @@ these systems can also be toggled from the
 ## Quality of life
 
 - **Resolutions.** Vanilla was locked to 640x480; 1.13 runs at higher and custom
-  resolutions, set in `ja2.ini`. Some features need the extra space — the enhanced item
+  resolutions, set in `Ja2.ini`. Some features need the extra space — the enhanced item
   description box does not fit in 640x480, and the maximum squad size (6, 8, or 10) is
   tied to resolution.
 - **Tooltips everywhere.** Skill traits explain themselves on the New Game and IMP
