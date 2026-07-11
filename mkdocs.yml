@@ -64,6 +64,8 @@ markdown_extensions:
 
 plugins:
   - search
+  - social:
+      enabled: !ENV [CI, false]
   - git-revision-date-localized:
       enable_creation_date: false
       fallback_to_build_date: true
