@@ -116,6 +116,10 @@ This site is itself a community project, and it is deliberately easy to fix:
 - **Larger changes:** the site lives at
   [github.com/1dot13/documentation](https://github.com/1dot13/documentation). It is built
   with MkDocs Material; pages are plain Markdown files under `docs/`.
+- **Just reporting:** if you spot an error but would rather not edit anything yourself,
+  open an issue on
+  [1dot13/documentation](https://github.com/1dot13/documentation/issues) naming the page
+  and what is wrong.
 
 To preview your changes locally:
 

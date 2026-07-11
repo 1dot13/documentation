@@ -63,11 +63,33 @@ back to `Data`. Mods built on 1.13 ship their own folder in the same pattern, e.
 `Data-AIM` for AIMNAS — see the [configuration overview](../configuration/index.md)
 and the [VFS page](../modding/vfs.md) for how the layering works.
 
+**DEFEAT_MODE** — A `Ja2_Options.INI` setting that defines when a lost battle counts as
+a *defeat*, with its morale and loyalty penalties: any loss (the default), only losses
+where the enemy was alerted or saw you retreat, or only battles where mercs actually
+died. See [Retreat, defeat & capture](../playing/features/defeat.md).
+
+**Dirt** — Weapon fouling, half of the advanced repair/dirt system (on by default):
+every shot dirties the gun — faster in dusty sectors — and a dirty gun jams more until
+a merc with a cleaning kit removes the fouling. See
+[Weapons & ballistics](../playing/features/weapons.md).
+
 **Drassen counterattack** — A massive enemy counterattack the Queen launches at Drassen
 early in the game, infamous for wiping out unprepared squads. It is controlled by
 `TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN` in `Ja2_Options.INI`; see
 [Starter tips](../playing/tips.md) for surviving it and
 [Early game](../walkthrough/early-game.md) for the details.
+
+**Dynamic opinions** — A Flugente feature from 2014: mercs form and update individual
+opinions of each other as the campaign unfolds, feeding into morale, dialogue and team
+chemistry. The MeLoDY laptop site (see below) visualizes the results. See
+[Morale & opinions](../playing/features/morale.md).
+
+## F
+
+**Facilities** — Specific buildings in specific sectors (such as Cambria's hospital)
+that offer extra map-screen assignments and bonuses, at a price and sometimes at a
+risk. The system was introduced by Headrock's HAM mod and is long since part of core
+1.13. See [Facilities & assignments](../playing/features/facilities.md).
 
 ## G
 
@@ -102,8 +124,8 @@ See [Inventory & LBE](../playing/features/inventory.md).
 
 ## M
 
-**MeLoDy** — A laptop website (unlocked with dynamic opinions) that analyzes your
-team's personalities and relationships. See
+**MeLoDY** — A laptop website (unlocked with *dynamic opinions*, see above) that
+analyzes your team's personalities and relationships. See
 [Morale & opinions](../playing/features/morale.md).
 
 **Mini Events** — Optional random campaign events that pop up on the strategic screen
@@ -142,6 +164,12 @@ on the AIM website and lets each merc offer up to five selectable gear kits, def
 ## O
 
 **OCTH** — See **NCTH / OCTH** above.
+
+**Overheating** — An optional weapon-temperature feature, off by default
+(`OVERHEATING` in `Ja2_Options.INI`, or the *Weapon Overheating* toggle on the
+new-game screen): every shot heats the gun, and a hot gun jams more and wears out
+faster until it cools down. See
+[Weapons & ballistics](../playing/features/weapons.md).
 
 ## P
 
@@ -188,6 +216,11 @@ animations and tilesets (e.g. `tilesets.slf`). The VFS can mount SLF archives as
 as uncompressed 7z archives. See
 [Virtual File System](../modding/vfs.md).
 
+**Snitch** — A minor trait (written by modder anv, merged in 2014) that turns a merc
+into your informant: midnight gossip reports on the team, propaganda and
+rumor-gathering in towns, even undercover work among prisoners of war. See
+[Snitches & informants](../playing/features/snitches.md).
+
 **STI** — The image format used for JA2 graphics such as merc faces and portraits,
 limited to a 256-color palette and usually edited with the STI Edit tool. See
 [Faces & portraits](../modding/faces.md).
@@ -211,12 +244,24 @@ See [XML data files](../configuration/xml-files.md).
 enables 1.13's massive expanded gun list, while *Reduced* keeps a smaller arsenal. See
 [New game options](../playing/new-game-options.md).
 
+**Transport groups** — Enemy supply convoys, a third kind of enemy group besides
+patrols and attack groups (off by default; `STRATEGIC_TRANSPORT_GROUPS_ENABLED`).
+They run between the Queen's staging area and her mining towns, drop everything they
+carry when intercepted, and feed the enemy war machine if they make it home. See
+[The strategic war](../playing/features/strategic-war.md).
+
 ## V
 
 **VFS** — The Virtual File System, which builds a unified view of the game's files at
 runtime from stacked *profiles* of folders and archives, configured in `vfs_config.ini`.
 It is the machinery behind the `Data-XXX` layering and makes mods easy to distribute and
 combine. See [Virtual File System](../modding/vfs.md).
+
+**Volunteer pool** — An optional militia rule (`MILITIA_VOLUNTEER_POOL`, off by
+default): Arulco holds a single, finite pool of people willing to fight for you, and
+every militiaman trained consumes one volunteer. Liberating sectors, recruiting
+civilians and the Rebel Command *Draft Civilians* directive refill it. See
+[Militia](../playing/features/militia.md).
 
 ## Sources
 

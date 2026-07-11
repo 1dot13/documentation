@@ -32,7 +32,7 @@ You will see two kinds of release on that page:
 
 | Release | What it is |
 | --- | --- |
-| **Stable tags** (`v1` … `v5`) | Fixed snapshots published periodically. `v5` (September 2025) is the newest stable release at the time of writing. |
+| **Stable tags** (currently `v1` and `v5`) | Fixed snapshots published periodically. `v5` (September 2025) is the newest stable release at the time of writing; the intermediate tags `v2`–`v4` are no longer listed on the page. See [Version history](../reference/version-history.md) for the whole release story. |
 | **Latest (unstable)** | A rolling pre-release that is rebuilt continuously as development goes on, with the newest features and bug fixes — and the newest bugs. |
 
 If you want a predictable first campaign, take the newest stable tag. If you want the current state of development (and are willing to report the occasional bug), take *Latest (unstable)*.
@@ -65,18 +65,19 @@ Run `ja2.exe` in your game folder. That's it — the mod is active as soon as it
 
 A few things worth knowing right away:
 
-- **Where settings live.** Basic engine settings such as resolution and windowed mode are in `Ja2.ini`, next to `ja2.exe`. The bulk of 1.13's gameplay options are in `Data-1.13\Ja2_Options.INI`. See the [configuration overview](../configuration/index.md) before you start editing.
-- **Display problems?** Current releases ship with *cnc-ddraw* to make the old engine behave on modern Windows. If you hit issues with higher resolutions, a black screen, or ++alt+tab++ not working, run `cnc-ddraw-config.exe` in the game folder and adjust its settings.
+- **Where settings live.** Basic engine settings such as resolution and windowed mode are in `Ja2.ini`, next to `ja2.exe`. The bulk of 1.13's gameplay options are in `Data-1.13\Ja2_Options.INI`. See the [configuration overview](../configuration/index.md) before you start editing — and note that some settings only take effect in a new campaign ([Savegames](../configuration/savegames.md) has the details).
+- **Display problems?** Current releases ship with *cnc-ddraw* to make the old engine behave on modern Windows. If you hit issues with higher resolutions, a black screen, or ++alt+tab++ not working, run `cnc-ddraw config.exe` (the name contains a space) in the game folder and adjust its settings.
 - **Anything else broken?** See [troubleshooting](troubleshooting.md) — it also covers the legacy fixes (Wine DLLs, registry tweaks, CPU affinity) that old guides recommend for pre-GitHub installs, and playing on Linux or Mac via Wine.
 
 ## Next steps
 
-Your install is done. Continue with the [guided tutorial](tutorial.md), which takes you from first-time settings through creating your IMP merc, hiring a squad, and landing in Arulco. Quick questions are collected in the [FAQ](faq.md).
+Your install is done. Continue with the [guided tutorial](tutorial.md), which takes you from first-time settings through creating your IMP merc, hiring a squad, and landing in Arulco. Unsure which difficulty to pick for a first campaign? [Difficulty levels](../playing/difficulty.md) compares them side by side, and the [feature guides](../playing/features/index.md) show everything the mod adds. Quick questions are collected in the [FAQ](faq.md).
 
 ## Sources
 
-- [1dot13/source releases page](https://github.com/1dot13/source/releases) — current all-in-one releases (v5, Latest (unstable))
+- [1dot13/source releases page](https://github.com/1dot13/source/releases) — current all-in-one releases (v5, Latest (unstable)); release names and dates re-verified via the GitHub API, July 2026
 - [README of the 1dot13/source repository](https://github.com/1dot13/source) — install steps, release contents, cnc-ddraw advice
+- [1dot13/gamedir repository](https://github.com/1dot13/gamedir) — `cnc-ddraw config.exe` filename (verified July 2026)
 - [Bear's Pit thread: How to get: latest 1.13, 7609, feature-descriptions and more](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=24648)
 - [Digi Storage archive with the 7609 installers](https://storage.rcs-rds.ro/links/4729f8d6-f44b-42b7-aa3e-e0ddc6deead6?path=%2FJA_2%2Fv1.13_Releases%2FOfficial%2FEnglish%2Fv7435) (file listing verified July 2026)
 - Jagged Alliance 2 v1.13 Starter Documentation (r8741 era), from github.com/1dot13/documentation — folder advice, backup tips, 7609 file names

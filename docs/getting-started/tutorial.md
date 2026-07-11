@@ -78,7 +78,7 @@ option in full):
 
 | Option | First-run recommendation | Why |
 | ------ | ------------------------ | --- |
-| Difficulty Level | **Experienced** | The default, and the baseline the game is balanced around. Difficulty affects starting cash, enemy numbers, elite troops and more. |
+| Difficulty Level | **Experienced** | The default, and the baseline the game is balanced around. Difficulty affects starting cash, enemy numbers, elite troops and more — see [difficulty levels compared](../playing/difficulty.md). |
 | Skill Traits | **New** | The 1.13 trait system. Hover any trait for a tooltip explaining what it does. |
 | Game Style | Sci-Fi or Realistic | *Sci-Fi* (the default) includes a unique enemy type and some unrealistic weapons; *Realistic* removes them. Pick *Realistic* if you want a purely military campaign. |
 | Extra Difficulty | **Save Anytime** | Iron Man restricts saving to enemy-free sectors — not for a first run. |
@@ -103,7 +103,8 @@ manager. Later in the campaign you reach it from the map screen with ++l++, and 
 it with ++escape++.
 
 1. **Read your e-mail first.** Your inbox explains your mission in Arulco and contains
-   a message from I.M.P. — the Institute for Mercenary Profiling — with an access code.
+   a message from Psych Pro Inc. about I.M.P. — the Institute for Mercenary
+   Profiling — with an access code.
 2. The **Web** section is where you hire people: A.I.M. (the mercenary agency),
    I.M.P. (your custom merc), and later Bobby Ray's online gun shop and the cut-price
    M.E.R.C. agency, which are not available on day one.
@@ -112,19 +113,21 @@ it with ++escape++.
 
 Your I.M.P. character is a custom mercenary you design yourself. Creation costs a flat
 $3,000, and unlike hired mercs an I.M.P. has no recurring salary — easily the best
-money you will spend today.
+money you will spend today. This section covers the essentials; the
+[IMP creation guide](../playing/features/imp.md) is the full reference.
 
 1. Open the I.M.P. website from the browser.
 2. Enter the access code from the I.M.P. e-mail: **XEP624**.
 3. Fill in a name, an optional nickname, and a gender.
 4. Work through the profiling process: attributes, skills and traits, then a portrait
-   and one of three voices per gender.
+   and a voice (the current game data ships 20 portraits and 15 voice sets).
 
 In 1.13 the attribute screen is a point-buy system. By default you distribute a
-500-point pool across your attributes, each between 35 and 85. Dropping an attribute
-below 35 sets it to 0 in exchange for bonus points, and skipping optional extras
-(skill traits, or taking a disability) also earns extra points. 1.13 can also let you
-pick a **background** with its own bonuses and penalties.
+500-point pool across your attributes, each between 35 and 85. Five of the ten
+attributes (Leadership, Marksmanship, Mechanical, Explosives and Medical) can be
+dropped below 35 — that sets them straight to 0 in exchange for bonus points.
+Skipping trait picks earns extra points too, as does taking a disability. 1.13 can
+also let you pick a **background** with its own bonuses and penalties.
 
 !!! tip "A solid first I.M.P."
     Don't min-max your first character. High Marksmanship, Health, Dexterity and
@@ -179,7 +182,7 @@ The essentials to get through it — combat is turn-based once enemies are sight
 | ++p++ / ++c++ / ++s++ | Go prone / crouch / stand |
 | ++r++ | Run mode |
 | ++l++ | Turn to face the cursor; press again to raise your weapon |
-| ++b++ | Cycle single/burst/auto fire modes |
+| ++b++ | Cycle burst/auto (and under-barrel) fire modes |
 | ++alt+r++ | Reload the selected merc's weapon |
 | ++f++ | Show info about the tile under the cursor (cover, range, chance to hit…) |
 | ++j++ | Vault fences, climb onto or off flat roofs |
@@ -227,7 +230,7 @@ also involves a food-delivery side quest that starts here — see
 
 Leave Omerta via the strategic map (++m++): select your squad, plot a route to Drassen
 and confirm. Holding ++shift++ while plotting picks the most direct route instead of
-the fastest. Compress time with ++"+"++ / ++"-"++ or toggle it with ++space++, and
+the fastest. Compress time with ++plus++ / ++minus++ or toggle it with ++space++, and
 enter a highlighted sector with ++escape++ when you arrive.
 
 Drassen spans three sectors from north to south: **B13** (airport), **C13**
@@ -262,8 +265,10 @@ fight from. In 1.13, be wary of **enemy reinforcements from nearby patrols** joi
 the battle — they often bring better-armed red- and black-shirted troops.
 
 Once the sector is clear, talk to the **head miner** in the southwest so the Drassen
-mine starts working for you. Mine income is what funds the rest of your campaign — you
-can see mine income on the map screen with the ++m++ map filter.
+mine starts working for you — a mine pays *nothing* until you have spoken to him. Mine
+income is what funds the rest of your campaign (see
+[money & economy](../playing/economy.md)); you can see it on the map screen with the
+++m++ map filter.
 
 !!! tip "Resupply at Bobby Ray's"
     With the airport secured, order gear from Bobby Ray's on the laptop and have it
@@ -276,10 +281,12 @@ defend captured sectors while you move on.
 
 1. Open the map screen (++m++) and give one of your leaders the militia-training
    assignment in a Drassen sector (hold right-click on a merc in tactical, or use the
-   assignment column on the map screen). Training costs money — that reserve from
-   Step 6.
+   assignment column on the map screen). Training costs money ($750 a session by
+   default) and the trainer needs at least 20 Leadership — that reserve from Step 6
+   has a purpose.
 2. Repeat until the town sectors have solid garrisons. You can start training before
-   you hold the entire town.
+   you hold the entire town. Note that 1.13 militia also draw a small daily upkeep
+   ($10/$20/$30 per green/regular/elite militiaman), so keep some income flowing.
 3. See [militia](../playing/features/militia.md) for training, moving militia between
    sectors, and directly commanding them in battle.
 
@@ -331,6 +338,9 @@ campaign is truly under way.
   on this page.
 - `Ja2.ini` and `Data-1.13/Ja2_Options.INI` from the current
   [1dot13/gamedir](https://github.com/1dot13/gamedir) repository — resolution settings,
-  I.M.P. point-buy values, counterattack setting.
+  I.M.P. point-buy values, militia training cost, Leadership requirement and daily
+  upkeep, counterattack setting.
+- `Data-1.13/TableData/IMPPortraits.xml` and `IMPVoices.xml` from the same repository —
+  I.M.P. portrait and voice counts.
 - The previous 1.13 starter documentation (r8741-era): index and play guide — New Game
   option descriptions, starter merc suggestions, early tactics, counterattack advice.

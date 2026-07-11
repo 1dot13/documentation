@@ -9,8 +9,8 @@ the weapon picture in its description box, so you can see at a glance what fits 
 
 This page covers NAS from the player's side: how slots behave, what the common
 attachment families do, and how to work the scope-mode toggle in combat. If you want
-to know how the system is defined in XML (slots, assignments, incompatibilities), see
-[NAS internals](../../modding/nas-internals.md).
+to know how the system is defined in XML (slots, compatibility, incompatibilities),
+see [NAS internals](../../modding/nas-internals.md).
 
 ## Choosing old or new at game start
 
@@ -25,8 +25,8 @@ system, via the **Inventory / Attachments** option:
 
 There is no "Old / New" combination: NAS only works together with the
 [New Inventory System](inventory.md), and it needs a resolution above 640x480 —
-there simply isn't enough screen space otherwise. If you try anyway, the game warns
-you and refuses to start. See [New Game options](../new-game-options.md) for the
+there simply isn't enough screen space otherwise. At 640x480 the selector is hidden
+and the game runs Old / Old. See [New Game options](../new-game-options.md) for the
 rest of the New Game screen.
 
 Some items are flagged to exist only in one of the two systems, so the arsenal you
@@ -34,22 +34,23 @@ encounter differs slightly depending on your choice.
 
 !!! warning "Pick once, per campaign"
     Switching the attachment system in the middle of a campaign is not recommended:
-    attachments can disappear from items they no longer fit. Under NAS, attachments
-    on LBE gear (vests, packs) are also no longer possible.
+    attachments can disappear from items they no longer fit.
 
 ## How slots work
 
-- **Slots depend on the gun.** Every weapon has its own list of slots, and each slot
-  accepts specific attachments. A sniper rifle has a slot that takes big scopes; a
-  machine pistol probably doesn't. Internally an item can have up to 30 slots.
+- **Slots depend on the gun.** Each slot holds one family of attachment — scope,
+  laser, sight, stock, barrel and so on — and the game shows a slot only if the gun
+  actually accepts an attachment of that family. Which attachment fits which gun is
+  defined per gun in the game data (`Attachments.xml`), so a sniper rifle grows a
+  slot for big scopes while a machine pistol doesn't.
 - **Big slots** exist for bulky attachments that would not fit a normal slot.
-- **Attachments can add or remove slots.** The classic example is an under-barrel
-  grenade launcher: attach it to a compatible rifle and it brings its own launcher
-  slot, into which you then load a grenade. Modders also use this for things like
-  rail expansions.
+- **Attachments can bring their own slots.** The classic example is an under-barrel
+  grenade launcher: attach it to a compatible rifle and its launcher slot appears on
+  the rifle's panel, into which you then load a grenade. Any attachment that itself
+  accepts attachments works this way.
 - **Some combinations are still forbidden**, even when the slots are free. NAS keeps
-  an incompatibility list for pairs that make no sense together — for example, a 7x
-  battle scope cannot be combined with a reflex sight.
+  an incompatibility list for pairs that make no sense together — for example, a 10x
+  sniper scope cannot be combined with a reflex sight.
 - **Merges still exist.** Changing a gun's caliber (barrel/conversion kits) is still
   done by merging items, not by attachments. NAS checks merge results for validity.
 - **Tooltips help.** NAS added many attachment tooltips, and in Bobby Ray's web shop
@@ -184,7 +185,7 @@ fewer). To keep looting balanced, each attachment only has an
 `ATTACHMENT_DROP_RATE` chance (default 10%) to drop with the weapon when its owner
 dies — inseparable attachments always drop. Both settings live in
 `Ja2_Options.INI`; the file warns that raising the drop rate above 20% unbalances
-the game unless you also lower the attachment count.
+the game unless you also adjust the attachment count.
 
 One more setting worth knowing: `USE_DEFAULT_SLOTS_WHEN_MISSING` makes the game
 generate default slots for items that have no NAS data — useful when playing an old
@@ -193,10 +194,10 @@ See the [Ja2_Options.INI tour](../../configuration/options-ini.md) for more.
 
 ## Modding NAS
 
-Everything above — which slots a gun has, where they are drawn, what fits into them,
-which attachments conflict, and what slots an attachment adds or removes — is
-defined in XML and fully moddable. See
-[NAS internals](../../modding/nas-internals.md) for the data model.
+Everything above — which attachments a gun accepts (and therefore which slots it
+shows), where the slots are drawn, and which attachments conflict — is defined in
+XML and fully moddable. See [NAS internals](../../modding/nas-internals.md) for the
+data model.
 
 ## Sources
 
@@ -208,3 +209,12 @@ defined in XML and fully moddable. See
 - [Instructions For New Features — JA2 v1.13 wiki (pbworks)](http://ja2v113.pbworks.com/w/page/4218346/Instructions%20For%20New%20Features)
 - JA2_113_Hotkeys.pdf (r9389, 2022), from `Docs\Manuals` in the 1.13 game directory
 - [`Ja2_Options.INI` from the current 1.13 game directory (GitHub, 1dot13/gamedir)](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/Ja2_Options.INI)
+  (attachment drop rate, enemy attachment count, scope aim-click thresholds, scope
+  modes, `SHIFT_F_REMOVE_ATTACHMENTS`, Bobby Ray tooltips; re-verified July 2026)
+- Current game data from [github.com/1dot13/gamedir](https://github.com/1dot13/gamedir):
+  `Data-1.13\TableData\Items\IncompatibleAttachments.xml` (scope/reflex-sight example)
+  and `Data-1.13\TableData\Items\Items.xml` (suppressor variants, LAM-200, Match
+  Sights)
+- [`Tactical/Items.cpp`](https://raw.githubusercontent.com/1dot13/source/master/Tactical/Items.cpp)
+  from the 1dot13/source repository (`GetItemSlots`: slots derived from compatible
+  attachments; attached launchers contribute their own slots)

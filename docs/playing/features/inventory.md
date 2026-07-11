@@ -46,9 +46,10 @@ choices:
 | Old/Old | Everything as in the original game |
 
 There is deliberately **no Old/New option**: the New Attachment System only works
-together with the New Inventory System, and it also refuses to run in 640×480 mode —
-there simply isn't enough screen space. If you try, the game warns you and won't start.
-See [Attachments](attachments.md) for what NAS itself changes.
+together with the New Inventory System. The new systems also need more screen space
+than 640×480 provides — at that resolution the Inventory / Attachments selector is
+hidden and the game runs Old/Old. See [Attachments](attachments.md) for what NAS
+itself changes.
 
 !!! note "NAS needs NIS"
     If you want the new attachment slots, you must also take the new inventory. The
@@ -109,15 +110,15 @@ Backpacks are the biggest containers, and they come with real combat penalties:
 - Climbing with a backpack is restricted. With the shipped defaults
   (`MAX_BACKPACK_WEIGHT_TO_CLIMB = 5`, `USE_GLOBAL_BACKPACK_SETTINGS = TRUE` under
   `[Tactical Gameplay Settings]` in `Ja2_Options.INI`), a merc can only climb while
-  wearing a very light pack (empty weight 0.5 kg or less). Both settings are documented
-  in the INI if you want different rules — see
-  [Ja2_Options.INI](../../configuration/options-ini.md).
+  wearing a very light pack (empty weight 0.5 kg or less — in the standard item set
+  only the Tactical Sling qualifies). Both settings are documented in the INI if you
+  want different rules — see [Ja2_Options.INI](../../configuration/options-ini.md).
 
 Because of this, 1.13 gives you hotkeys to ditch and recover packs quickly:
 
 | Hotkey | Effect |
 | ------ | ------ |
-| ++shift+b++ | All mercs in the sector drop their backpacks (NIV only). |
+| ++shift+b++ | All mercs in the sector drop their backpacks; press again to pick them back up (NIV only). |
 | ++ctrl+shift+f++ | Pick up all dropped backpacks (NIV only), then automatically run ++shift+f++ (remove attachments/unload weapons in sector) and ++shift+s++ (sort sector inventory). |
 
 With `SHOW_BACKPACK_OWNER = TRUE` (the default in `Ja2_Options.INI`), a dropped backpack
@@ -174,9 +175,10 @@ attachment class that accepts duplicates). See
 - New Attachment System readme/design doc by WarmSteel (NIS/resolution requirements)
 - Previous 1.13 starter documentation, Play Guide (r8741-era)
 - JA2 1.13 official hotkey reference, `JA2_113_Hotkeys.pdf` (r9389, 2022)
-- Current game data from [github.com/1dot13/gamedir](https://github.com/1dot13/gamedir):
-  `Data-1.13\TableData\Items\LoadBearingEquipment.xml`,
-  `Data-1.13\TableData\Items\Pockets.xml`, `Data-1.13\Ja2_Options.INI`,
+- Current game data from [github.com/1dot13/gamedir](https://github.com/1dot13/gamedir)
+  (re-verified July 2026): `Data-1.13\TableData\Items\LoadBearingEquipment.xml`,
+  `Data-1.13\TableData\Items\Pockets.xml`, `Data-1.13\TableData\Items\Items.xml`
+  (MOLLE pouch attachment class), `Data-1.13\Ja2_Options.INI`,
   `Data-1.13\APBPConstants.ini`
 - 1.13 source code from [github.com/1dot13/source](https://github.com/1dot13/source):
   `Tactical/Item Types.h` (inventory slot and LBE class definitions)

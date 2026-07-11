@@ -34,6 +34,7 @@ big packaged releases.
 | 2011 | Release build 4870 |
 | 2014 | Release build 7435, updated to build **7609** — "the stable" that many older mods still require |
 | 2022 | SVN development ends abruptly; the project moves to GitHub at [github.com/1dot13](https://github.com/1dot13) |
+| 2023 | First GitHub release, **v1** |
 | 2025 | Stable release **v5** on GitHub; a rolling "Latest (unstable)" release is updated continuously |
 
 Today, development happens in the open on GitHub. Releases are "all-in-one"
@@ -47,23 +48,26 @@ revisions and releases is on the
 
 This is a curated highlight reel, not a complete list — the
 [playing section](../playing/index.md) gives the full tour of what's different
-in the game.
+in the game, and the [feature guides](../playing/features/index.md) have a
+dedicated page for every major system.
 
 **Deeper tactical combat**
 
-- A working **suppression fire** system: bullets flying past your mercs (and
-  the enemy) cost APs, force stance changes, and can pin units down.
+- A working [**suppression fire**](../playing/features/suppression.md) system:
+  bullets flying past your mercs (and the enemy) cost APs, force stance
+  changes, and can pin units down.
 - **Improved autofire** — you choose how many rounds to fire, at an AP cost
   per extra round.
 - An optional, completely redesigned aiming model:
   [New Chance to Hit (NCTH)](../playing/features/ncth.md).
-- **Smarter AI**: enemies flank you, take cover, climb roofs, use scoped
-  snipers with spotters, and fire suppressively.
+- [**Smarter AI**](../playing/features/tactical-ai.md): enemies flank you, take
+  cover, climb roofs, use scoped snipers with spotters, and fire suppressively.
 
 **A massive arsenal**
 
 - Hundreds of new guns, plus new armor (including ghillie suits), new grenades
-  and rocket launchers, and new ammo types such as tracer, match, and
+  and rocket launchers, and new
+  [ammo types](../playing/features/weapons.md) such as tracer, match, and
   cold-loaded (subsonic).
 - The [New Inventory System](../playing/features/inventory.md) with **Load
   Bearing Equipment (LBE)**: vests, harnesses, holsters, and backpacks that
@@ -79,22 +83,25 @@ in the game.
 - Enemies react: capture a town and nearby garrisons may investigate — and
   taking Drassen early triggers a massive counterattack (configurable, like
   almost everything else).
-- Sector **facilities** give your mercs new assignments with local bonuses.
+- Sector [**facilities**](../playing/features/facilities.md) give your mercs
+  new assignments with local bonuses.
 
 **Your game, your rules**
 
 - Higher resolutions instead of the original locked 640x480.
-- A much bigger new-game screen: the INSANE difficulty level, Bobby Ray's
+- A much bigger new-game screen: the
+  [INSANE difficulty level](../playing/difficulty.md), Bobby Ray's
   selection, "Tons of Guns", iron man mode, and more — see
   [New game options](../playing/new-game-options.md).
-- Up to six IMP mercs with far deeper customization, appearance options, and
-  trait choices.
+- Up to six [IMP mercs](../playing/features/imp.md) with far deeper
+  customization, appearance options, and trait choices.
 - Nearly everything is exposed in `Ja2_Options.INI` and XML data files — see
   the [configuration section](../configuration/index.md).
 
 **And more**
 
-- Weather effects: rain and thunderstorms.
+- [Weather effects](../playing/features/environment.md): rain and
+  thunderstorms.
 - The mercs from *Unfinished Business* (Gaston, Stogie, Tex, Biggins) join the
   roster.
 - Enhanced item descriptions, mouse wheel support, and dozens of
@@ -152,6 +159,7 @@ you want is the unmodified vanilla game at modern resolutions, look at
 ## Sources
 
 - README of [github.com/1dot13/source](https://github.com/1dot13/source) (installation, SVN-to-GitHub history, all-in-one releases)
+- [1dot13/source releases page](https://github.com/1dot13/source/releases) — GitHub release names and dates (v1 July 2023, v5 September 2025; verified via the GitHub API, July 2026)
 - [JA2 v1.13 pbworks wiki — FrontPage](http://ja2v113.pbworks.com/w/page/4218339/FrontPage) (project description, release dates; 2014-era)
 - [JA2 v1.13 pbworks wiki — Features](http://ja2v113.pbworks.com/w/page/4218338/Features) (feature descriptions; 2008–2012 era)
 - [History of the Jagged Alliance series — JA2 Stracciatella project](https://ja2-stracciatella.github.io/history/) (1.13 start year)

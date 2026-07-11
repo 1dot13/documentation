@@ -44,6 +44,22 @@ key sits under, so you can jump to it quickly. For a broader tour of the file, s
 | `MERCS_CAN_DIE_ON_ASSIGNMENT` | `[Recruitment Settings]` | `FALSE` prevents A.I.M./M.E.R.C. mercs you have not hired from dying while away on other missions. (The per-difficulty cap on such deaths, `MaxMercDeaths`, lives in `DifficultySettings.xml`.) |
 | `SLAY_STAYS_FOREVER` | `[Recruitment Settings]` | `TRUE` lets the character Slay stay with your team indefinitely; with `FALSE` he can only be recruited for a limited time. |
 
+### Newer optional systems
+
+Recent releases added several large optional systems, all switched in
+`Ja2_Options.INI` as well. Each row links to the page that explains the system in
+full — read it before you flip the switch.
+
+| Setting | Section | Why you might change it |
+| --- | --- | --- |
+| `MINI_EVENTS_ENABLED` | `[Mini Events Settings]` | Off by default. `TRUE` turns on [Mini Events](../playing/features/events.md): random campaign events that pop up on the strategic screen with two choices, each with positive and/or negative effects. A low-risk way to add flavor to any campaign. |
+| `REBEL_COMMAND_ENABLED` | `[Rebel Command Settings]` | Off by default. `TRUE` enables [Rebel Command](../playing/features/rebel-command.md): you direct the rebels at the strategic level through the A.R.C. laptop site. The INI recommends starting a new campaign ("unless you're up for a challenge"); if you enable it mid-campaign, the game grants a starting stock of Supplies based on the current day and progress. |
+| `AGGRESSIVE_STRATEGIC_AI` | `[Strategic Event Settings]` | Default `2`: the Queen can launch Drassen-style counterattacks on every city, plus major offensives late in the campaign. `1` keeps the city counterattacks but drops the offensives; `0` downgrades the non-Drassen counterattacks (the Drassen one has its own toggle, above). Worth lowering for a gentler first campaign — see [the strategic war](../playing/features/strategic-war.md). |
+| `MERC_WEBSITE_IMMEDIATELY_AVAILABLE` | `[Recruitment Settings]` | `TRUE` sends Speck's introductory e-mail at the start of the game, so the budget M.E.R.C. hiring site is open from day 1. See [Hiring & contracts](../playing/features/hiring.md). |
+| `FAST_BOBBY_RAY_SHIPMENTS` | `[Shopkeeper Inventory Settings]` | `TRUE` makes Bobby Ray's shipments arrive faster. See [Bobby Ray's](../playing/features/bobby-ray.md) for the shop's other quality-of-life settings. |
+| `FOOD` | `[Tactical Food Settings]` | Off by default, and fine to leave off for a first campaign. `TRUE` opts in to the [food & water system](../playing/features/food.md): mercs must eat and drink or suffer morale, energy and eventually stat penalties. |
+| `DISEASE` | `[Disease Settings]` | Off by default. `TRUE` opts in to the [disease system](../playing/features/drugs-disease.md): mercs can catch diseases from swamp insects, corpses, contaminated items and more. Like food, an extra survival layer for players who want more to manage. |
+
 ### Settings that moved or were removed
 
 Two entries from older versions of this list no longer work the way they used to:

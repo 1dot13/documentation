@@ -45,7 +45,9 @@ Two kinds of release exist side by side:
   from current development code, so it always reflects the newest work; the download
   date on the release page tells you how fresh it is. Expect occasional rough edges.
 - **Stable releases** — tagged versions (v1 through v5) published when the code is
-  considered solid. The current stable is **v5** (September 2025).
+  considered solid. The current stable is **v5** (September 2025). Superseded stables
+  do not always stay downloadable: as of July 2026 the releases page lists only v1,
+  v5 and Latest (unstable), though all five `v*` tags remain in the repository.
 
 During the SVN era, builds were instead distributed on the Bear's Pit forum as SCIs
 ("Single Click Installers"). You will still see that term in older threads — see the

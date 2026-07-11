@@ -118,9 +118,9 @@ Stance cuts both ways under NCTH:
 
 In addition, a merc positioned behind suitable cover — tables, rocks, crates, open
 windows — can **rest their weapon** on it (`WEAPON_RESTING = TRUE` by default). This
-grants a crouching or standing merc a large part of the prone-stance steadiness
-bonus. Parking a shooter at a window ledge is one of the cheapest accuracy boosts in
-the game.
+grants a crouching or standing merc half of the prone-stance steadiness bonus
+(`WEAPON_RESTING_PRONE_BONI_PERCENTAGE = 50`). Parking a shooter at a window ledge is
+one of the cheapest accuracy boosts in the game.
 
 ### The gun itself
 
@@ -237,8 +237,12 @@ Set it to `TRUE` to play with NCTH, `FALSE` for the classic OCTH system. The set
 applies to everyone in the game — your mercs, militia and the enemy alike.
 
 On the old r7609 "stable" release this was a **New Game screen option** ("New Chance
-to Hit System"); it moved into `Ja2_Options.INI` with r8610. See
-[new game options](../new-game-options.md) for the other settings that moved.
+to Hit System"); the new-game screen was slimmed down starting with r8610, and NCTH
+itself moved into `Ja2_Options.INI` at **r8625**. See
+[new game options](../new-game-options.md) for the other settings that moved. Current
+releases can also flip it without editing the INI: the *1.13 Features* screen on the
+New Game screen has a "New Chance to Hit" toggle that can override the INI value
+(its *Use These Overrides* master switch must be on).
 
 !!! tip "Pick one per campaign"
     OCTH and NCTH balance very differently, so decide which system you want before
@@ -306,6 +310,9 @@ switches.
 - [`Ja2_Options.INI`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/Ja2_Options.INI)
   from the 1dot13/gamedir repository (NCTH switch, cursor options, weapon resting,
   scope modes, aimed burst)
+- [`Tactical/Weapons.cpp`](https://raw.githubusercontent.com/1dot13/source/master/Tactical/Weapons.cpp)
+  from the 1dot13/source repository (NCTH aperture calculation, iron-sight gradient and
+  laser bonus behavior; fetched July 2026)
 - JA2_113_Hotkeys.pdf (r9389, 2022) — official 1.13 hotkey reference (keys cited here)
 - "Jagged Alliance 2 v1.13 — Starter Documentation" and "Play Guide" (2019, r8741 era)
   by tais & Yunotchi

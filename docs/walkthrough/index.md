@@ -32,7 +32,7 @@ and that is exactly where your mercenaries land.
 
 ## How the walkthrough is organized
 
-The campaign pages follow the order most players take the country in, plus two
+The campaign pages follow the order most players take the country in, plus three
 reference pages that cut across the whole map:
 
 - **[First steps](first-steps.md)** — the laptop, creating your IMP merc, hiring
@@ -45,6 +45,8 @@ reference pages that cut across the whole map:
 - **[Side quests](side-quests.md)** — every side quest, town by town.
 - **[NPCs and recruitment](npcs-recruitment.md)** — who can join your team, where
   to find them, and the terrorists and other wanted characters.
+- **[Secrets](secrets.md)** — hidden weapon caches, unique items, and easter eggs
+  across the whole map.
 
 ## A suggested campaign route
 
@@ -83,7 +85,8 @@ Drassen first feel like suicide if you are not ready for it. Survival advice is 
 the [starter tips](../playing/tips.md) and the [early game](early-game.md) page.
 If you would rather skip it, set `TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN`
 to `FALSE` in `Ja2_Options.INI` — see
-[the options tour](../configuration/options-ini.md).
+[the options tour](../configuration/options-ini.md) and the
+[recommended settings](../configuration/recommended-settings.md).
 
 ### Militia are a real army now
 
@@ -103,9 +106,9 @@ militia can be trained in city and SAM sectors. Details on the
 - Patrol size, the number of elite troops in patrols, the chance of being
   ambushed, and how many moves the Queen makes per day are all configurable in
   `Ja2_Options.INI`.
-- Higher difficulty levels field larger garrisons and more elite troops, and the
-  1.13-exclusive INSANE difficulty gives the Queen unlimited reinforcements that
-  keep attacking for the whole campaign.
+- Higher [difficulty levels](../playing/difficulty.md) field larger garrisons and
+  more elite troops, and the 1.13-exclusive INSANE difficulty gives the Queen
+  unlimited reinforcements that keep attacking for the whole campaign.
 - As the campaign's [progress](../reference/glossary.md) value rises, both you and
   the enemy get access to better equipment ("coolness" tiers). How fast that
   happens is set by the *Progress Speed of Item Choices* option when you start a

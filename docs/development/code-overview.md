@@ -45,8 +45,8 @@ top-level `CMakeLists.txt`; treat them as a starting point, not a specification.
 
 | Directory | What it houses |
 |---|---|
-| `Tactical/` | The turn-based combat layer — by far the largest directory (237 files). Soldiers (`Soldier Control.cpp`, `Soldier Profile.cpp`), weapons and items (`Weapons.cpp`, `Items.cpp`), line of sight (`LOS.cpp`), action points (`Points.cpp`), squads, morale, vehicles, boxing, food/disease/drugs, the in-sector interface (`Interface*.cpp`), and dozens of `XML_*.cpp` files that load the `Data-1.13\TableData` XMLs (attachments, LBE, merc starting gear, merchants, …). |
-| `Strategic/` | The campaign layer (119 files): map screen (`mapscreen.cpp`, `Map Screen Interface*.cpp`), assignments, auto-resolve, merc contracts, quests, town loyalty, mines and facilities, militia (`Town Militia.cpp`, `MilitiaSquads.cpp`, `MilitiaIndividual.cpp`), the strategic AI (`Strategic AI.cpp`, `Queen Command.cpp`, `Reinforcement.cpp`) and more `XML_*.cpp` data loaders. |
+| `Tactical/` | The turn-based combat layer — by far the largest directory (237 files). Soldiers (`Soldier Control.cpp`, `Soldier Profile.cpp`), weapons and items (`Weapons.cpp`, `Items.cpp`), line of sight (`LOS.cpp`), action points (`Points.cpp`), squads, morale (`Morale.cpp`), vehicles, boxing, food/disease/drugs, the in-sector interface (`Interface*.cpp`), and dozens of `XML_*.cpp` files that load the `Data-1.13\TableData` XMLs (attachments, LBE, merc starting gear, merchants, …). |
+| `Strategic/` | The campaign layer (119 files): map screen (`mapscreen.cpp`, `Map Screen Interface*.cpp`), assignments, auto-resolve, merc contracts, quests, town loyalty, Rebel Command (`Rebel Command.cpp`), mines and facilities, militia (`Town Militia.cpp`, `MilitiaSquads.cpp`, `MilitiaIndividual.cpp`), the strategic AI (`Strategic AI.cpp`, `Queen Command.cpp`, `Reinforcement.cpp`) and more `XML_*.cpp` data loaders. |
 | `TacticalAI/` | The classic per-soldier tactical AI: `AIMain.cpp`, `DecideAction.cpp`, `Attacks.cpp`, `Movement.cpp`, `Knowledge.cpp`, `FindLocations.cpp`, plus creature and zombie variants (`CreatureDecideAction.cpp`, `ZombieDecideAction.cpp`). |
 | `ModularizedTacticalAI/` | A newer, plan-based AI framework with its own `readme.txt`, coding style rules and Doxygen configuration. Its sources (`AbstractPlanFactory.cpp`, `PlanFactoryLibrary.cpp`, `LegacyAIPlan.cpp`, `NullPlan.cpp`, `CrowPlan.cpp`, …) appear to wrap the classic AI in exchangeable "plans". |
 | `TileEngine/` | The isometric world engine: rendering (`Render Dirty.cpp`, `Render Z.cpp`), lighting and shadows, smoke and light effects, explosions, fog of war, smell, buildings, interactive tiles, exit grids and the radar screen. |
@@ -59,7 +59,7 @@ top-level `CMakeLists.txt`; treat them as a starting point, not a specification.
 | `lua/` | Bundled Lua 5.1 headers plus the binding layer (`lua_state.cpp`, `lua_function.cpp`, `lua_class_interface.cpp`); `lua_strategic.cpp` and `lua_tactical.cpp` appear to expose strategic- and tactical-layer functionality to scripts. See [Lua scripting](../modding/lua.md) for the modder-facing side. |
 | `i18n/` | Localized game text, one file per language (`_EnglishText.cpp`, `_GermanText.cpp`, `_RussianText.cpp`, …) plus `_Ja25*Text.cpp` variants for Unfinished Business, and string import/export helpers. Built once per language target. |
 | `ext/` | Third-party libraries built from source: `VFS/` (the **bfVFS** library — the engine behind the [Virtual File System](../modding/vfs.md)), `libpng/`, `zlib/` and `export/` (a `ja2export` utility). `versions.txt` pins the bundled versions: 7z(lzma) 9.22, utfcpp 2.3.4, libpng 1.2.50, zlib 1.2.8. |
-| `cmake/` | Build helper scripts: `CopyUserPresetTemplate.cmake` (creates your `CMakeUserPresets.json` on first configure), `ValidateOptions.cmake` (checks the language/application choices), clang and MinGW toolchain files, and a `presets` folder. |
+| `cmake/` | Build helper scripts: `CopyUserPresetTemplate.cmake` (copies the `CMakePresets.json` template from `cmake/presets/` into the repository root on first configure), `ValidateOptions.cmake` (checks the language/application choices), clang and MinGW toolchain files, and a `presets` folder. |
 | `wine/` | A small static library (`wine.cpp` plus an `include/` folder) linked into the game; based on the name it appears to hold Wine-related compatibility code. |
 | `.github/` | GitHub Actions workflow definitions. |
 
@@ -94,7 +94,9 @@ the global include path).
 |---|---|
 | Tactical/combat mechanics (weapons, shooting, items, soldier behavior) | `Tactical/` — e.g. `Weapons.cpp`, `Items.cpp`, `LOS.cpp`, `Points.cpp`, `Soldier Control.cpp`, `Overhead.cpp` |
 | How XML data files are read into the game | The `XML_*.cpp` files in `Tactical/` and `Strategic/` (e.g. `XML_Attachments.cpp`, `XML_MercStartingGear.cpp`, `XML_Army.cpp`) |
-| Strategic/campaign behavior (assignments, militia, enemy army, quests) | `Strategic/` — e.g. `Strategic AI.cpp`, `Assignments.cpp`, `Town Militia.cpp`, `Quests.cpp` |
+| Strategic/campaign behavior (assignments, militia, enemy army, quests) | `Strategic/` — e.g. `Strategic AI.cpp`, `Queen Command.cpp` (the enemy army's garrisons and reinforcements), `Assignments.cpp`, `Town Militia.cpp`, `Quests.cpp` |
+| A single 1.13 feature system | Often one aptly named file — e.g. `Tactical/Morale.cpp` for [morale and merc opinions](../playing/features/morale.md), or `Strategic/Rebel Command.cpp` for the whole [Rebel Command](../playing/features/rebel-command.md) layer |
+| How INI settings reach the code | `Ja2/GameSettings.cpp` — `LoadGameExternalOptions()` reads `Ja2_Options.ini` into the global `gGameExternalOptions`; the same file also loads `Skills_Settings.ini`, `CTHConstants.ini` and `APBPConstants.ini` (via the `CIniReader` from `Utils/INIReader.cpp`) |
 | Enemy tactical AI decisions | `TacticalAI/` (`DecideAction.cpp`, `AIMain.cpp`); the plan framework in `ModularizedTacticalAI/` |
 | Tactical UI (panels, cursors, item display) | `Tactical/Interface*.cpp`, `Tactical/UI Cursors.cpp` |
 | Map screen UI | `Strategic/Map Screen Interface*.cpp`, `Strategic/mapscreen.cpp` |
@@ -105,7 +107,7 @@ the global include path).
 | Map Editor behavior | `Editor/` — see also the [Map Editor page](../modding/map-editor.md) |
 | Multiplayer/networking | `Multiplayer/`, plus the `MP*Screen` files in `Ja2/` — see [Multiplayer](../multiplayer/index.md) |
 | Lua scripting hooks | `lua/` — see [Lua scripting](../modding/lua.md) |
-| Translations / game text | `i18n/` |
+| Translations / game text | `i18n/` — `_EnglishText.cpp` is the master source for every English in-game string |
 
 !!! tip "Grep is your friend"
     With 35+ MB of C++, the fastest way to find the code behind a feature is usually
@@ -155,6 +157,8 @@ developer material that never moved to GitHub:
   languages, compile definitions)
 - `README.md` of `1dot13/source` (Visual Studio setup)
 - `ModularizedTacticalAI/readme.txt` and `ext/versions.txt` from `1dot13/source`
+- `Ja2/GameSettings.cpp` and `cmake/CopyUserPresetTemplate.cmake` from `1dot13/source`
+  (INI file names and loading functions; preset template behavior)
 - GitHub language statistics API for `1dot13/source`
 - [SVN `Documents/1.13 Modding/Source Code/` folder](https://ja2svn.mooo.com/source/ja2/trunk/Documents/1.13%20Modding/Source%20Code/)
   and its `Help/` and `ModularizedAI/html/` subfolders (fetched July 2026)

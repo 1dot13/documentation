@@ -17,9 +17,9 @@ NCTH and the inventory system shape everything that follows.
 
 ## Day 1: the laptop
 
-The campaign opens on your laptop. Before anyone sets foot in Arulco you hire a team,
-optionally create a custom merc, and manage your starting cash (which depends on the
-difficulty level you picked).
+The campaign opens on your [laptop](../playing/laptop.md). Before anyone sets foot in
+Arulco you hire a team, optionally create a custom merc, and manage your starting cash
+(which depends on the [difficulty level](../playing/difficulty.md) you picked).
 
 ### Hiring from A.I.M.
 
@@ -69,7 +69,9 @@ areas where 1.13 goes far beyond vanilla. In current releases (defaults from
 | `DYNAMIC_IMP_PROFILE_COST` | `FALSE` | If `TRUE`, each extra IMP costs progressively more |
 
 So IMP creation in 1.13 is a genuine point-buy system: you trade skill traits,
-disabilities and dumped attributes against raw stats. IMPs with expert traits can even
+disabilities and dumped attributes against raw stats. The
+[IMP creation page](../playing/features/imp.md) walks through the whole process, and
+the [traits page](../playing/features/traits.md) explains what every skill trait does. IMPs with expert traits can even
 receive different starting gear (`EXPERTS_GET_DIFFERENT_CHOICES`, backed by
 `TableData\Inventory\IMPItemChoices.xml`), and the optional `ALTERNATIVE_IMP_CREATION` setting
 ties the selectable merc backgrounds to your trait choices.
@@ -253,7 +255,9 @@ starving, and Father John Walker in Drassen can arrange a supply line.
 3. The supplies take **24 hours** to arrive. Then return to Omerta and speak to Miguel.
 
 Rewards: **Dimitri Guzzo** becomes recruitable, and loyalty rises in both Drassen and
-Omerta.
+Omerta. If you play with [Rebel Command](../playing/features/rebel-command.md) enabled
+(it is off by default), delivering the food also unlocks the rebels' A.R.C. website on
+your laptop.
 
 Flavor note: Father Walker likes a drink. Buy him alcohol from the bar and, once a pink
 glass appears next to his portrait, talk to him in a friendly way — he'll share his
@@ -344,7 +348,9 @@ The Queen's army is not a static obstacle course:
   `TRIGGER_MASSIVE_ENEMY_COUNTERATTACK_AT_DRASSEN = TRUE` — after you take Drassen, the
   Queen sends a massive force to retake it, exactly as she threatens in the
   "Meanwhile..." cutscene. The default `AGGRESSIVE_STRATEGIC_AI = 2` additionally
-  allows counterattacks against *every* city plus progress-based offensives.
+  allows counterattacks against *every* city plus progress-based offensives. Both
+  settings are discussed on the
+  [recommended settings page](../configuration/recommended-settings.md).
 
 !!! danger "The Drassen counterattack"
     This battle can end a young campaign. How to prepare for it — and how to turn it

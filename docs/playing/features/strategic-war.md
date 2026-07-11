@@ -112,7 +112,8 @@ On top of the strategic layer, enemies in **adjacent sectors can reinforce a bat
 in progress** — they arrive at the map edge a few turns in (enabled per difficulty in
 `DifficultySettings.xml`; delays and sizes are tunable via
 `MIN/RND_DELAY_ENEMY_REINFORCEMENTS` and `MIN/RND_ENTER_ENEMY_REINFORCEMENTS` in
-`[Strategic Gameplay Settings]`). Militia can do the same for you.
+`[Strategic Gameplay Settings]`). [Militia](militia.md#defending-towns) can do the
+same for you.
 
 !!! tip "The Drassen counterattack"
     The counterattack a new player actually has to survive is the first one. The
@@ -191,9 +192,9 @@ not spent attacking you. Sector specifics for these features live in
 
 Availability also scales with campaign progress (`[Strategic Gameplay Settings]`):
 jeeps from `JEEP_MINIMUM_PROGRESS = 30`, robots from `ROBOT_MINIMUM_PROGRESS = 45`,
-tanks from `TANK_MINIMUM_PROGRESS = 60`; enemy helicopters unlock when the AI learns
-of your own helicopter use, or at `ENEMYHELI_DEFINITE_UNLOCK_AT_PROGRESS = 30` at the
-latest.
+tanks from `TANK_MINIMUM_PROGRESS = 60`. Enemy helicopters unlock when the AI learns
+of your own helicopter use, or at `ENEMYHELI_DEFINITE_UNLOCK_AT_PROGRESS = 30` (in
+`[Enemy Helicopter Settings]`) at the latest.
 
 ## Supply convoys: strategic transport groups
 

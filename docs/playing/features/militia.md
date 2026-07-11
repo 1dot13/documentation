@@ -90,10 +90,11 @@ have been in your service for 24 hours.
   (`PRISONER_DEFECT_CHANCE`, default 25%).
 - **A private military contractor.** With `PMC = TRUE` (the default), you receive an
   email from a PMC once you start training militia. Through its website you can hire
-  regular and veteran militia for a steep price; they enter Arulco through sectors
-  with suitable facilities such as airports, harbors and border posts. The company
-  slowly replenishes its ranks up to `PMC_MAX_REGULARS` (35) and `PMC_MAX_VETERANS`
-  (20).
+  regular and veteran militia for a steep price; they arrive through sectors with a
+  suitable entry-point facility — in the stock data, the small airports in Drassen
+  and Meduna. The company slowly replenishes its ranks up to `PMC_MAX_REGULARS` (35)
+  and `PMC_MAX_VETERANS` (20). Pricing, arrival and wages are covered in depth on the
+  [hiring & contracts page](hiring.md#kerberus-militia-by-mail-order).
 
 ### Optional recruitment limits
 
@@ -213,7 +214,8 @@ militia at your side. Militia in 1.13 pull their weight in several new ways:
   acting).
 - **Recon.** With `NO_ENEMY_DETECTION_WITHOUT_RECON = TRUE` (the shipped default),
   enemy groups moving on the strategic map are only revealed when militia spot them —
-  garrisons double as your early-warning network.
+  garrisons double as your early-warning network (see
+  [reading the map](strategic-war.md#reading-the-map)).
 - **Shared vision.** `WE_SEE_WHAT_MILITIA_SEES_AND_VICE_VERSA = TRUE` means your mercs
   see what militia see in tactical combat, and vice versa.
 - **Mine flagging.** Militia who spot a landmine plant a blue warning flag on it
@@ -270,9 +272,8 @@ converge on the same hostile sector, the usual "wait for the other squads?"
 coordination prompt appears. Militia that can receive commands (per the rules above)
 can also retreat from an auto-resolve battle via the retreat button.
 
-On the map screen, press ++z++ to toggle the militia & enemies filter and ++r++ to
-toggle the **mobile militia restrictions** filter (see below). The full list is in the
-[hotkey reference](../hotkeys.md).
+On the map screen, press ++z++ to toggle the militia & enemies map filter. The full
+list is in the [hotkey reference](../hotkeys.md).
 
 ## Mobile (roaming) militia
 
@@ -291,9 +292,10 @@ between allowed (green), forbidden (red) and "no-leave" (yellow) — mobiles cou
 enter a no-leave sector but not exit it, turning it into a player-made roadblock or
 wilderness garrison. `ALLOW_MOBILE_MILITIA_REINFORCE_TOWN_GARRISONS` and
 `..._SAM_GARRISONS` controlled whether roamers moved back in to reinforce towns and
-SAM sites. If you play an old SVN-based mod, these are the settings to look for; the
-++r++ mobile-militia-restrictions map filter in the [hotkey reference](../hotkeys.md)
-stems from this system.
+SAM sites. If you play an old SVN-based mod, these are the settings to look for. The
+r9389 hotkey sheet still lists a mobile-militia-restrictions map filter on ++r++; in
+current builds that binding is gone — ++r++ now toggles the weather overlay (see the
+[hotkey reference](../hotkeys.md)).
 
 **Current builds.** The self-roaming feature was removed in March 2018 (r8548) in
 favor of strategic militia command (see above) — that is why none of the
@@ -382,8 +384,8 @@ inventory of the sector they are stationed in:
   **militia inspection** entry. They remember exactly which items came from your
   stockpile and return only those — anything militia steal during a battle stays
   lost, as it always did.
-- Militia reinforcing another sector take their gear along, and mobile militia keep
-  the gear from their training sector.
+- Militia reinforcing another sector take their gear along (as do militia groups you
+  march out of town — see above).
 
 It is up to you to keep your garrisons supplied — leave spare weapons, armor and ammo
 in the sectors your militia defend.
@@ -433,15 +435,14 @@ kills and assists, and a health ratio.
 - The 1.13 source code on GitHub —
   [`Tactical/Militia Control.cpp`](https://github.com/1dot13/source/blob/master/Tactical/Militia%20Control.cpp)
   and `i18n/_EnglishText.cpp` (the tactical order menu entries and their
-  line-of-sight/radio/extended-ear conditions), and
-  [`TableData/Map/FacilityTypes.xml`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/TableData/Map/FacilityTypes.xml)
-  from the gamedir repository (military HQ war-room requirements)
-- Source files used to verify the volunteer pool and militia resources:
+  line-of-sight/radio/extended-ear conditions),
   [`Strategic/Town Militia.cpp`](https://github.com/1dot13/source/blob/master/Strategic/Town%20Militia.cpp)
-  (pool gain formulas, training draw, resource conversion values, devaluation),
-  `Strategic/Assignments.cpp` (training gates, prisoner interrogation outcomes),
-  `Strategic/Player Command.cpp` (liberation volunteers),
+  (volunteer pool gain formulas, training draw, resource conversion values,
+  devaluation), `Strategic/Assignments.cpp` (training gates, prisoner interrogation
+  outcomes), `Strategic/Player Command.cpp` (liberation volunteers),
   `Tactical/Soldier Control.cpp` (tactical civilian recruitment),
   `Strategic/Map Screen Interface Map Inventory.cpp` (++alt++ + right-click
-  conversion), `Strategic/Map Screen Interface Map.cpp` (map overlay) and
+  conversion), `Strategic/Map Screen Interface Map.cpp` (militia view overlay) and
   `Strategic/Rebel Command.cpp` (volunteer/resource hooks and feature gating)
+- [`TableData/Map/FacilityTypes.xml`](https://raw.githubusercontent.com/1dot13/gamedir/master/Data-1.13/TableData/Map/FacilityTypes.xml)
+  from the gamedir repository (military HQ war-room requirements)

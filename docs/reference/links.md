@@ -81,6 +81,10 @@ Threads:
   download location: all-in-one packages per language, including the Map Editor and
   JA2: Unfinished Business support. Step-by-step instructions are on the
   [Installation](../getting-started/installation.md) page.
+- **[XML Editor releases](https://github.com/1dot13/xml-editor/releases)** — beta
+  builds of the XML Editor, updated separately from the game packages (a copy is
+  already bundled with the game). What it does is covered on the
+  [Tools](tools.md) page.
 - **Jagged Alliance 2 itself** — you must own the base game; it is sold at
   [GOG](https://www.gog.com/game/jagged_alliance_2) and
   [Steam](https://store.steampowered.com/app/1620/Jagged_Alliance_2_Gold/).
@@ -101,19 +105,25 @@ Threads:
 
 ## Wikis & references
 
-- **[The old 1.13 wiki (pbworks)](http://ja2v113.pbworks.com/w/page/4218334/FrontPage)**
+- **[The old 1.13 wiki (pbworks)](http://ja2v113.pbworks.com/w/page/4218339/FrontPage)**
   — the original community wiki, largely written in the 2008–2012 era. Outdated in
   places (it predates the GitHub move and many current features), but its
   [Features page](http://ja2v113.pbworks.com/w/page/4218338/Features) and XML reference
   pages are still useful background reading.
-- **[The HAM wiki — New Chance To Hit](https://ja2v113ham.fandom.com/wiki/New_Chance_To_Hit)**
+- **[The HAM wiki — New Chance To Hit (archived)](https://web.archive.org/web/20251206200112/https://ja2v113ham.fandom.com/wiki/New_Chance_To_Hit)**
   — a detailed article on how the NCTH system works, written when NCTH was introduced.
-  Read [NCTH explained](../playing/features/ncth.md) first for the player-level view.
+  The HAM wiki went offline in 2026 (its old address now redirects to the general
+  Jagged Alliance wiki), so this links to a Wayback Machine copy. Read
+  [NCTH explained](../playing/features/ncth.md) first for the player-level view.
 - **[The Jagged Alliance fandom wiki](https://jaggedalliance.fandom.com/wiki/Jagged_Alliance_2)**
   — covers the whole series; good for vanilla JA2 story, characters, and quest details
   that 1.13 leaves unchanged.
-- **[FurloSK's 1.13 item reference](http://ja2.furlo.sk/)** — a sortable browser of
+- **[FurloSK's 1.13 item reference](https://ja2.furlo.sk/)** — a sortable browser of
   1.13 item and weapon stats.
+- **[The `Docs` folder in gamedir](https://github.com/1dot13/gamedir/tree/master/Docs)**
+  — the reference documents that ship with every install, browsable online: the
+  official hotkey PDFs, the Map Editor manual and tutorial, and the technical-issues
+  guide (in the `Manuals` subfolder and alongside it).
 - **[The history of the Jagged Alliance series](https://ja2-stracciatella.github.io/history/)**
   — a series retrospective hosted by the
   [JA2 Stracciatella](https://ja2-stracciatella.github.io/) project (which is itself
@@ -147,7 +157,10 @@ This site did not start from scratch:
   manual, the multiplayer guides, and the New Attachment System design document. Those
   texts are the backbone of the modding section of this site.
 
-Want to help improve these pages? See [Contributing](../development/contributing.md).
+This site itself is maintained by the community, and anyone can pitch in: the pencil
+(edit) button at the top of every page opens that page's source on GitHub, where you
+can propose a correction without any special setup. See
+[Contributing](../development/contributing.md) for details.
 
 ## Sources
 
@@ -165,4 +178,8 @@ Want to help improve these pages? See [Contributing](../development/contributing
   [1.13 Xml Editing](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=6244),
   [How to create face sti's](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=1033),
   [Trunk AI and improvements](https://thepit.ja-galaxy-forum.com/index.php?t=msg&th=24289)
+- GitHub repository listings and release pages (`gamedir` `Docs`/`Manuals` folders,
+  `xml-editor` releases), fetched via the GitHub API in July 2026
+- Wayback Machine snapshot history of the HAM wiki NCTH article (CDX API, July 2026),
+  confirming the wiki's disappearance and the archived copy linked above
 - Link availability spot-checked via HTTP in July 2026
