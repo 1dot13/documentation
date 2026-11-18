@@ -88,6 +88,12 @@ Threads:
 - **Jagged Alliance 2 itself** — you must own the base game; it is sold at
   [GOG](https://www.gog.com/game/jagged_alliance_2) and
   [Steam](https://store.steampowered.com/app/1620/Jagged_Alliance_2_Gold/).
+- **[Unofficial native Linux port of JA2 v1.13 (r7609)](https://goodoldgames.dev/en/page/jagged-alliance-2)**
+  — a free, non-commercial SDL2 build for Linux x86_64 and ARM64. It is not an
+  official 1.13 release and is not affiliated with the 1.13 team, THQ Nordic,
+  Strategy First, or Sir-Tech. It ships no game data; you need your own legally
+  purchased copy. Current public release: 1.0.1 (11 November 2026), still in
+  active development.
 - **[Legacy r7609 packages](https://storage.rcs-rds.ro/links/4729f8d6-f44b-42b7-aa3e-e0ddc6deead6?path=%2FJA_2%2Fv1.13_Releases%2FOfficial%2FEnglish%2Fv7435)**
   — the old "stable" release (`JA2_113_FullRelease_English_7435.exe` plus
   `JA2_113_UpdateForRelease7435_English_7609.exe`), still online. Only needed for older
